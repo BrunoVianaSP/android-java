@@ -13,4 +13,5 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
     <color name="colorAccent">#2a1aDD</color>
+    <color name="default_stroke_color">#FFFFFF</color>
 </resources>
