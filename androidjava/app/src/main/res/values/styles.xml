@@ -7,8 +7,8 @@
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/primaryTextColor</item>
-
         <item name="android:buttonStyle">@style/button</item>
+        <item name="android:textViewStyle">@style/textView</item>
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">
@@ -24,19 +24,36 @@
     </style>
 
     <style name="button" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="android:textColor">#FFFFFFFF</item>
         <item name="android:shadowColor">#FF000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">-1</item>
         <item name="android:shadowRadius">0.2</item>
-        <item name="android:textSize">16dip</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:background">@drawable/button</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
     </style>
 
+    <style name="textView" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
 
+    <style name="textInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/primaryTextColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:background">@color/primaryAlphaColor</item>
+    </style>
+
+    <dimen name="default_text_size">20dp</dimen>
 
 </resources>
