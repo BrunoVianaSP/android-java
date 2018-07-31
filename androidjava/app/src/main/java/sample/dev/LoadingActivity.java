@@ -32,7 +32,7 @@ public class LoadingActivity extends AppCompatActivity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
 
-    private static final int OPEN_MAIN_ACTIVITY_DELAY = 2000;
+    private static final int OPEN_LOGIN_ACTIVITY_DELAY = 2000;
 
     private boolean mVisible;
     private View mControlsView;
@@ -124,7 +124,7 @@ public class LoadingActivity extends AppCompatActivity {
                 Intent i=new Intent(LoadingActivity.this, LoginActivity.class);
                 startActivity(i);
             }
-        }, OPEN_MAIN_ACTIVITY_DELAY);
+        }, OPEN_LOGIN_ACTIVITY_DELAY);
 
     }
 
