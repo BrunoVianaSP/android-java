@@ -13,9 +13,14 @@ import android.widget.TextView;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
 import sample.dev.home.HomeFragment;
+import sample.dev.home.HomeItemGenerator;
 import sample.dev.notification.NotificationFragment;
+import sample.dev.notification.NotificationItemGenerator;
 
-public class MainActivity extends AppCompatActivity implements DashboardFragment.DashboardListener {
+public class MainActivity extends AppCompatActivity implements DashboardFragment.DashboardListener,
+        HomeFragment.HomeListener,
+        NotificationFragment.NotificationListener
+{
 
 //    private TextView mTextMessage;
 
@@ -77,6 +82,16 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     @Override
     public void onDashboardInteraction(DashboardItemGenerator.DummyItem item) {
+
+    }
+
+    @Override
+    public void onHomeInteraction(HomeItemGenerator.DummyItem item) {
+
+    }
+
+    @Override
+    public void onNotificationInteraction(NotificationItemGenerator.DummyItem item) {
 
     }
 }
