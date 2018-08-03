@@ -23,4 +23,6 @@
     </string>
     <string name="dummy_number">1</string>
     <string name="dummy_data">Some Value</string>
+    <string name="dummy_company_name">Company Name</string>
+    <string name="dummy_food_title">Churrasco Brasil</string>
 </resources>

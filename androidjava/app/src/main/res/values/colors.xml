@@ -18,4 +18,5 @@
     <color name="colorAccent">#2a1aDD</color>
     <color name="default_stroke_color">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
+    <color name="ice">#CDCDCD</color>
 </resources>

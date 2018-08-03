@@ -11,6 +11,8 @@
         <item name="android:textViewStyle">@style/textView</item>
     </style>
 
+
+
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -46,6 +48,14 @@
         <item name="android:textColor">@color/primaryTextColor</item>
     </style>
 
+    <style name="titleStyle" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:layout_margin">@dimen/small_margin</item>
+    </style>
+
     <style name="textInputLayout" parent="Widget.Design.TextInputLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -55,5 +65,5 @@
     </style>
 
 
-
+    <dimen name="title_text_size">30sp</dimen>
 </resources>
