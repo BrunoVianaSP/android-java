@@ -4,11 +4,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/tiny_margin"
     android:orientation="vertical"
-    android:background="@color/secondaryColor" >
+    android:background="@color/secondaryColor"
+    android:showDividers="middle"
+    android:divider="@color/secondaryLightColor">
 
     <include layout="@layout/card_header"/>
     <include layout="@layout/card_image"/>
     <include layout="@layout/card_title"/>
     <include layout="@layout/card_description"/>
+    <include layout="@layout/card_footer"/>
 
 </LinearLayout>

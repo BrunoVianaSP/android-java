@@ -37,8 +37,8 @@ public class DashboardRecyclerViewAdapter extends RecyclerView.Adapter<Dashboard
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+//        holder.mIdView.setText(mValues.get(position).id);
+//        holder.mContentView.setText(mValues.get(position).content);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +66,8 @@ public class DashboardRecyclerViewAdapter extends RecyclerView.Adapter<Dashboard
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = (TextView) view.findViewById(R.id.item_title);
+            mContentView = (TextView) view.findViewById(R.id.description);
         }
 
         @Override

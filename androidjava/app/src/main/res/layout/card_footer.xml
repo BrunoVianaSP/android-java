@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/tiny_margin"
     android:orientation="horizontal"
-    tools:showIn="@layout/fragment_home">
-        <TextView
-            android:id="@+id/item_title"
-            style="@style/titleStyle"
-            android:text="@string/dummy_food_title"/>
+    android:padding="@dimen/tiny_padding"
+    tools:showIn="@layout/fragment_home"
+    android:background="@color/secondaryDarkColor">
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/descriptionStyle"
+        android:text="@string/dummy_footer"/>
+
 </LinearLayout>
