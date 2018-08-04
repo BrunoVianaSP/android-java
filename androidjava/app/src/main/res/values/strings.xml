@@ -25,4 +25,5 @@
     <string name="dummy_data">Some Value</string>
     <string name="dummy_company_name">Company Name</string>
     <string name="dummy_food_title">Churrasco Brasil</string>
+    <string name="dummy_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed augue sed nisl faucibus dictum sed ut ligula. Integer efficitur gravida ultricies. Nullam hendrerit egestas sem, eu laoreet urna bibendum id. Aliquam non facilisis sapien. Mauris faucibus felis sed lectus ornare sagittis. Nulla lorem enim, ornare non scelerisque quis, dictum ac nulla. Fusce vel erat non odio venenatis auctor.</string>
 </resources>

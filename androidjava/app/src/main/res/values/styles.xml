@@ -51,10 +51,18 @@
     <style name="titleStyle" parent="@android:style/Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
         <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:layout_margin">@dimen/small_margin</item>
     </style>
+
+
+    <style name="descriptionStyle" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/ice</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+    </style>
+
 
     <style name="textInputLayout" parent="Widget.Design.TextInputLayout">
         <item name="android:layout_width">match_parent</item>
