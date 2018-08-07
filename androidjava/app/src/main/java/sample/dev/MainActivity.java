@@ -1,5 +1,6 @@
 package sample.dev;
 
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
@@ -16,10 +17,12 @@ import sample.dev.home.HomeFragment;
 import sample.dev.home.HomeItemGenerator;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
+import sample.dev.user.SignupFragment;
 
 public class MainActivity extends AppCompatActivity implements DashboardFragment.DashboardListener,
         HomeFragment.HomeListener,
-        NotificationFragment.NotificationListener
+        NotificationFragment.NotificationListener,
+        SignupFragment.SignupFragmentListener
 {
 
 //    private TextView mTextMessage;
@@ -39,6 +42,17 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                     fragmentTransaction.commit();
                     return true;
                 }
+
+                case R.id.navigation_user: {
+//                    mTextMessage.setText(R.string.title_dashboard);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    Fragment fragment = SignupFragment.newInstance("", "");
+                    fragmentTransaction.replace(R.id.main_container, fragment);
+                    fragmentTransaction.commit();
+                    return true;
+                }
+
                 case R.id.navigation_dashboard: {
 //                    mTextMessage.setText(R.string.title_dashboard);
                     FragmentManager fragmentManager = getSupportFragmentManager();
@@ -92,6 +106,11 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     @Override
     public void onNotificationInteraction(NotificationItemGenerator.DummyItem item) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }
