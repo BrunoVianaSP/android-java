@@ -6,7 +6,7 @@
     android:orientation="horizontal"
     android:padding="@dimen/tiny_padding"
     tools:showIn="@layout/fragment_home"
-    android:background="@color/secondaryDarkColor">
+    android:background="@color/secondaryColor">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
