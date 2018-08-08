@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".user.SignupFragment"
-    android:background="@color/primaryColor">
+    android:background="@color/primaryColor"
+    android:padding="@dimen/small_padding">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,12 +23,13 @@
             <include layout="@layout/layout_password_confirmation"/>
             <include layout="@layout/layout_proposal_notification"/>
             <include layout="@layout/layout_proposal_user_contract"/>
+            <Button
+                android:id="@+id/btnSignup"
+                style="@style/button"
+                android:text="@string/action_sign_up"/>
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btnSignup"
-        style="@style/button"
-        android:text="@string/action_sign_up" />
+
 
 </LinearLayout>

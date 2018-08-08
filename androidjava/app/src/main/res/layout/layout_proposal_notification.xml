@@ -3,18 +3,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <android.support.design.widget.TextInputLayout
-        style="@style/textInputLayout">
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/default_margin"
+    android:layout_marginBottom="@dimen/default_margin">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="left">
+        <TextView
+            android:id="@+id/description"
+            style="@style/normalTextStyle"
+            android:text="@string/proposal_notification"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+        <CheckBox
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_full_name"
-            android:inputType="text"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="@color/primaryTextColor"
-            android:textColorHint="@color/primaryTextColor"
+
             />
-    </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
 </LinearLayout>

@@ -9,8 +9,8 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_full_name"
-            android:inputType="text"
+            android:hint="@string/prompt_cpf"
+            android:inputType="number"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/primaryTextColor"
