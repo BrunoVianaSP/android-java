@@ -17,12 +17,14 @@ import sample.dev.home.HomeFragment;
 import sample.dev.home.HomeItemGenerator;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
+import sample.dev.user.ProfileFragment;
 import sample.dev.user.SignupFragment;
 
 public class MainActivity extends AppCompatActivity implements DashboardFragment.DashboardListener,
         HomeFragment.HomeListener,
         NotificationFragment.NotificationListener,
-        SignupFragment.SignupFragmentListener
+        SignupFragment.SignupFragmentListener,
+        ProfileFragment.OnFragmentInteractionListener
 {
 
 //    private TextView mTextMessage;
@@ -111,6 +113,10 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = ProfileFragment.newInstance("", "");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.commit();
     }
 }
