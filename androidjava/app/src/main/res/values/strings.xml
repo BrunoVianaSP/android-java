@@ -46,4 +46,17 @@
     <string name="prompt_orders">Orders</string>
     <string name="prompt_settings">Settings</string>
     <string name="prompt_suggestions">Suggestions</string>
+    <string name="dummy_place_name">Playball Santana</string>
+    <string name="dummy_place_type">Society</string>
+    <string name="prompt_see_more">Ver mais</string>
+    <string name="dummy_rate">4,7</string>
+    <string name="prompt_see_rates">Ver avaliações</string>
+    <string name="dummy_minutes_range">45-60</string>
+    <string name="prompt_minutes">Minutos</string>
+    <string name="dummy_distance_km">1,1 km</string>
+    <string name="prompt_distance">Distancia</string>
+    <string name="dummy_section_name">Projetos Aprovados</string>
+    <string name="dummy_place_section_name">Jogos passados</string>
+    <string name="dummy_place_match_time">Hora: 8h-10h</string>
+    <string name="title_location">Places</string>
 </resources>

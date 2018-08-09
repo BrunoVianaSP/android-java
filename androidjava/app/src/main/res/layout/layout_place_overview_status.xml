@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/small_padding"
+    tools:showIn="@layout/fragment_place_overview"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/default_margin"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_star_white_24dp"
+                android:layout_marginRight="@dimen/small_margin"
+                />
+            <TextView
+                style="@style/normalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/dummy_rate" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/infoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/prompt_see_rates" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/small_margin"
+        android:layout_marginLeft="@dimen/small_margin"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/default_margin"
+            android:gravity="center">
+            <TextView
+                style="@style/normalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/dummy_minutes_range" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/infoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/prompt_minutes" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/small_margin"
+        android:layout_marginLeft="@dimen/small_margin"
+        android:layout_gravity="end">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/default_margin"
+            android:gravity="center">
+            <TextView
+                style="@style/normalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/dummy_distance_km" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/infoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/prompt_distance" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,7 +9,7 @@
         <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:buttonStyle">@style/button</item>
         <item name="android:textViewStyle">@style/textView</item>
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="colorControlNormal">#c5c5c5</item>
         <item name="colorControlActivated">@color/white</item>
         <item name="colorControlHighlight">@color/white</item>
@@ -65,12 +65,30 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/ice</item>
         <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">3</item>
     </style>
+
+    <style name="infoTextStyle" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/ice</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+    </style>
+
+    <style name="infoWarnTextStyle" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAccentWarn</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+    </style>
+
+
 
     <style name="normalTextStyle" parent="@android:style/Widget.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/ice</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:textSize">@dimen/default_text_size</item>
     </style>
 
@@ -84,5 +102,8 @@
     </style>
 
 
+
+
     <dimen name="title_text_size">30sp</dimen>
+
 </resources>

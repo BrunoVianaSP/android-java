@@ -19,4 +19,5 @@
     <color name="default_stroke_color">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="ice">#CDCDCD</color>
+    <color name="colorAccentWarn">#FFFF00</color>
 </resources>

@@ -17,6 +17,7 @@ import sample.dev.home.HomeFragment;
 import sample.dev.home.HomeItemGenerator;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
+import sample.dev.place.PlaceOverviewFragment;
 import sample.dev.user.ProfileFragment;
 import sample.dev.user.SignupFragment;
 
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         HomeFragment.HomeListener,
         NotificationFragment.NotificationListener,
         SignupFragment.SignupFragmentListener,
-        ProfileFragment.OnFragmentInteractionListener
+        ProfileFragment.OnFragmentInteractionListener,
+        PlaceOverviewFragment.PlaceFragmentListener
 {
 
 //    private TextView mTextMessage;
@@ -60,6 +62,16 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     Fragment fragment = DashboardFragment.newInstance(1);
+                    fragmentTransaction.replace(R.id.main_container, fragment);
+                    fragmentTransaction.commit();
+                    return true;
+                }
+
+                case R.id.navigation_location: {
+//                    mTextMessage.setText(R.string.title_dashboard);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    Fragment fragment = PlaceOverviewFragment.newInstance("","");
                     fragmentTransaction.replace(R.id.main_container, fragment);
                     fragmentTransaction.commit();
                     return true;
