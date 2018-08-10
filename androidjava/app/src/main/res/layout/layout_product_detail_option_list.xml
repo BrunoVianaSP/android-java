@@ -112,7 +112,8 @@
 
             <RadioButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio"/>
         </LinearLayout>
 
         <include layout="@layout/layout_horizontal_tiny_divider"></include>
@@ -130,7 +131,8 @@
 
             <RadioButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio"/>
         </LinearLayout>
 
         <include layout="@layout/layout_horizontal_tiny_divider"></include>
@@ -149,7 +151,8 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/radio"/>
+                android:background="@drawable/radio"
+                />
         </LinearLayout>
 
         <include layout="@layout/layout_horizontal_tiny_divider"></include>

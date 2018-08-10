@@ -114,7 +114,9 @@
         <item name="android:background">@color/primaryAlphaColor</item>
     </style>
 
-
+    <style name="radioButton">
+        <item name="android:background">@drawable/radio</item>
+    </style>
 
 
 </resources>
