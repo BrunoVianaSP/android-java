@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
+style="@style/modalCard"
 android:layout_height="match_parent"
 android:orientation="vertical"
 tools:context=".product.ProductDetailFragment"
-android:background="@color/primaryColor"
 android:padding="@dimen/small_padding">
 
 <include layout="@layout/layout_product_detail_header"/>
-
+    <include layout="@layout/layout_product_detail_image"/>
+    <include layout="@layout/layout_product_detail_description"/>
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -19,11 +19,8 @@ android:padding="@dimen/small_padding">
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:showDividers="middle"
-        android:dividerPadding="@dimen/default_padding"
+        android:dividerPadding="@dimen/small_padding"
         android:divider="@color/ice">
-
-        <include layout="@layout/layout_product_detail_description"/>
-        <include layout="@layout/layout_product_detail_status"/>
         <include layout="@layout/layout_product_detail_option_list"/>
     </LinearLayout>
 </ScrollView>

@@ -28,6 +28,7 @@
     <dimen name="normal_divider_height">4dp</dimen>
 
     <dimen name="tiny_stroke_width">1dp</dimen>
+    <dimen name="tiny_divider_height">2dp</dimen>
 
 
 </resources>

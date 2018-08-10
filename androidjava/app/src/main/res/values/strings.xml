@@ -60,4 +60,8 @@
     <string name="dummy_place_match_time">Hora: 8h-10h</string>
     <string name="title_location">Places</string>
     <string name="dummy_home_title">Screens Tour</string>
+    <string name="prompt_item_detail">Item Detail</string>
+    <string name="dummy_item_name">Cheese Salada + Fritas + Bebida + Sobremesa</string>
+    <string name="dummy_item_description">1 - Hamburger Artesanal 120g, cheddar, maionese, alface e tomate!</string>
+    <string name="prompt_add_observation">Add observation</string>
 </resources>

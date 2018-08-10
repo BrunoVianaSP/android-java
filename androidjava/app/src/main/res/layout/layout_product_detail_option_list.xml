@@ -1,6 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_margin"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/titleStyle"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/red" />
+
+        <TextView
+            style="@style/titleStyle"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/primaryDarkColor" />
+
+        <TextView
+            style="@style/titleStyle"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/primaryComplementaryColor" />
+    </LinearLayout>
+
+    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/titleStyle"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/prompt_add_observation"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/tiny_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/titleStyle"
+            android:text="Escolha o pão"
+            android:textAllCaps="true"
+            android:textColor="@color/primaryDarkColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/normalTextStyle"
+            android:layout_weight="1"
+            android:text="Escolha 1 opção"
+            android:textColor="@color/primaryComplementaryColor" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/badge"
+            android:orientation="horizontal"
+            android:scaleType="fitEnd">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Obrigatorio"
+                android:textAllCaps="true"
+                android:textColor="@color/primaryTextColor" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/normalTextStyle"
+                android:layout_weight="1"
+                android:text="Pão de Hamburger"
+                android:textColor="@color/primaryColor" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_horizontal_tiny_divider"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/normalTextStyle"
+                android:layout_weight="1"
+                android:text="Pão com Gergelim"
+                android:textColor="@color/primaryColor" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_horizontal_tiny_divider"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/normalTextStyle"
+                android:layout_weight="1"
+                android:text="Pão Australiano"
+                android:textColor="@color/primaryColor" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio"/>
+        </LinearLayout>
+
+        <include layout="@layout/layout_horizontal_tiny_divider"></include>
+    </LinearLayout>
+
 
 </LinearLayout>
