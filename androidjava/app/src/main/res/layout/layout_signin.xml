@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/email_login_form"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_login">
+
+    <include layout="@layout/layout_email"></include>
+
+    <include layout="@layout/layout_password"></include>
+
+    <Button
+        android:id="@+id/email_sign_in_button"
+        style="@style/button"
+        android:text="@string/action_sign_in" />
+</LinearLayout>
