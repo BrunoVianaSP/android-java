@@ -10,8 +10,13 @@
     <color name="primaryAlphaLightColor">#AA45327c</color>
     <color name="primaryDarkColor">#000028</color>
 
+
+    <color name="primaryDisabledColor">#c9c2c6</color>
+
+
     <color name="primaryComplementaryColor">#f2991c</color>
     <color name="primaryComplementaryDarkColor">#cf8113</color>
+    <color name="primaryComplementaryDarkestColor">#bd740e</color>
 
     <color name="primaryBorderComplementaryColor">#4f320b</color>
 
