@@ -59,7 +59,6 @@
         <TextView
             style="@style/titleStyle"
             android:text="Escolha o pão"
-            android:textAllCaps="true"
             android:textColor="@color/primaryDarkColor" />
     </LinearLayout>
 
@@ -87,7 +86,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Obrigatorio"
-                android:textAllCaps="true"
                 android:textColor="@color/primaryTextColor" />
         </LinearLayout>
 
