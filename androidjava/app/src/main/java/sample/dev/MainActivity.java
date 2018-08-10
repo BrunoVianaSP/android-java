@@ -14,7 +14,6 @@ import android.widget.TextView;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
 import sample.dev.home.HomeFragment;
-import sample.dev.home.HomeItemGenerator;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 //                    mTextMessage.setText(R.string.title_home);
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = HomeFragment.newInstance(1);
+                    Fragment fragment = HomeFragment.newInstance("","");
                     fragmentTransaction.replace(R.id.main_container, fragment);
                     fragmentTransaction.commit();
                     return true;
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = HomeFragment.newInstance(1);
+        Fragment fragment = HomeFragment.newInstance("","");
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.commit();
     }
@@ -113,10 +112,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     }
 
-    @Override
-    public void onHomeInteraction(HomeItemGenerator.DummyItem item) {
-
-    }
 
     @Override
     public void onNotificationInteraction(NotificationItemGenerator.DummyItem item) {
@@ -130,5 +125,10 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         Fragment fragment = ProfileFragment.newInstance("", "");
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onHomeInteraction(Uri uri) {
+
     }
 }

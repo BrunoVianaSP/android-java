@@ -13,5 +13,5 @@
     <stroke
         android:width="@dimen/default_stroke_width"
         android:color="@color/default_stroke_color" />
-    <corners android:radius="@dimen/default_radius" />
+    <corners android:radius="@dimen/tiny_radius" />
 </shape>

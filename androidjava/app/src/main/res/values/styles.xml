@@ -46,6 +46,14 @@
         <item name="android:clickable">true</item>
     </style>
 
+    <style name="buttonNavigate" parent="button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_navigate</item>
+        <item name="android:layout_margin">@dimen/tiny_margin</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
+    </style>
+
+
     <style name="textView" parent="@android:style/Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -100,9 +108,6 @@
         <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:background">@color/primaryAlphaColor</item>
     </style>
-
-
-
 
 
 

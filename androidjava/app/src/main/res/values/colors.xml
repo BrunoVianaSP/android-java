@@ -8,8 +8,16 @@
     <color name="primaryAlphaColor">#AA140b4f</color>
     <color name="primaryLightColor">#45327c</color>
     <color name="primaryAlphaLightColor">#AA45327c</color>
-
     <color name="primaryDarkColor">#000028</color>
+
+    <color name="primaryComplementaryColor">#f2991c</color>
+    <color name="primaryComplementaryDarkColor">#cf8113</color>
+
+    <color name="primaryBorderComplementaryColor">#4f320b</color>
+
+
+
+
     <color name="secondaryColor">#2a1a9b</color>
     <color name="secondaryLightColor">#6445cd</color>
     <color name="secondaryDarkColor">#00006b</color>
@@ -20,4 +28,6 @@
     <color name="white">#FFFFFF</color>
     <color name="ice">#CDCDCD</color>
     <color name="colorAccentWarn">#FFFF00</color>
+    <color name="dark_stroke_color">#111199</color>
+    <color name="light_stroke_color">#1111DD</color>
 </resources>

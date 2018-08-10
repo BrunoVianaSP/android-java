@@ -59,4 +59,5 @@
     <string name="dummy_place_section_name">Jogos passados</string>
     <string name="dummy_place_match_time">Hora: 8h-10h</string>
     <string name="title_location">Places</string>
+    <string name="dummy_home_title">Screens Tour</string>
 </resources>
