@@ -17,6 +17,7 @@ import sample.dev.home.HomeFragment;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
+import sample.dev.product.ProductDetailFragment;
 import sample.dev.user.ProfileFragment;
 import sample.dev.user.SignupFragment;
 
@@ -25,8 +26,11 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         NotificationFragment.NotificationListener,
         SignupFragment.SignupFragmentListener,
         ProfileFragment.OnFragmentInteractionListener,
-        PlaceOverviewFragment.PlaceFragmentListener
+        PlaceOverviewFragment.PlaceFragmentListener,
+        ProductDetailFragment.ProductDetailListener
 {
+
+    protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
 //    private TextView mTextMessage;
 
@@ -112,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     }
 
-
     @Override
     public void onNotificationInteraction(NotificationItemGenerator.DummyItem item) {
 
@@ -128,7 +131,24 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     }
 
     @Override
-    public void onHomeInteraction(Uri uri) {
+    public void onHomeButtonPressed(int button) {
+        log.info("onHomeInteraction: " + button);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        switch (button) {
+            case R.id.btnProductDetail: {
+                Fragment fragment = ProductDetailFragment.newInstance("","");
+                fragmentTransaction.replace(R.id.main_container, fragment);
+                fragmentTransaction.commit();
+               break;
+            }
+            default: {
+                log.info("Invalid button pressed!");
+                break;
+            }
+        }
 
     }
 }

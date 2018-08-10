@@ -3,10 +3,13 @@ package sample.dev.home;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import sample.dev.R;
 
@@ -68,11 +71,18 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onHomeInteraction(uri);
-        }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final Button btnProductDetail = (Button) view.findViewById(R.id.btnProductDetail);
+        btnProductDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onHomeButtonPressed(R.id.btnProductDetail);
+            }
+        });
+
     }
 
     @Override
@@ -103,7 +113,6 @@ public class HomeFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface HomeListener {
-        // TODO: Update argument type and name
-        void onHomeInteraction(Uri uri);
+        void onHomeButtonPressed(int button);
     }
 }
