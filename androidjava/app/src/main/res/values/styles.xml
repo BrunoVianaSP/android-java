@@ -118,5 +118,9 @@
         <item name="android:background">@drawable/radio</item>
     </style>
 
+    <style name="AppTheme.PopupOverlay" parent="Platform.ThemeOverlay.AppCompat.Dark" />
+
+    <style name="AppTheme.AppBarOverlay" parent="Platform.ThemeOverlay.AppCompat.Dark"></style>
+
 
 </resources>

@@ -64,4 +64,5 @@
     <string name="dummy_item_name">Cheese Salada + Fritas + Bebida + Sobremesa</string>
     <string name="dummy_item_description">1 - Hamburger Artesanal 120g, cheddar, maionese, alface e tomate!</string>
     <string name="prompt_add_observation">Add observation</string>
+    <string name="action_settings">Settings</string>
 </resources>
