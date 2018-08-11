@@ -118,9 +118,14 @@
         <item name="android:background">@drawable/radio</item>
     </style>
 
-    <style name="AppTheme.PopupOverlay" parent="Platform.ThemeOverlay.AppCompat.Dark" />
+    <style name="AppTheme.PopupOverlay" parent="Platform.ThemeOverlay.AppCompat.Dark" >
+        <!--<item name="colorPrimary">@color/primaryComplementaryColor</item>-->
+    </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="Platform.ThemeOverlay.AppCompat.Dark"></style>
+    <style name="AppTheme.AppBarOverlay" parent="AppTheme">
+        <!--<item name="colorPrimary">@color/primaryComplementaryColor</item>-->
+        <item name="android:textViewStyle">@style/titleStyle</item>
+    </style>
 
 
 </resources>

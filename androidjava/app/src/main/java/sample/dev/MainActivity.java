@@ -2,6 +2,7 @@ package sample.dev;
 
 import android.net.Uri;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
     private Menu menu;
+    CollapsingToolbarLayout collapsingToolbarLayout;
 
 //    private TextView mTextMessage;
 
@@ -49,11 +51,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
             switch (item.getItemId()) {
                 case R.id.navigation_home: {
 //                    mTextMessage.setText(R.string.title_home);
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = HomeFragment.newInstance("","");
-                    fragmentTransaction.replace(R.id.main_container, fragment);
-                    fragmentTransaction.commit();
+                    showHomeFragment();
                     return true;
                 }
 
@@ -106,11 +104,28 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        ConfigBottomNavigator();
+        configFloatButton();
+        configAppBarLayout();
+        configCollapsingLayout();
 
+        showHomeFragment();
+    }
 
+    private void showHomeFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = HomeFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void configCollapsingLayout() {
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        collapsingToolbarLayout.setTitle("Home");
+    }
+
+    private void configFloatButton() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,12 +134,19 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                         .setAction("Action", null).show();
             }
         });
+    }
 
+    private void ConfigBottomNavigator() {
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void configAppBarLayout() {
         AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            boolean isShow = false;
-            int scrollRange = -1;
 
+            private boolean isShow = false;
+            private int scrollRange = -1;
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 if (scrollRange == -1) {
@@ -132,29 +154,29 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                 }
                 if (scrollRange + verticalOffset == 0) {
                     isShow = true;
-                    showOption(R.id.action_info);
+                    onBarColapsed();
+
                 } else if (isShow) {
                     isShow = false;
-                    hideOption(R.id.action_info);
+                    onBarExpanded();
                 }
             }
         });
-
-
-
-
-
-
-
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = HomeFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.commit();
     }
 
+    private void onBarColapsed() {
+        showOption(R.id.action_info);
+        setCollapsingBarTitle("Views Tour");
+    }
 
+    private void onBarExpanded() {
+        hideOption(R.id.action_info);
+        setCollapsingBarTitle("Home");
+    }
+
+    private void setCollapsingBarTitle(String title) {
+        collapsingToolbarLayout.setTitle(title);
+    }
 
 
     @Override
