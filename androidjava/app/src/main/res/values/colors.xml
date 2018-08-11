@@ -36,4 +36,5 @@
     <color name="dark_stroke_color">#111199</color>
     <color name="light_stroke_color">#1111DD</color>
     <color name="red">#DD0101</color>
+    <color name="transparent">#00000000</color>
 </resources>
