@@ -9,10 +9,7 @@
     <color name="primaryLightColor">#45327c</color>
     <color name="primaryAlphaLightColor">#AA45327c</color>
     <color name="primaryDarkColor">#000028</color>
-
-
     <color name="primaryDisabledColor">#c9c2c6</color>
-
 
     <color name="primaryComplementaryColor">#f2991c</color>
     <color name="primaryComplementaryDarkColor">#cf8113</color>
@@ -21,13 +18,13 @@
     <color name="primaryBorderComplementaryColor">#4f320b</color>
 
 
-
-
     <color name="secondaryColor">#2a1a9b</color>
     <color name="secondaryLightColor">#6445cd</color>
     <color name="secondaryDarkColor">#00006b</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
+
+
     <color name="colorAccent">#2a1aDD</color>
     <color name="default_stroke_color">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
