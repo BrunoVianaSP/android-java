@@ -16,8 +16,12 @@
         <item name="toolbarStyle">@style/ToolBarStyle</item>
         <item name="tooltipForegroundColor">@color/secondaryDarkColor</item>
         <item name="titleTextColor">@color/primaryTextColor</item>
+        <item name="actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
     </style>
 
+    <style name="MyOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/primaryTextColor</item>
+    </style>
 
     <style name="ToolBarStyle" parent="Theme.AppCompat">
         <item name="android:textColorPrimary">@color/primaryTextColor</item>
