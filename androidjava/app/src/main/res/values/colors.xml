@@ -4,10 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="black_overlay">#66000000</color>
 
-    <color name="primaryColor">#e0dedc</color>
+    <color name="primaryColor">#e0e0e0</color>
     <color name="primaryLightColor">#efefef</color>
     <color name="primaryDarkColor">#8d8d8d</color>
-    <color name="secondaryColor">#dcdee0</color>
+    <color name="secondaryColor">#d0dddd</color>
     <color name="secondaryLightColor">#c1d5e0</color>
     <color name="secondaryDarkColor">#62757f</color>
     <color name="primaryTextColor">#000000</color>
