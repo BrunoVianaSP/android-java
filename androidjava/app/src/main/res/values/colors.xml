@@ -24,7 +24,7 @@
     <color name="primaryBorderComplementaryColor">#4f320b</color>
 
     <color name="colorAccent">#2a1aDD</color>
-    <color name="default_stroke_color">#FFFFFF</color>
+    <color name="default_stroke_color">#8d8d8d</color>
     <color name="white">#FFFFFF</color>
     <color name="ice">#CDCDCD</color>
     <color name="colorAccentWarn">#FFFF00</color>

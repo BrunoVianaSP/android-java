@@ -1,5 +1,7 @@
 package sample.dev;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -11,6 +13,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -122,18 +126,19 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     private void configCollapsingLayout() {
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        collapsingToolbarLayout.setTitle("Home");
+//        setCollapsingBarTitle("Home");
+//        collapsingToolbarLayout.setTitle("Home");
     }
 
     private void configFloatButton() {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
     }
 
     private void ConfigBottomNavigator() {
@@ -166,12 +171,14 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     private void onBarColapsed() {
         showOption(R.id.action_info);
-        setCollapsingBarTitle("Views Tour");
+//        setCollapsingBarTitle("Views Tour");
+        setCollapsingBarTitle("");
     }
 
     private void onBarExpanded() {
         hideOption(R.id.action_info);
-        setCollapsingBarTitle("Home");
+//        setCollapsingBarTitle("Home");
+        setCollapsingBarTitle("");
     }
 
     private void setCollapsingBarTitle(String title) {
@@ -240,21 +247,50 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     public void onHomeButtonPressed(int button) {
         log.info("onHomeInteraction: " + button);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//
+//        switch (button) {
+//            case R.id.btnProductDetail: {
+//                Fragment fragment = ProductDetailFragment.newInstance("","");
+//                fragmentTransaction.replace(R.id.main_container, fragment);
+//                fragmentTransaction.commit();
+//               break;
+//            }
+//            default: {
+//                log.info("Invalid button pressed!");
+//                break;
+//            }
+//        }
 
-        switch (button) {
-            case R.id.btnProductDetail: {
-                Fragment fragment = ProductDetailFragment.newInstance("","");
-                fragmentTransaction.replace(R.id.main_container, fragment);
-                fragmentTransaction.commit();
-               break;
-            }
-            default: {
-                log.info("Invalid button pressed!");
-                break;
-            }
-        }
+    }
 
+    @Override
+    public void onBackPressed() {
+        offerExitApp();
+    }
+
+    private void offerExitApp() {
+        log.info("offerExitApp");
+        String msg = "Deseja sair?";
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(msg)
+                .setCancelable(false)
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        closeApp();
+                    }
+                })
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private void closeApp() {
+        MainActivity.this.finish();
     }
 }

@@ -75,13 +75,13 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final Button btnProductDetail = (Button) view.findViewById(R.id.btnProductDetail);
-        btnProductDetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.onHomeButtonPressed(R.id.btnProductDetail);
-            }
-        });
+//        final Button btnProductDetail = (Button) view.findViewById(R.id.btnProductDetail);
+//        btnProductDetail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mListener.onHomeButtonPressed(R.id.btnProductDetail);
+//            }
+//        });
 
     }
 
