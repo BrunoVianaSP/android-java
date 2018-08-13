@@ -11,10 +11,17 @@
         <item name="android:textViewStyle">@style/textView</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="colorControlNormal">#c5c5c5</item>
-        <item name="colorControlActivated">@color/white</item>
-        <item name="colorControlHighlight">@color/white</item>
+        <item name="colorControlActivated">@color/black</item>
+        <item name="colorControlHighlight">@color/black</item>
+        <item name="toolbarStyle">@style/ToolBarStyle</item>
     </style>
 
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/primaryTextColor</item>
+        <item name="actionMenuTextColor">@color/primaryTextColor</item>
+    </style>
 
 
     <style name="FullscreenTheme" parent="AppTheme">
@@ -34,7 +41,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/small_margin</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:shadowColor">#FF000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">-1</item>
@@ -110,8 +117,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColorHint">@color/primaryTextColor</item>
-        <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="android:background">@color/primaryAlphaColor</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:background">@color/primaryColor</item>
     </style>
 
     <style name="radioButton">
@@ -127,5 +134,17 @@
         <item name="android:textViewStyle">@style/titleStyle</item>
     </style>
 
+    <style name="customCardView" parent="CardView.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">@dimen/default_radius</item>
+        <item name="android:elevation">3dp</item>
 
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--card_view:cardCornerRadius="@dimen/default_radius"-->
+    </style>
+
+    <color name="black">#000000</color>
 </resources>

@@ -4,11 +4,17 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="black_overlay">#66000000</color>
 
-    <color name="primaryColor">#140b4f</color>
+    <color name="primaryColor">#e0dedc</color>
+    <color name="primaryLightColor">#efefef</color>
+    <color name="primaryDarkColor">#8d8d8d</color>
+    <color name="secondaryColor">#dcdee0</color>
+    <color name="secondaryLightColor">#c1d5e0</color>
+    <color name="secondaryDarkColor">#62757f</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#212121</color>
+
     <color name="primaryAlphaColor">#AA140b4f</color>
-    <color name="primaryLightColor">#45327c</color>
     <color name="primaryAlphaLightColor">#AA45327c</color>
-    <color name="primaryDarkColor">#000028</color>
     <color name="primaryDisabledColor">#c9c2c6</color>
 
     <color name="primaryComplementaryColor">#f2991c</color>
@@ -16,14 +22,6 @@
     <color name="primaryComplementaryDarkestColor">#bd740e</color>
 
     <color name="primaryBorderComplementaryColor">#4f320b</color>
-
-
-    <color name="secondaryColor">#2a1a9b</color>
-    <color name="secondaryLightColor">#6445cd</color>
-    <color name="secondaryDarkColor">#00006b</color>
-    <color name="primaryTextColor">#ffffff</color>
-    <color name="secondaryTextColor">#ffffff</color>
-
 
     <color name="colorAccent">#2a1aDD</color>
     <color name="default_stroke_color">#FFFFFF</color>
