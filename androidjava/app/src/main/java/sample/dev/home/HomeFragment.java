@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +34,8 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private HomeListener mListener;
+
+    CollapsingToolbarLayout collapsingToolbarLayout;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -83,6 +87,56 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
+        configAppBarLayout(view);
+        configCollapsingLayout(view);
+
+    }
+
+    private void configCollapsingLayout(View view) {
+        collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
+//        setCollapsingBarTitle("Home");
+//        collapsingToolbarLayout.setTitle("Home");
+    }
+
+    private void configAppBarLayout(View view) {
+        AppBarLayout mAppBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
+        mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+
+            private boolean isShow = false;
+            private int scrollRange = -1;
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    isShow = true;
+                    onBarColapsed();
+
+                } else if (isShow) {
+                    isShow = false;
+                    onBarExpanded();
+                }
+            }
+        });
+    }
+
+    private void onBarColapsed() {
+        mListener.showOption(R.id.action_info);
+//        setCollapsingBarTitle("Views Tour");
+//        collapsingToolbarLayout.setVisibility(View.GONE);
+        setCollapsingBarTitle("Feed de Noticias");
+    }
+
+    private void onBarExpanded() {
+        mListener.hideOption(R.id.action_info);
+//        setCollapsingBarTitle("Home");
+        setCollapsingBarTitle("");
+//        collapsingToolbarLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void setCollapsingBarTitle(String title) {
+        collapsingToolbarLayout.setTitle(title);
     }
 
     @Override
@@ -114,5 +168,7 @@ public class HomeFragment extends Fragment {
      */
     public interface HomeListener {
         void onHomeButtonPressed(int button);
+        void showOption(int resId);
+        void hideOption(int resId);
     }
 }

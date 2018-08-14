@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
     private Menu menu;
-    CollapsingToolbarLayout collapsingToolbarLayout;
+//    CollapsingToolbarLayout collapsingToolbarLayout;
 
 //    private TextView mTextMessage;
 
@@ -110,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
         ConfigBottomNavigator();
         configFloatButton();
-        configAppBarLayout();
-        configCollapsingLayout();
+//        configAppBarLayout();
+//        configCollapsingLayout();
 
         showHomeFragment();
     }
@@ -124,11 +124,11 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         fragmentTransaction.commit();
     }
 
-    private void configCollapsingLayout() {
-        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-//        setCollapsingBarTitle("Home");
-//        collapsingToolbarLayout.setTitle("Home");
-    }
+//    private void configCollapsingLayout() {
+//        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+////        setCollapsingBarTitle("Home");
+////        collapsingToolbarLayout.setTitle("Home");
+//    }
 
     private void configFloatButton() {
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -146,44 +146,44 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    private void configAppBarLayout() {
-        AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
-        mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//    private void configAppBarLayout() {
+//        AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+//        mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//
+//            private boolean isShow = false;
+//            private int scrollRange = -1;
+//            @Override
+//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+//                if (scrollRange == -1) {
+//                    scrollRange = appBarLayout.getTotalScrollRange();
+//                }
+//                if (scrollRange + verticalOffset == 0) {
+//                    isShow = true;
+//                    onBarColapsed();
+//
+//                } else if (isShow) {
+//                    isShow = false;
+//                    onBarExpanded();
+//                }
+//            }
+//        });
+//    }
 
-            private boolean isShow = false;
-            private int scrollRange = -1;
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (scrollRange == -1) {
-                    scrollRange = appBarLayout.getTotalScrollRange();
-                }
-                if (scrollRange + verticalOffset == 0) {
-                    isShow = true;
-                    onBarColapsed();
-
-                } else if (isShow) {
-                    isShow = false;
-                    onBarExpanded();
-                }
-            }
-        });
-    }
-
-    private void onBarColapsed() {
-        showOption(R.id.action_info);
-//        setCollapsingBarTitle("Views Tour");
-        setCollapsingBarTitle("");
-    }
-
-    private void onBarExpanded() {
-        hideOption(R.id.action_info);
-//        setCollapsingBarTitle("Home");
-        setCollapsingBarTitle("");
-    }
-
-    private void setCollapsingBarTitle(String title) {
-        collapsingToolbarLayout.setTitle(title);
-    }
+//    private void onBarColapsed() {
+//        showOption(R.id.action_info);
+////        setCollapsingBarTitle("Views Tour");
+//        setCollapsingBarTitle("");
+//    }
+//
+//    private void onBarExpanded() {
+//        hideOption(R.id.action_info);
+////        setCollapsingBarTitle("Home");
+//        setCollapsingBarTitle("");
+//    }
+//
+//    private void setCollapsingBarTitle(String title) {
+//        collapsingToolbarLayout.setTitle(title);
+//    }
 
 
     @Override
@@ -212,12 +212,12 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         return super.onOptionsItemSelected(item);
     }
 
-    private void hideOption(int id) {
+    public void hideOption(int id) {
         MenuItem item = menu.findItem(id);
         item.setVisible(false);
     }
 
-    private void showOption(int id) {
+    public void showOption(int id) {
         MenuItem item = menu.findItem(id);
         item.setVisible(true);
     }

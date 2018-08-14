@@ -12,7 +12,7 @@
         android:right="@dimen/small_padding"
         android:bottom="@dimen/small_padding" />
     <stroke
-        android:width="2dip"
+        android:width="@dimen/default_stroke_width"
         android:color="@color/default_stroke_color" />
-    <corners android:radius="8dp" />
+    <corners android:radius="@dimen/tiny_radius" />
 </shape>
