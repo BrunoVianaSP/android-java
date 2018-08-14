@@ -4,17 +4,32 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="black_overlay">#66000000</color>
 
-    <color name="primaryColor">#009B3A</color>
-    <color name="primaryLightColor">#11AC4B</color>
-    <color name="primaryDarkColor">#008A29</color>
+
+    <!--GREEN SET-->
+    <!--<color name="primaryColor">#009B3A</color>-->
+    <!--<color name="primaryLightColor">#11AC4B</color>-->
+    <!--<color name="primaryDarkColor">#008A29</color>-->
+    <!--<color name="primaryTextColor">#ffffff</color>-->
+    <!--<color name="primaryDetailColor">#FEDF00</color>-->
+
+    <!--<color name="secondaryColor">#FEDF00</color>-->
+    <!--<color name="secondaryLightColor">#FFEF11</color>-->
+    <!--<color name="secondaryDarkColor">#EDCE00</color>-->
+    <!--<color name="secondaryTextColor">#009B3A</color>-->
+    <!--<color name="secondaryDetailColor">#002776</color>-->
+
+
+    <color name="primaryColor">#002776</color>
+    <color name="primaryLightColor">#113887</color>
+    <color name="primaryDarkColor">#001665</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="primaryDetailColor">#FEDF00</color>
 
     <color name="secondaryColor">#FEDF00</color>
     <color name="secondaryLightColor">#FFEF11</color>
     <color name="secondaryDarkColor">#EDCE00</color>
-    <color name="secondaryTextColor">#002776</color>
-    <color name="secondaryDetailColor">#002776</color>
+    <color name="secondaryTextColor">#11AC4B</color>
+    <color name="secondaryDetailColor">#11AC4B</color>
 
 
 

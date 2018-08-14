@@ -6,11 +6,11 @@
     android:orientation="horizontal"
     android:padding="@dimen/tiny_padding"
     tools:showIn="@layout/fragment_dashboard"
-    android:background="@color/secondaryDarkColor">
+    android:background="@color/secondaryColor">
 
     <TextView
         style="@style/descriptionStyle"
         android:text="@string/dummy_footer"
-        android:textColor="@color/white"/>
+        android:textColor="@color/secondaryTextColor"/>
 
 </LinearLayout>

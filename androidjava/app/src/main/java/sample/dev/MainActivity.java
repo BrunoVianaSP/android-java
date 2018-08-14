@@ -3,27 +3,17 @@ package sample.dev;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.net.Uri;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
@@ -63,17 +53,16 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
             switch (item.getItemId()) {
                 case R.id.navigation_home: {
-
                     showHomeFragment();
                     return true;
                 }
 
-                case R.id.navigation_user: {
+                case R.id.navigation_user_profile: {
 //                    mTextMessage.setText(R.string.title_dashboard);
                     getSupportActionBar().setTitle("Usuario");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = SignupFragment.newInstance("", "");
+                    Fragment fragment = ProfileFragment.newInstance("", "");
                     fragmentTransaction.replace(R.id.main_container, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
@@ -90,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 //                    return true;
 //                }
 
-                case R.id.navigation_location: {
+                case R.id.navigation_quiz: {
                     getSupportActionBar().setTitle("Quiz de Afinidade");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -101,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                     return true;
                 }
 
-                case R.id.navigation_notifications: {
+                case R.id.navigation_candidates: {
 //                    mToolbar.setTitle("Configuracoes");
 //                    FragmentManager fragmentManager = getSupportFragmentManager();
 //                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -134,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     private void showHomeFragment() {
         getSupportActionBar().setTitle("Inicio");
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = HomeFragment.newInstance("","");

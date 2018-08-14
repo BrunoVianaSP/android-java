@@ -8,18 +8,18 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_user"
+        android:id="@+id/navigation_user_profile"
         android:icon="@drawable/ic_person_outline_white_24dp"
         android:title="@string/title_user" />
 
 
     <item
-        android:id="@+id/navigation_location"
+        android:id="@+id/navigation_quiz"
         android:icon="@drawable/ic_gamepad_white_24dp"
         android:title="@string/title_quiz" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_candidates"
         android:icon="@drawable/ic_people_white_24dp"
         android:title="@string/title_candidates" />
 

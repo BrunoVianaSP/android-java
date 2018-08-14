@@ -39,13 +39,13 @@
     <string name="proposal_notification">Receive emails with news and sales.</string>
     <string name="proposal_user_contract">I agree with terms and conditions while using this app.</string>
     <string name="dummy_user_name">Bruno Viana</string>
-    <string name="prompt_favorites">Favorites</string>
-    <string name="prompt_personal">Personal</string>
-    <string name="prompt_help">Help</string>
-    <string name="prompt_alarms">Alarms</string>
-    <string name="prompt_orders">Orders</string>
-    <string name="prompt_settings">Settings</string>
-    <string name="prompt_suggestions">Suggestions</string>
+    <string name="prompt_favorites">Favoritos</string>
+    <string name="prompt_personal">Perfil</string>
+    <string name="prompt_help">Ajuda</string>
+    <string name="prompt_alarms">Alarmes</string>
+    <string name="prompt_orders">Pedidos</string>
+    <string name="prompt_settings">Configurações</string>
+    <string name="prompt_suggestions">Sugestões</string>
     <string name="dummy_place_name">Playball Santana</string>
     <string name="dummy_place_type">Society</string>
     <string name="prompt_see_more">Ver mais</string>
@@ -69,4 +69,5 @@
     <string name="title_quiz">Quiz</string>
     <string name="title_candidates">Candidatos</string>
     <string name="title_legal_terms">Legal</string>
+    <string name="prompt_terms_conditions">Termos Legais</string>
 </resources>

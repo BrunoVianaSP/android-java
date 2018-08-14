@@ -158,5 +158,14 @@
         <!--card_view:cardCornerRadius="@dimen/default_radius"-->
     </style>
 
+    <style name="container">
+        <item name="android:background">@drawable/container</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+
+    </style>
+
     <color name="black">#000000</color>
 </resources>

@@ -9,4 +9,5 @@
     android:layout_margin="@dimen/tiny_margin"
     app:layoutManager="LinearLayoutManager"
     tools:context=".dashboard.DashboardFragment"
-    tools:listitem="@layout/fragment_dashboard" />
+    tools:listitem="@layout/fragment_dashboard"
+    android:background="@color/primaryColor"/>

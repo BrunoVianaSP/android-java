@@ -2,19 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/default_padding"
-    android:paddingBottom="@dimen/default_padding"
-    android:layout_marginTop="@dimen/tiny_margin"
-    android:background="@color/secondaryDarkColor"
+    style="@style/container"
     tools:showIn="@layout/fragment_profile">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:src="@drawable/ic_home_white_24dp"
+        android:src="@drawable/ic_favorite_white_24dp"
         />
     <TextView
         android:layout_width="wrap_content"

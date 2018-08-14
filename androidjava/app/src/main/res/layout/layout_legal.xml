@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:src="@drawable/ic_settings_white_24dp"
+        android:src="@drawable/ic_account_balance_white_24dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
         android:gravity="center_vertical"
-        android:text="@string/prompt_settings"
+        android:text="@string/prompt_terms_conditions"
         android:textColor="@color/primaryTextColor"/>
 
     <ImageView

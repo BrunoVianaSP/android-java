@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@color/secondaryDarkColor"
+    android:padding="@dimen/tiny_padding"
+    android:background="@color/secondaryColor"
     tools:showIn="@layout/fragment_dashboard">
         <TextView
             android:id="@+id/item_title"
             style="@style/titleStyle"
             android:text="@string/dummy_food_title"
-            android:textColor="@color/white"/>
+            android:textColor="@color/secondaryTextColor"/>
 </LinearLayout>

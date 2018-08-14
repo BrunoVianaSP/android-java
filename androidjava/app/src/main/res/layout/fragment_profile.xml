@@ -13,21 +13,14 @@ android:padding="@dimen/small_padding">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-
-    >
+    android:layout_gravity="center">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:showDividers="middle"
-        android:dividerPadding="@dimen/default_padding"
-        android:divider="@color/ice">
-
+        android:orientation="vertical">
         <include layout="@layout/layout_personal"/>
         <include layout="@layout/layout_favorites"/>
-        <include layout="@layout/layout_orders"/>
-        <include layout="@layout/layout_alarms"/>
+        <include layout="@layout/layout_legal"/>
         <include layout="@layout/layout_settings"/>
         <include layout="@layout/layout_suggestions"/>
         <include layout="@layout/layout_help"/>

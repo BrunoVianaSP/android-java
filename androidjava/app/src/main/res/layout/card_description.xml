@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="75dp"
+    android:layout_height="85dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:layout_marginTop="@dimen/tiny_margin"
-    android:layout_marginBottom="@dimen/tiny_margin"
+    android:padding="@dimen/tiny_padding"
     tools:showIn="@layout/fragment_dashboard"
-    android:background="@color/primaryColor">
+    android:background="@color/secondaryDetailColor">
         <TextView
             android:id="@+id/description"
             style="@style/descriptionStyle"
             android:text="@string/dummy_description"
-            android:textColor="@color/black"/>
+            android:textColor="@color/primaryTextColor"/>
 </LinearLayout>
