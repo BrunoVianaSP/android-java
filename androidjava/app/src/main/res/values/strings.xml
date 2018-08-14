@@ -72,4 +72,5 @@
     <string name="prompt_terms_conditions">Termos Legais</string>
     <string name="action_continue">Continuar</string>
     <string name="prompt_password_recovery">Digite o email cadastrado para recuperar a senha</string>
+    <string name="you_are_logged_in">Conectado com sucesso!</string>
 </resources>

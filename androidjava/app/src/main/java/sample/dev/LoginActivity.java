@@ -3,8 +3,10 @@ package sample.dev;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -26,6 +28,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -279,8 +282,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     public void loginButtonPressed() {
 //        attemptLogin();
-        Intent i=new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(i);
+        showProgress(true);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showProgress(false);
+
+
+                showToast(getApplicationContext(), "Conectado com sucesso!", Toast.LENGTH_SHORT);
+
+
+                Intent i=new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        }, OPEN_MAIN_ACTIVITY_DELAY);
+
+    }
+
+    private void showToast(Context context, CharSequence text, int duration) {
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
     @Override

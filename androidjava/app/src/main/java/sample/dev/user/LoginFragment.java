@@ -109,13 +109,7 @@ public class LoginFragment extends Fragment {
             public void onClick(View view) {
 //                mEmailSignInButton.setEnabled(false);
                 mEmailSignInButton.setClickable(false);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mListener.loginButtonPressed();
-                    }
-                }, OPEN_MAIN_ACTIVITY_DELAY);
-
+                mListener.loginButtonPressed();
             }
         });
     }
