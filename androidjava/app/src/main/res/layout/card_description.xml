@@ -3,11 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="75dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="@dimen/tiny_margin"
     android:orientation="horizontal"
-    tools:showIn="@layout/fragment_home">
+    android:layout_marginTop="@dimen/tiny_margin"
+    android:layout_marginBottom="@dimen/tiny_margin"
+    tools:showIn="@layout/fragment_dashboard"
+    android:background="@color/primaryColor">
         <TextView
             android:id="@+id/description"
             style="@style/descriptionStyle"
-            android:text="@string/dummy_description"/>
+            android:text="@string/dummy_description"
+            android:textColor="@color/black"/>
 </LinearLayout>

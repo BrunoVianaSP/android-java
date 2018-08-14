@@ -6,8 +6,7 @@
     android:name="sample.dev.DashboardFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_margin="@dimen/tiny_margin"
     app:layoutManager="LinearLayoutManager"
     tools:context=".dashboard.DashboardFragment"
     tools:listitem="@layout/fragment_dashboard" />

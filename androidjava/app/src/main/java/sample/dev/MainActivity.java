@@ -16,11 +16,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
 import sample.dev.home.HomeFragment;
@@ -45,56 +49,71 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     private Menu menu;
 //    CollapsingToolbarLayout collapsingToolbarLayout;
 
-//    private TextView mTextMessage;
+//    @BindView(R.id.toolbar)
+//    public Toolbar mToolbar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            LinearLayout layout = (LinearLayout) findViewById(R.id.main_container);
+            layout.removeAllViews();
+
             switch (item.getItemId()) {
                 case R.id.navigation_home: {
-//                    mTextMessage.setText(R.string.title_home);
+
                     showHomeFragment();
                     return true;
                 }
 
                 case R.id.navigation_user: {
 //                    mTextMessage.setText(R.string.title_dashboard);
+                    getSupportActionBar().setTitle("Usuario");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     Fragment fragment = SignupFragment.newInstance("", "");
                     fragmentTransaction.replace(R.id.main_container, fragment);
+                    fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     return true;
                 }
 
-                case R.id.navigation_dashboard: {
-//                    mTextMessage.setText(R.string.title_dashboard);
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = DashboardFragment.newInstance(1);
-                    fragmentTransaction.replace(R.id.main_container, fragment);
-                    fragmentTransaction.commit();
-                    return true;
-                }
+//                case R.id.navigation_dashboard: {
+//                    mToolbar.setTitle("Candidatos");
+//                    FragmentManager fragmentManager = getSupportFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    Fragment fragment = DashboardFragment.newInstance(1);
+//                    fragmentTransaction.replace(R.id.main_container, fragment);
+//                    fragmentTransaction.commit();
+//                    return true;
+//                }
 
                 case R.id.navigation_location: {
-//                    mTextMessage.setText(R.string.title_dashboard);
+                    getSupportActionBar().setTitle("Quiz de Afinidade");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     Fragment fragment = PlaceOverviewFragment.newInstance("","");
                     fragmentTransaction.replace(R.id.main_container, fragment);
+                    fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     return true;
                 }
 
                 case R.id.navigation_notifications: {
-//                    mTextMessage.setText(R.string.title_notifications);
+//                    mToolbar.setTitle("Configuracoes");
+//                    FragmentManager fragmentManager = getSupportFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    Fragment fragment = NotificationFragment.newInstance(1);
+//                    fragmentTransaction.replace(R.id.main_container, fragment);
+//                    fragmentTransaction.commit();
+                    getSupportActionBar().setTitle("Candidatos");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = NotificationFragment.newInstance(1);
+                    Fragment fragment = DashboardFragment.newInstance(1);
                     fragmentTransaction.replace(R.id.main_container, fragment);
+                    fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     return true;
                 }
@@ -107,28 +126,24 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         ConfigBottomNavigator();
         configFloatButton();
-//        configAppBarLayout();
-//        configCollapsingLayout();
-
         showHomeFragment();
     }
 
     private void showHomeFragment() {
+        getSupportActionBar().setTitle("Inicio");
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = HomeFragment.newInstance("","");
         fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-//    private void configCollapsingLayout() {
-//        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-////        setCollapsingBarTitle("Home");
-////        collapsingToolbarLayout.setTitle("Home");
-//    }
+
 
     private void configFloatButton() {
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -145,45 +160,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
-//    private void configAppBarLayout() {
-//        AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
-//        mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-//
-//            private boolean isShow = false;
-//            private int scrollRange = -1;
-//            @Override
-//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-//                if (scrollRange == -1) {
-//                    scrollRange = appBarLayout.getTotalScrollRange();
-//                }
-//                if (scrollRange + verticalOffset == 0) {
-//                    isShow = true;
-//                    onBarColapsed();
-//
-//                } else if (isShow) {
-//                    isShow = false;
-//                    onBarExpanded();
-//                }
-//            }
-//        });
-//    }
-
-//    private void onBarColapsed() {
-//        showOption(R.id.action_info);
-////        setCollapsingBarTitle("Views Tour");
-//        setCollapsingBarTitle("");
-//    }
-//
-//    private void onBarExpanded() {
-//        hideOption(R.id.action_info);
-////        setCollapsingBarTitle("Home");
-//        setCollapsingBarTitle("");
-//    }
-//
-//    private void setCollapsingBarTitle(String title) {
-//        collapsingToolbarLayout.setTitle(title);
-//    }
 
 
     @Override
@@ -240,6 +216,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = ProfileFragment.newInstance("", "");
         fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
