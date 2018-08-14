@@ -14,10 +14,19 @@
     <include layout="@layout/layout_app_name"></include>
 
     <ScrollView
-        android:id="@+id/login_form"
+        android:id="@+id/login_outer_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
-        <include layout="@layout/layout_signin"></include>
+
+        <LinearLayout
+            android:id="@+id/login_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        </LinearLayout>
+
+        <!--<include layout="@layout/layout_signin"></include>-->
     </ScrollView>
 </LinearLayout>

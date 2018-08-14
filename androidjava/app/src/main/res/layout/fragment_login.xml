@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/container"
     android:layout_gravity="center">
@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/primaryColor">
+        android:background="@color/primaryLightColor">
 
         <include layout="@layout/layout_email"></include>
 
@@ -34,4 +34,4 @@
     </LinearLayout>
 
 
-</android.support.v7.widget.CardView>
+</LinearLayout>
