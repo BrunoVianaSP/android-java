@@ -99,7 +99,7 @@ public class LoginFragment extends Fragment {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mListener.forgotPasswordButtonPressed();
             }
         });
 
@@ -107,8 +107,8 @@ public class LoginFragment extends Fragment {
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                attemptLogin();
-                mEmailSignInButton.setEnabled(false);
+//                mEmailSignInButton.setEnabled(false);
+                mEmailSignInButton.setClickable(false);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -151,7 +151,7 @@ public class LoginFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface LoginFragmentListener {
-
         void loginButtonPressed();
+        void forgotPasswordButtonPressed();
     }
 }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import sample.dev.user.ForgotPasswordFragment;
 import sample.dev.user.LoginFragment;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -38,7 +40,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, LoginFragment.LoginFragmentListener {
+public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, LoginFragment.LoginFragmentListener, ForgotPasswordFragment.ForgotPasswordListener {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -279,6 +281,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //        attemptLogin();
         Intent i=new Intent(LoginActivity.this, MainActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    public void forgotPasswordButtonPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = ForgotPasswordFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.login_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 

@@ -11,7 +11,7 @@
 
     <!-- Login progress -->
     <include layout="@layout/layout_progress_bar"></include>
-    <include layout="@layout/layout_app_name"></include>
+
 
     <ScrollView
         android:id="@+id/login_outer_scroll"

@@ -70,4 +70,6 @@
     <string name="title_candidates">Candidatos</string>
     <string name="title_legal_terms">Legal</string>
     <string name="prompt_terms_conditions">Termos Legais</string>
+    <string name="action_continue">Continuar</string>
+    <string name="prompt_password_recovery">Digite o email cadastrado para recuperar a senha</string>
 </resources>
