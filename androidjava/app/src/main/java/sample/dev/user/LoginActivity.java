@@ -1,4 +1,4 @@
-package sample.dev;
+package sample.dev.user;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -35,15 +35,17 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import sample.dev.user.ForgotPasswordFragment;
-import sample.dev.user.LoginFragment;
+import sample.dev.MainActivity;
+import sample.dev.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, LoginFragment.LoginFragmentListener, ForgotPasswordFragment.ForgotPasswordListener {
+public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, LoginFragment.LoginFragmentListener, ForgotPasswordFragment.ForgotPasswordListener, ChangePasswordFragment.ChangePasswordFragmentListener {
+
+    protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -282,21 +284,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     public void loginButtonPressed() {
 //        attemptLogin();
+        startMainActivity();
+    }
+
+    private void startMainActivity() {
         showProgress(true);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 showProgress(false);
 
-
-                showToast(getApplicationContext(), "Conectado com sucesso!", Toast.LENGTH_SHORT);
+//                showToast(getApplicationContext(), "Conectado com sucesso!", Toast.LENGTH_SHORT);
 
 
                 Intent i=new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
             }
         }, OPEN_MAIN_ACTIVITY_DELAY);
-
     }
 
     private void showToast(Context context, CharSequence text, int duration) {
@@ -312,6 +316,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         fragmentTransaction.replace(R.id.login_container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void continueButtonPressed(String email) {
+        log.info("continueButtonPressed");
+        log.info("email: " + email);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = ChangePasswordFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.login_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void saveNewPasswordPressed(String newPassword, String confirmPassword) {
+        //TODO: Server checks
+        startMainActivity();
     }
 
 
