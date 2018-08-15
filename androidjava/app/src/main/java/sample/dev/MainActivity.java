@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import java.util.Objects;
+
 import butterknife.ButterKnife;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            LinearLayout layout = (LinearLayout) findViewById(R.id.main_container);
+            LinearLayout layout = findViewById(R.id.main_container);
             layout.removeAllViews();
 
             switch (item.getItemId()) {
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
                 case R.id.navigation_user_profile: {
 //                    mTextMessage.setText(R.string.title_dashboard);
-                    getSupportActionBar().setTitle("Usuario");
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Usuario");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     Fragment fragment = ProfileFragment.newInstance("", "");
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 //                }
 
                 case R.id.navigation_quiz: {
-                    getSupportActionBar().setTitle("Quiz de Afinidade");
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Quiz de Afinidade");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     Fragment fragment = PlaceOverviewFragment.newInstance("","");
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 //                    Fragment fragment = NotificationFragment.newInstance(1);
 //                    fragmentTransaction.replace(R.id.main_container, fragment);
 //                    fragmentTransaction.commit();
-                    getSupportActionBar().setTitle("Candidatos");
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Candidatos");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     Fragment fragment = DashboardFragment.newInstance(1);
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     }
 
     private void showHomeFragment() {
-        getSupportActionBar().setTitle("Inicio");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Inicio");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = HomeFragment.newInstance("","");
@@ -145,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     }
 
     private void ConfigBottomNavigator() {
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 

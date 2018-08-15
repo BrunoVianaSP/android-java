@@ -35,6 +35,6 @@
             android:layout_marginLeft="@dimen/small_margin"
             android:layout_gravity="end"
             android:src="@drawable/ic_navigate_next_white_24dp"
-            />
+            android:contentDescription="TODO" />
     </LinearLayout>
 </LinearLayout>

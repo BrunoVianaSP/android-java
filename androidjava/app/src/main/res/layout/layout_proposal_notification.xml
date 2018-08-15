@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:gravity="left">
         <TextView
-            android:id="@+id/description"
             style="@style/normalTextStyle"
             android:text="@string/proposal_notification"
             android:textStyle="bold"/>

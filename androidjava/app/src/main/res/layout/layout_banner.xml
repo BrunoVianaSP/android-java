@@ -9,4 +9,5 @@
     android:src="@drawable/hamburger1"
     app:layout_collapseMode="pin"
     app:layout_collapseParallaxMultiplier="0.7"
-    tools:showIn="@layout/activity_main" />
+    tools:showIn="@layout/activity_main"
+    android:contentDescription="TODO" />

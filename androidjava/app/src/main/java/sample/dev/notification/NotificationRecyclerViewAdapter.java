@@ -1,5 +1,6 @@
 package sample.dev.notification;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,15 +28,16 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter<Notifi
         mListener = listener;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_notification, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
 //        holder.mIdView.setText(mValues.get(position).id);
 //        holder.mContentView.setText(mValues.get(position).content);
@@ -66,8 +68,8 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter<Notifi
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_title);
-            mContentView = (TextView) view.findViewById(R.id.description);
+            mIdView = view.findViewById(R.id.item_title);
+            mContentView = view.findViewById(R.id.description);
         }
 
         @Override

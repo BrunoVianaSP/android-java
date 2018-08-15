@@ -1,7 +1,6 @@
 package sample.dev.home;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import sample.dev.R;
 
@@ -69,7 +67,7 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
@@ -93,13 +91,13 @@ public class HomeFragment extends Fragment {
     }
 
     private void configCollapsingLayout(View view) {
-        collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
+        collapsingToolbarLayout = view.findViewById(R.id.toolbar_layout);
 //        setCollapsingBarTitle("Home");
 //        collapsingToolbarLayout.setTitle("Home");
     }
 
     private void configAppBarLayout(View view) {
-        AppBarLayout mAppBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
+        AppBarLayout mAppBarLayout = view.findViewById(R.id.app_bar);
         mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
 
             private boolean isShow = false;

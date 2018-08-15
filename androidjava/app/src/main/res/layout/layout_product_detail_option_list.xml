@@ -33,7 +33,7 @@
             android:textColor="@color/primaryComplementaryColor" />
     </LinearLayout>
 
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+    <include layout="@layout/layout_horizontal_tiny_divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,10 +45,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/prompt_add_observation"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            android:layout_width="0dp" />
     </LinearLayout>
 
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+    <include layout="@layout/layout_horizontal_tiny_divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +72,8 @@
             style="@style/normalTextStyle"
             android:layout_weight="1"
             android:text="Escolha 1 opção"
-            android:textColor="@color/primaryComplementaryColor" />
+            android:textColor="@color/primaryComplementaryColor"
+            android:layout_width="0dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -91,7 +93,7 @@
 
     </LinearLayout>
 
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+    <include layout="@layout/layout_horizontal_tiny_divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -108,7 +110,8 @@
                 style="@style/normalTextStyle"
                 android:layout_weight="1"
                 android:text="Pão de Hamburger"
-                android:textColor="@color/primaryColor" />
+                android:textColor="@color/primaryColor"
+                android:layout_width="0dp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -116,7 +119,7 @@
                 android:background="@drawable/radio"/>
         </LinearLayout>
 
-        <include layout="@layout/layout_horizontal_tiny_divider"></include>
+        <include layout="@layout/layout_horizontal_tiny_divider" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,7 +130,8 @@
                 style="@style/normalTextStyle"
                 android:layout_weight="1"
                 android:text="Pão com Gergelim"
-                android:textColor="@color/primaryColor" />
+                android:textColor="@color/primaryColor"
+                android:layout_width="0dp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -135,7 +139,7 @@
                 android:background="@drawable/radio"/>
         </LinearLayout>
 
-        <include layout="@layout/layout_horizontal_tiny_divider"></include>
+        <include layout="@layout/layout_horizontal_tiny_divider" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -146,7 +150,8 @@
                 style="@style/normalTextStyle"
                 android:layout_weight="1"
                 android:text="Pão Australiano"
-                android:textColor="@color/primaryColor" />
+                android:textColor="@color/primaryColor"
+                android:layout_width="0dp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -155,7 +160,7 @@
                 />
         </LinearLayout>
 
-        <include layout="@layout/layout_horizontal_tiny_divider"></include>
+        <include layout="@layout/layout_horizontal_tiny_divider" />
     </LinearLayout>
 
 

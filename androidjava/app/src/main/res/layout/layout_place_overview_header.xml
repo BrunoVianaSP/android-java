@@ -20,14 +20,14 @@
             android:textColor="@color/primaryTextColor"/>
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/small_margin"
             android:layout_gravity="end"
             android:layout_weight="1"
             android:scaleType="fitEnd"
             android:src="@drawable/ic_account_circle_white_48dp"
-            />
+            android:contentDescription="TODO" />
     </LinearLayout>
 
     <TextView

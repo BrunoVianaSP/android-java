@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:src="@drawable/ic_home_white_24dp"
-            />
+            android:contentDescription="TODO" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -27,5 +27,5 @@
             android:layout_marginLeft="@dimen/small_margin"
             android:layout_gravity="start"
             android:src="@drawable/ic_navigate_next_white_24dp"
-            />
+            android:contentDescription="TODO" />
 </LinearLayout>

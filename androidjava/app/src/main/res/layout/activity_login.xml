@@ -10,7 +10,7 @@
     android:background="@color/primaryColor">
 
     <!-- Login progress -->
-    <include layout="@layout/layout_progress_bar"></include>
+    <include layout="@layout/layout_progress_bar" />
 
 
     <ScrollView
