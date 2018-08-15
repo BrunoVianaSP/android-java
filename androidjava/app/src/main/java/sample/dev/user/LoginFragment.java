@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -43,7 +44,7 @@ public class LoginFragment extends Fragment {
     TextView forgotPassword;
 
     @BindView(R.id.email)
-    public AutoCompleteTextView mEmailView;
+    public EditText mEmailView;
 
     @BindView(R.id.password)
     public TextView mPasswordView;
