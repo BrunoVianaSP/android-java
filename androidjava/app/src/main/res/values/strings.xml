@@ -74,4 +74,7 @@
     <string name="prompt_password_recovery">Digite o email cadastrado para recuperar a senha</string>
     <string name="you_are_logged_in">Conectado com sucesso!</string>
     <string name="prompt_save">Salvar</string>
+    <string name="prompt_number_aggree">1 apoio</string>
+    <string name="prompt_candidate_name">Airton Sandoval - MDB</string>
+    <string name="prompt_candidate_similarity">50% similar a voce</string>
 </resources>
