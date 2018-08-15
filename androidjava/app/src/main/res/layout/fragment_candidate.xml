@@ -2,30 +2,30 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     card_view:cardCornerRadius="@dimen/default_radius"
     card_view:cardUseCompatPadding="true"
-    android:layout_marginBottom="@dimen/default_margin"
-    android:background="@color/primaryLightColor">
+    android:layout_margin="@dimen/tiny_margin"
+    tools:showIn="@layout/fragment_candidate_list"
+    app:cardBackgroundColor="@color/primaryColor">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        >
+        android:background="@color/secondaryColor">
 
         <LinearLayout
             style="@style/container"
             android:orientation="horizontal"
-            tools:showIn="@layout/fragment_profile">
+            android:background="@color/secondaryDetailColor">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:showIn="@layout/fragment_profile">
+                android:orientation="vertical">
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -34,6 +34,7 @@
                     android:src="@drawable/ic_android_white_48dp"
                     android:contentDescription="TODO" />
                 <TextView
+                    android:id="@+id/item_number"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     style="@style/normalTextStyle"
@@ -50,6 +51,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="@dimen/default_margin">
                 <TextView
+                    android:id="@+id/content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/titleStyle"
@@ -63,45 +65,47 @@
                     android:text="@string/prompt_candidate_similarity"
                     android:textColor="@color/primaryTextColor"/>
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="@dimen/tiny_margin"
-                        android:layout_marginBottom="@dimen/tiny_margin"
-                        android:src="@drawable/ic_favorite_white_24dp"
-                        android:contentDescription="TODO" />
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="@dimen/default_margin"
-                        android:layout_marginTop="@dimen/tiny_margin"
-                        android:layout_marginBottom="@dimen/tiny_margin"
-                        android:src="@drawable/like1"
-                        android:contentDescription="TODO" />
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="@dimen/default_margin"
-                        android:layout_marginTop="@dimen/tiny_margin"
-                        android:layout_marginBottom="@dimen/tiny_margin"
-                        android:src="@drawable/dislike1"
-                        android:contentDescription="TODO" />
-
-                </LinearLayout>
-
-
+                    style="@style/descriptionStyle"
+                    android:text="@string/prompt_candidate_situation"
+                    android:textColor="@color/primaryTextColor"/>
             </LinearLayout>
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/tiny_margin"
+                android:layout_marginBottom="@dimen/tiny_margin"
+                android:src="@drawable/ic_favorite_white_24dp"
+                android:contentDescription="TODO" />
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginTop="@dimen/tiny_margin"
+                android:layout_marginBottom="@dimen/tiny_margin"
+                android:src="@drawable/like1"
+                android:contentDescription="TODO" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginTop="@dimen/tiny_margin"
+                android:layout_marginBottom="@dimen/tiny_margin"
+                android:src="@drawable/dislike1"
+                android:contentDescription="TODO" />
 
         </LinearLayout>
-
     </LinearLayout>
 
 
@@ -113,23 +117,107 @@
 
 
 
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:layout_width="wrap_content"-->
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
     <!--android:layout_height="wrap_content"-->
-    <!--android:orientation="horizontal">-->
+    <!--android:orientation="vertical"-->
+    <!--card_view:cardCornerRadius="@dimen/default_radius"-->
+    <!--card_view:cardUseCompatPadding="true"-->
+    <!--android:layout_marginBottom="@dimen/default_margin"-->
+    <!--android:background="@color/primaryLightColor"-->
+    <!--tools:showIn="@layout/fragment_candidate_list">-->
 
-    <!--<TextView-->
-        <!--android:id="@+id/item_number"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_margin="@dimen/text_margin"-->
-        <!--android:textAppearance="?attr/textAppearanceListItem" />-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
 
-    <!--<TextView-->
-        <!--android:id="@+id/content"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_margin="@dimen/text_margin"-->
-        <!--android:textAppearance="?attr/textAppearanceListItem" />-->
-<!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--style="@style/container"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--tools:showIn="@layout/fragment_profile">-->
+                <!--<ImageView-->
+                    <!--android:layout_width="70dp"-->
+                    <!--android:layout_height="70dp"-->
+                    <!--android:layout_margin="@dimen/tiny_margin"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:src="@drawable/ic_android_white_48dp"-->
+                    <!--android:contentDescription="TODO" />-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--style="@style/normalTextStyle"-->
+                    <!--android:layout_margin="@dimen/tiny_margin"-->
+                    <!--android:text="@string/prompt_number_aggree"-->
+                    <!--android:textColor="@color/primaryTextColor"-->
+                    <!--android:layout_gravity="center_horizontal"/>-->
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginLeft="@dimen/default_margin">-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--style="@style/titleStyle"-->
+                    <!--android:text="@string/prompt_candidate_name"-->
+                    <!--android:textColor="@color/primaryTextColor"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--style="@style/descriptionStyle"-->
+                    <!--android:text="@string/prompt_candidate_similarity"-->
+                    <!--android:textColor="@color/primaryTextColor"/>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<ImageView-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_marginTop="@dimen/tiny_margin"-->
+                        <!--android:layout_marginBottom="@dimen/tiny_margin"-->
+                        <!--android:src="@drawable/ic_favorite_white_24dp"-->
+                        <!--android:contentDescription="TODO" />-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_marginLeft="@dimen/default_margin"-->
+                        <!--android:layout_marginTop="@dimen/tiny_margin"-->
+                        <!--android:layout_marginBottom="@dimen/tiny_margin"-->
+                        <!--android:src="@drawable/like1"-->
+                        <!--android:contentDescription="TODO" />-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_marginLeft="@dimen/default_margin"-->
+                        <!--android:layout_marginTop="@dimen/tiny_margin"-->
+                        <!--android:layout_marginBottom="@dimen/tiny_margin"-->
+                        <!--android:src="@drawable/dislike1"-->
+                        <!--android:contentDescription="TODO" />-->
+
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+
+<!--</android.support.v7.widget.CardView>-->
+
+
+

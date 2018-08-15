@@ -1,4 +1,4 @@
-package sample.dev.candidate.dummy.dummy;
+package sample.dev.candidate.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;

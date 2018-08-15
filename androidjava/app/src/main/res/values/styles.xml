@@ -85,9 +85,7 @@
         <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:textSize">@dimen/title_text_size</item>
         <item name="android:textStyle">bold</item>
-
     </style>
-
 
     <style name="descriptionStyle" parent="@android:style/Widget.TextView">
         <item name="android:layout_width">match_parent</item>
@@ -126,8 +124,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColorHint">@color/primaryTextColor</item>
-        <item name="android:textColor">@color/secondaryTextColor</item>
-        <item name="android:background">@color/primaryLightColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:background">@color/primaryColor</item>
     </style>
 
     <style name="radioButton">
@@ -167,5 +165,5 @@
 
     </style>
 
-    <color name="black">#000000</color>
+
 </resources>

@@ -1,4 +1,4 @@
-package sample.dev.candidate.dummy;
+package sample.dev.quiz;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,28 +15,28 @@ import sample.dev.R;
 /**
  * A fragment representing a list of Items.
  * <p/>
- * Activities containing this fragment MUST implement the {@link CandidateFragmentListener}
+ * Activities containing this fragment MUST implement the {@link QuizFragmentListener}
  * interface.
  */
-public class CandidateFragment extends Fragment {
+public class QuizFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
-    private CandidateFragmentListener mListener;
+    private QuizFragmentListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public CandidateFragment() {
+    public QuizFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static CandidateFragment newInstance(int columnCount) {
-        CandidateFragment fragment = new CandidateFragment();
+    public static QuizFragment newInstance(int columnCount) {
+        QuizFragment fragment = new QuizFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -55,7 +55,7 @@ public class CandidateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_candidate_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_quiz_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -66,7 +66,7 @@ public class CandidateFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyCandidateRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new QuizRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }
@@ -75,8 +75,8 @@ public class CandidateFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof CandidateFragmentListener) {
-            mListener = (CandidateFragmentListener) context;
+        if (context instanceof QuizFragmentListener) {
+            mListener = (QuizFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
@@ -99,7 +99,7 @@ public class CandidateFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface CandidateFragmentListener {
+    public interface QuizFragmentListener {
         // TODO: Update argument type and name
 //        void onListFragmentInteraction(DummyItem item);
     }

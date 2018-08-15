@@ -1,4 +1,4 @@
-package sample.dev.candidate.dummy;
+package sample.dev.quiz;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,20 +9,20 @@ import android.widget.TextView;
 import java.util.List;
 
 import sample.dev.R;
-import sample.dev.candidate.dummy.CandidateFragment.CandidateFragmentListener;
-import sample.dev.candidate.dummy.DummyContent.DummyItem;
+import sample.dev.quiz.DummyContent.DummyItem;
+import sample.dev.quiz.QuizFragment.QuizFragmentListener;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link CandidateFragmentListener}.
+ * specified {@link QuizFragmentListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandidateRecyclerViewAdapter.ViewHolder> {
+public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
-    private final CandidateFragmentListener mListener;
+    private final QuizFragmentListener mListener;
 
-    public MyCandidateRecyclerViewAdapter(List<DummyItem> items, CandidateFragmentListener listener) {
+    public QuizRecyclerViewAdapter(List<DummyItem> items, QuizFragmentListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -30,7 +30,7 @@ public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_candidate, parent, false);
+                .inflate(R.layout.fragment_quiz, parent, false);
         return new ViewHolder(view);
     }
 

@@ -3,11 +3,11 @@ package sample.dev;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.net.Uri;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import java.util.Objects;
 
 import butterknife.ButterKnife;
+import sample.dev.candidate.dummy.CandidateFragment;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
 import sample.dev.home.HomeFragment;
@@ -24,6 +25,7 @@ import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
 import sample.dev.product.ProductDetailFragment;
+import sample.dev.quiz.QuizFragment;
 import sample.dev.user.ProfileFragment;
 import sample.dev.user.SignupFragment;
 
@@ -33,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         SignupFragment.SignupFragmentListener,
         ProfileFragment.OnFragmentInteractionListener,
         PlaceOverviewFragment.PlaceFragmentListener,
-        ProductDetailFragment.ProductDetailListener
+        ProductDetailFragment.ProductDetailListener,
+        CandidateFragment.CandidateFragmentListener,
+        QuizFragment.QuizFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                     Objects.requireNonNull(getSupportActionBar()).setTitle("Quiz de Afinidade");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = PlaceOverviewFragment.newInstance("","");
+                    Fragment fragment = QuizFragment.newInstance(1);
                     fragmentTransaction.replace(R.id.main_container, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
@@ -93,16 +97,10 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                 }
 
                 case R.id.navigation_candidates: {
-//                    mToolbar.setTitle("Configuracoes");
-//                    FragmentManager fragmentManager = getSupportFragmentManager();
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    Fragment fragment = NotificationFragment.newInstance(1);
-//                    fragmentTransaction.replace(R.id.main_container, fragment);
-//                    fragmentTransaction.commit();
                     Objects.requireNonNull(getSupportActionBar()).setTitle("Candidatos");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = DashboardFragment.newInstance(1);
+                    Fragment fragment = CandidateFragment.newInstance(1);
                     fragmentTransaction.replace(R.id.main_container, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
