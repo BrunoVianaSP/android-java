@@ -34,8 +34,11 @@ public class ProfileFragment extends Fragment {
 
     private ProfileFragmentListener mListener;
 
-    @BindView(R.id.layoutLegalTerms)
-    public LinearLayout layoutLegalTerms;
+    @BindView(R.id.navigatorLegalTerms)
+    public LinearLayout navigatorLegalTerms;
+
+    @BindView(R.id.navigatorSettings)
+    public LinearLayout navigatorSettings;
     
     
     public ProfileFragment() {
@@ -74,10 +77,16 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        layoutLegalTerms.setOnClickListener(new View.OnClickListener() {
+        navigatorLegalTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.openLegalTerms();            }
+        });
+
+        navigatorSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openSettings();            }
         });
         
     }
@@ -111,7 +120,6 @@ public class ProfileFragment extends Fragment {
      */
     public interface ProfileFragmentListener {
         void openLegalTerms();
-        // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
+        void openSettings();
     }
 }

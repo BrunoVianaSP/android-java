@@ -27,6 +27,7 @@ import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
 import sample.dev.product.ProductDetailFragment;
 import sample.dev.quiz.QuizFragment;
+import sample.dev.settings.SettingsFragment;
 import sample.dev.user.ProfileFragment;
 import sample.dev.user.SignupFragment;
 
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         ProductDetailFragment.ProductDetailListener,
         CandidateFragment.CandidateFragmentListener,
         QuizFragment.QuizFragmentListener,
-        LegalTermsFragment.LegalTermsFragmentListener
+        LegalTermsFragment.LegalTermsFragmentListener,
+        SettingsFragment.SettingsFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -269,7 +271,30 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = LegalTermsFragment.newInstance("", "");
         fragmentTransaction.replace(R.id.main_container, fragment);
-//        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+
+
+
+
+
+
+    @Override
+    public void openSettings() {
+        log.info("openSettings");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Configurações");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = SettingsFragment.newInstance("", "");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void notificationCheck() {
+
     }
 }

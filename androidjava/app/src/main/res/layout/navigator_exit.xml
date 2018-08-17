@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigatorLegalTerms"
     android:orientation="horizontal"
     style="@style/container"
     tools:showIn="@layout/fragment_profile">
@@ -9,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:src="@drawable/ic_settings_white_24dp"
+        android:src="@drawable/ic_exit_to_app_black_24dp"
         android:contentDescription="TODO" />
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +18,7 @@
         style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
         android:gravity="center_vertical"
-        android:text="@string/prompt_settings"
+        android:text="@string/prompt_exit"
         android:textColor="@color/primaryTextColor"/>
 
     <ImageView
