@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 
 import java.util.Objects;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import sample.dev.cadidate.CandidateFragment;
 import sample.dev.settings.AboutFragment;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements
 
     private Menu menu;
 
+    @BindView(R.id.navigation)
+    BottomNavigationView bottomNavigationView;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -63,10 +66,13 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+            if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
+                log.info("Same option selected!");
+                return false;
+            }
+
             LinearLayout layout = findViewById(R.id.main_container);
             layout.removeAllViews();
-
-
 
             switch (item.getItemId()) {
                 case R.id.navigation_home: {
@@ -146,8 +152,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void ConfigBottomNavigator() {
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
 
@@ -169,6 +174,8 @@ public class MainActivity extends AppCompatActivity implements
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            bottomNavigationView.setSelectedItemId(R.id.navigation_user_profile);
+            openSettings();
             return true;
         } else if (id == R.id.action_info) {
             return true;
@@ -226,13 +233,11 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-//        offerExitApp();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fr = fragmentManager.findFragmentById(R.id.main_container);
         if(fr!=null && !(fr instanceof HomeFragment)){
-            BottomNavigationView bottomNavigationView;
-            bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+
             bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         } else {
             offerExitApp();

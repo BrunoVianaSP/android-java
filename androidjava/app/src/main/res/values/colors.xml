@@ -36,24 +36,16 @@
     <!--CAMOUFLAGE-->
     <color name="primaryColor">#e0e0e0</color>
     <color name="primaryLightColor">#efefef</color>
-    <color name="primaryDarkColor">#8d8d8d</color>
-    <color name="primaryDetailColor">#FFF</color>
-    <color name="secondaryColor">#d0d0d0</color>
-    <color name="secondaryLightColor">#c1d5e0</color>
-    <color name="secondaryDarkColor">#62757f</color>
+    <color name="primaryDarkColor">#D0D0D0</color>
     <color name="primaryTextColor">#000000</color>
-    <color name="secondaryTextColor">#212121</color>
-    <color name="secondaryDetailColor">#FFF</color>
+    <color name="primaryDetailColor">#D0D0D0</color>
 
-    <color name="primaryAlphaColor">#AA140b4f</color>
-    <color name="primaryAlphaLightColor">#AA45327c</color>
-    <color name="primaryDisabledColor">#c9c2c6</color>
+    <color name="secondaryColor">#e0e0e0</color>
+    <color name="secondaryLightColor">#efefef</color>
+    <color name="secondaryDarkColor">#D0D0D0</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="secondaryDetailColor">#D0D0D0</color>
 
-    <color name="primaryComplementaryColor">#f2991c</color>
-    <color name="primaryComplementaryDarkColor">#cf8113</color>
-    <color name="primaryComplementaryDarkestColor">#bd740e</color>
-
-    <color name="primaryBorderComplementaryColor">#4f320b</color>
 
     <color name="colorAccent">#2a1aDD</color>
     <color name="default_stroke_color">@color/primaryDetailColor</color>

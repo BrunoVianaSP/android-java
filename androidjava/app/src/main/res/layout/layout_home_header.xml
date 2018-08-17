@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/default_margin"
     android:orientation="horizontal"
-    android:background="@color/primaryComplementaryDarkestColor"
+    android:background="@color/primaryDarkColor"
     tools:showIn="@layout/fragment_home">
     <TextView
         android:id="@+id/item_title"
