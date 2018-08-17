@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="@dimen/normal_divider_height"
-    android:background="@color/ice"
+    android:background="@color/primaryLightColor"
     android:layout_marginTop="@dimen/small_margin"
     android:layout_marginBottom="@dimen/small_margin">
 </LinearLayout>

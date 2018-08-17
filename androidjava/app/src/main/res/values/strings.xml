@@ -82,4 +82,7 @@
     <string name="dummy_quiz_question">As empresas no Brasil precisam ser regulamentadas para que cumpram com os cuidados ao meio ambiente, pois elas não fariam isso espontaneamente.</string>
     <string name="prompt_exit">Sair</string>
     <string name="prompt_about">Sobre</string>
+    <string name="prompt_faq">FAQ</string>
+    <string name="prompt_app_info">App info</string>
+    <string name="prompt_contact_us">Entrar em contado</string>
 </resources>

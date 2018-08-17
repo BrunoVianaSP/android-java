@@ -8,13 +8,13 @@
     card_view:cardCornerRadius="@dimen/default_radius"
     card_view:cardUseCompatPadding="true"
     android:layout_margin="@dimen/tiny_margin"
-    app:cardBackgroundColor="@color/primaryColor">
+    app:cardBackgroundColor="@color/primaryDarkColor">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/primaryColor">
+        android:background="@color/primaryDarkColor">
 
         <ImageView
             android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         <LinearLayout
             style="@style/container"
             android:orientation="horizontal"
-            android:background="@color/primaryLightColor">
+            android:background="@color/primaryColor">
 
             <LinearLayout
                 android:layout_width="wrap_content"
