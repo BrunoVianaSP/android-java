@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/default_padding"
-    tools:context=".user.LoginActivity"
+    tools:context=".LoginActivity"
     android:background="@color/primaryColor">
 
     <!-- Login progress -->

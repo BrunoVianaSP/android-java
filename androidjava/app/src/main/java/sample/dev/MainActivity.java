@@ -261,7 +261,8 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void closeApp() {
-        MainActivity.this.finish();
+        MainActivity.this.finishAffinity();
+        System.exit(0);
     }
 
     @Override

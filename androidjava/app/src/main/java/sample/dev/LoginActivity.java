@@ -1,4 +1,4 @@
-package sample.dev.user;
+package sample.dev;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,8 +31,9 @@ import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import sample.dev.MainActivity;
-import sample.dev.R;
+import sample.dev.user.ChangePasswordFragment;
+import sample.dev.user.ForgotPasswordFragment;
+import sample.dev.user.LoginFragment;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -335,7 +336,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     @Override
     public void onBackPressed() {
-        LoginActivity.this.finish();
+        LoginActivity.this.finishAffinity();
+        System.exit(0);
     }
 
     private interface ProfileQuery {
