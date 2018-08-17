@@ -333,6 +333,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         startMainActivity();
     }
 
+    @Override
+    public void onBackPressed() {
+        LoginActivity.this.finish();
+    }
 
     private interface ProfileQuery {
         String[] PROJECTION = {

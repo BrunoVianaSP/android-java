@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements
 
     private Menu menu;
 
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -64,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements
             LinearLayout layout = findViewById(R.id.main_container);
             layout.removeAllViews();
 
+
+
             switch (item.getItemId()) {
                 case R.id.navigation_home: {
                     showHomeFragment();
@@ -71,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements
                 }
 
                 case R.id.navigation_user_profile: {
-//                    mTextMessage.setText(R.string.title_dashboard);
                     Objects.requireNonNull(getSupportActionBar()).setTitle("Usuario");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -107,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements
             return false;
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -222,7 +226,18 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-        offerExitApp();
+//        offerExitApp();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fr = fragmentManager.findFragmentById(R.id.main_container);
+        if(fr!=null && !(fr instanceof HomeFragment)){
+            BottomNavigationView bottomNavigationView;
+            bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+            bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        } else {
+            offerExitApp();
+        }
+
     }
 
     private void offerExitApp() {
