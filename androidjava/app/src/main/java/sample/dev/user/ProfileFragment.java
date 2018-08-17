@@ -34,6 +34,9 @@ public class ProfileFragment extends Fragment {
 
     private ProfileFragmentListener mListener;
 
+    @BindView(R.id.navigatorProfile)
+    public LinearLayout navigatorProfile;
+
     @BindView(R.id.navigatorLegalTerms)
     public LinearLayout navigatorLegalTerms;
 
@@ -135,7 +138,12 @@ public class ProfileFragment extends Fragment {
                 mListener.exit();             }
         });
 
-        
+        navigatorProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openEditProfile();
+            }
+        });
     }
 
     @Override
@@ -173,5 +181,6 @@ public class ProfileFragment extends Fragment {
         void openSuggestion();
         void openAbout();
         void exit();
+        void openEditProfile();
     }
 }

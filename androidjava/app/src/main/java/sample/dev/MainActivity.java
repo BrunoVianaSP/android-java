@@ -250,6 +250,18 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
+    public void openEditProfile() {
+        log.info("openEditProfile");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Editar perfil");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = SignupFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
     public void openLegalTerms() {
         log.info("openLegalTerms");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Termos Legais");
@@ -317,7 +329,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void openSuggestion() {
         log.info("openSuggestion");
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Ajuda");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Sugestões");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = SuggestionFragment.newInstance("","");
@@ -343,7 +355,6 @@ public class MainActivity extends AppCompatActivity implements
         log.info("exit");
         offerExitApp();
     }
-
 
 
 
