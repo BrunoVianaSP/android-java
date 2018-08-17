@@ -132,7 +132,7 @@ public class ProfileFragment extends Fragment {
         navigatorExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.openExit();             }
+                mListener.exit();             }
         });
 
         
@@ -172,6 +172,6 @@ public class ProfileFragment extends Fragment {
         void openHelp();
         void openSuggestion();
         void openAbout();
-        void openExit();
+        void exit();
     }
 }

@@ -18,22 +18,23 @@ import java.util.Objects;
 
 import butterknife.ButterKnife;
 import sample.dev.cadidate.CandidateFragment;
-import sample.dev.dashboard.DashboardFragment;
-import sample.dev.dashboard.DashboardItemGenerator;
-import sample.dev.favorites.FavoriteFragment;
-import sample.dev.favorites.dummy.DummyContent;
+import sample.dev.settings.AboutFragment;
+import sample.dev.settings.FavoriteFragment;
+import sample.dev.settings.FavoriteContent;
 import sample.dev.home.HomeFragment;
-import sample.dev.legal.LegalTermsFragment;
+import sample.dev.settings.HelpFragment;
+import sample.dev.settings.LegalTermsFragment;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
 import sample.dev.product.ProductDetailFragment;
 import sample.dev.quiz.QuizFragment;
 import sample.dev.settings.SettingsFragment;
+import sample.dev.settings.SuggestionFragment;
 import sample.dev.user.ProfileFragment;
 import sample.dev.user.SignupFragment;
 
-public class MainActivity extends AppCompatActivity implements DashboardFragment.DashboardListener,
+public class MainActivity extends AppCompatActivity implements
         HomeFragment.HomeListener,
         NotificationFragment.NotificationListener,
         SignupFragment.SignupFragmentListener,
@@ -44,16 +45,15 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         QuizFragment.QuizFragmentListener,
         LegalTermsFragment.LegalTermsFragmentListener,
         SettingsFragment.SettingsFragmentListener,
-        FavoriteFragment.FavoriteFragmentListener
+        FavoriteFragment.FavoriteFragmentListener,
+        SuggestionFragment.SuggestionFragmentListener,
+        AboutFragment.AboutFragmentListener,
+        HelpFragment.HelpFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
     private Menu menu;
-//    CollapsingToolbarLayout collapsingToolbarLayout;
-
-//    @BindView(R.id.toolbar)
-//    public Toolbar mToolbar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -81,16 +81,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
                     fragmentTransaction.commit();
                     return true;
                 }
-
-//                case R.id.navigation_dashboard: {
-//                    mToolbar.setTitle("Candidatos");
-//                    FragmentManager fragmentManager = getSupportFragmentManager();
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    Fragment fragment = DashboardFragment.newInstance(1);
-//                    fragmentTransaction.replace(R.id.main_container, fragment);
-//                    fragmentTransaction.commit();
-//                    return true;
-//                }
 
                 case R.id.navigation_quiz: {
                     Objects.requireNonNull(getSupportActionBar()).setTitle("Quiz de Afinidade");
@@ -191,13 +181,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     public void showOption(int id) {
         MenuItem item = menu.findItem(id);
         item.setVisible(true);
-    }
-
-
-
-    @Override
-    public void onDashboardInteraction(DashboardItemGenerator.DummyItem item) {
-
     }
 
     @Override
@@ -313,7 +296,7 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     }
 
     @Override
-    public void onFavoriteSelected(DummyContent.FavoriteItem item) {
+    public void onFavoriteSelected(FavoriteContent.FavoriteItem item) {
         log.info("onFavoriteSelected");
     }
 
@@ -322,21 +305,43 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     @Override
     public void openHelp() {
         log.info("openHelp");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Ajuda");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = HelpFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     @Override
     public void openSuggestion() {
         log.info("openSuggestion");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Ajuda");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = SuggestionFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     @Override
     public void openAbout() {
         log.info("openAbout");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Sobre a Empresa");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = AboutFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     @Override
-    public void openExit() {
-        log.info("openExit");
+    public void exit() {
+        log.info("exit");
+        offerExitApp();
     }
 
 

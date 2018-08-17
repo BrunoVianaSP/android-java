@@ -1,4 +1,4 @@
-package sample.dev.legal;
+package sample.dev.settings;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,12 +13,12 @@ import sample.dev.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LegalTermsFragmentListener} interface
+ * {@link AboutFragment.AboutFragmentListener} interface
  * to handle interaction events.
- * Use the {@link LegalTermsFragment#newInstance} factory method to
+ * Use the {@link AboutFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LegalTermsFragment extends Fragment {
+public class AboutFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,9 +28,9 @@ public class LegalTermsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private LegalTermsFragmentListener mListener;
+    private AboutFragmentListener mListener;
 
-    public LegalTermsFragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +40,11 @@ public class LegalTermsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LegalTermsFragment.
+     * @return A new instance of fragment AboutFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LegalTermsFragment newInstance(String param1, String param2) {
-        LegalTermsFragment fragment = new LegalTermsFragment();
+    public static AboutFragment newInstance(String param1, String param2) {
+        AboutFragment fragment = new AboutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,17 +65,19 @@ public class LegalTermsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_legal_terms, container, false);
+        return inflater.inflate(R.layout.fragment_about, container, false);
     }
+
+
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof LegalTermsFragmentListener) {
-            mListener = (LegalTermsFragmentListener) context;
+        if (context instanceof AboutFragmentListener) {
+            mListener = (AboutFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement LegalTermsFragmentListener");
+                    + " must implement OnFragmentInteractionListener");
         }
     }
 
@@ -95,7 +97,7 @@ public class LegalTermsFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface LegalTermsFragmentListener {
+    public interface AboutFragmentListener {
 
     }
 }

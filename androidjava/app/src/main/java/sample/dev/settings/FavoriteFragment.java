@@ -1,8 +1,7 @@
-package sample.dev.dashboard;
+package sample.dev.settings;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,33 +11,32 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import sample.dev.R;
-import sample.dev.dashboard.DashboardItemGenerator.DummyItem;
 
 /**
  * A fragment representing a list of Items.
  * <p/>
- * Activities containing this fragment MUST implement the {@link DashboardListener}
+ * Activities containing this fragment MUST implement the {@link FavoriteFragmentListener}
  * interface.
  */
-public class DashboardFragment extends Fragment {
+public class FavoriteFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
-    private DashboardListener mListener;
+    private FavoriteFragmentListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public DashboardFragment() {
+    public FavoriteFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static DashboardFragment newInstance(int columnCount) {
-        DashboardFragment fragment = new DashboardFragment();
+    public static FavoriteFragment newInstance(int columnCount) {
+        FavoriteFragment fragment = new FavoriteFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -55,9 +53,9 @@ public class DashboardFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_dashboard_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_favorite_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -68,7 +66,7 @@ public class DashboardFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new DashboardRecyclerViewAdapter(DashboardItemGenerator.ITEMS, mListener));
+            recyclerView.setAdapter(new FavoriteRecyclerViewAdapter(FavoriteContent.ITEMS, mListener));
         }
         return view;
     }
@@ -77,11 +75,11 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof DashboardListener) {
-            mListener = (DashboardListener) context;
+        if (context instanceof FavoriteFragmentListener) {
+            mListener = (FavoriteFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement NotificationListener");
+                    + " must implement FavoriteFragmentListener");
         }
     }
 
@@ -101,8 +99,8 @@ public class DashboardFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface DashboardListener {
+    public interface FavoriteFragmentListener {
         // TODO: Update argument type and name
-        void onDashboardInteraction(DummyItem item);
+        void onFavoriteSelected(FavoriteContent.FavoriteItem item);
     }
 }
