@@ -79,7 +79,7 @@ public class CandidateFragment extends Fragment {
             mListener = (CandidateFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+                    + " must implement FavoriteFragmentListener");
         }
     }
 
@@ -101,6 +101,6 @@ public class CandidateFragment extends Fragment {
      */
     public interface CandidateFragmentListener {
         // TODO: Update argument type and name
-//        void onListFragmentInteraction(DummyItem item);
+//        void onFavoriteSelected(FavoriteItem item);
     }
 }

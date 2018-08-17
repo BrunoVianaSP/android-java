@@ -39,7 +39,22 @@ public class ProfileFragment extends Fragment {
 
     @BindView(R.id.navigatorSettings)
     public LinearLayout navigatorSettings;
-    
+
+    @BindView(R.id.navigatorFavorite)
+    public LinearLayout navigatorFavorite;
+
+    @BindView(R.id.navigatorHelp)
+    public LinearLayout navigatorHelp;
+
+    @BindView(R.id.navigatorSuggestion)
+    public LinearLayout navigatorSuggestion;
+
+
+    @BindView(R.id.navigatorAbout)
+    public LinearLayout navigatorAbout;
+
+    @BindView(R.id.navigatorExit)
+    public LinearLayout navigatorExit;
     
     public ProfileFragment() {
         // Required empty public constructor
@@ -88,6 +103,38 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 mListener.openSettings();            }
         });
+
+        navigatorFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openFavorites();            }
+        });
+
+        navigatorHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openHelp();
+            }
+        });
+
+        navigatorSuggestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openSuggestion();            }
+        });
+
+        navigatorAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openAbout();             }
+        });
+
+        navigatorExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openExit();             }
+        });
+
         
     }
 
@@ -121,5 +168,10 @@ public class ProfileFragment extends Fragment {
     public interface ProfileFragmentListener {
         void openLegalTerms();
         void openSettings();
+        void openFavorites();
+        void openHelp();
+        void openSuggestion();
+        void openAbout();
+        void openExit();
     }
 }

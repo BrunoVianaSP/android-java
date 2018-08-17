@@ -20,6 +20,8 @@ import butterknife.ButterKnife;
 import sample.dev.cadidate.CandidateFragment;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
+import sample.dev.favorites.FavoriteFragment;
+import sample.dev.favorites.dummy.DummyContent;
 import sample.dev.home.HomeFragment;
 import sample.dev.legal.LegalTermsFragment;
 import sample.dev.notification.NotificationFragment;
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         CandidateFragment.CandidateFragmentListener,
         QuizFragment.QuizFragmentListener,
         LegalTermsFragment.LegalTermsFragmentListener,
-        SettingsFragment.SettingsFragmentListener
+        SettingsFragment.SettingsFragmentListener,
+        FavoriteFragment.FavoriteFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -276,11 +279,6 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
     }
 
 
-
-
-
-
-
     @Override
     public void openSettings() {
         log.info("openSettings");
@@ -295,6 +293,54 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     @Override
     public void notificationCheck() {
-
+        log.info("notificationCheck");
     }
+
+
+
+
+
+    @Override
+    public void openFavorites() {
+        log.info("openFavorites");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Favoritos");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = FavoriteFragment.newInstance(1);
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onFavoriteSelected(DummyContent.FavoriteItem item) {
+        log.info("onFavoriteSelected");
+    }
+
+
+
+    @Override
+    public void openHelp() {
+        log.info("openHelp");
+    }
+
+    @Override
+    public void openSuggestion() {
+        log.info("openSuggestion");
+    }
+
+    @Override
+    public void openAbout() {
+        log.info("openAbout");
+    }
+
+    @Override
+    public void openExit() {
+        log.info("openExit");
+    }
+
+
+
+
+
 }

@@ -12,11 +12,11 @@ android:padding="@dimen/small_padding">
 
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <include layout="@layout/navigator_personal"/>
         <include layout="@layout/navigator_favorites"/>
@@ -24,6 +24,7 @@ android:padding="@dimen/small_padding">
         <include layout="@layout/navigator_settings"/>
         <include layout="@layout/navigator_suggestions"/>
         <include layout="@layout/navigator_help"/>
+        <include layout="@layout/navigator_about"/>
         <include layout="@layout/navigator_exit"/>
     </LinearLayout>
 </ScrollView>

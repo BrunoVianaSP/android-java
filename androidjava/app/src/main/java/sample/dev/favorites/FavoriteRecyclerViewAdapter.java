@@ -1,4 +1,4 @@
-package sample.dev.cadidate;
+package sample.dev.favorites;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,23 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import sample.dev.R;
+import sample.dev.favorites.dummy.DummyContent;
+import sample.dev.favorites.dummy.DummyContent.FavoriteItem;
+
 import java.util.List;
 
-import sample.dev.R;
-import sample.dev.cadidate.CandidateFragment.CandidateFragmentListener;
-import sample.dev.cadidate.DummyContent.DummyItem;
-
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link CandidateFragmentListener}.
+ * {@link RecyclerView.Adapter} that can display a {@link DummyContent.FavoriteItem} and makes a call to the
+ * specified {@link FavoriteFragment.FavoriteFragmentListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandidateRecyclerViewAdapter.ViewHolder> {
+public class FavoriteRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
-    private final CandidateFragmentListener mListener;
+    private final List<FavoriteItem> mValues;
+    private final FavoriteFragment.FavoriteFragmentListener mListener;
 
-    public MyCandidateRecyclerViewAdapter(List<DummyItem> items, CandidateFragmentListener listener) {
+    public FavoriteRecyclerViewAdapter(List<DummyContent.FavoriteItem> items, FavoriteFragment.FavoriteFragmentListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -30,15 +30,15 @@ public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_candidate, parent, false);
+                .inflate(R.layout.fragment_favorite, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-//        holder.mIdView.setText(mValues.get(position).id);
-//        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).id);
+        holder.mContentView.setText(mValues.get(position).content);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandi
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-//                    mListener.onFavoriteSelected(holder.mItem);
+                    mListener.onFavoriteSelected(holder.mItem);
                 }
             }
         });
@@ -61,7 +61,7 @@ public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandi
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public DummyContent.FavoriteItem mItem;
 
         public ViewHolder(View view) {
             super(view);
