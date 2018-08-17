@@ -17,10 +17,11 @@ import android.widget.LinearLayout;
 import java.util.Objects;
 
 import butterknife.ButterKnife;
-import sample.dev.candidate.dummy.CandidateFragment;
+import sample.dev.cadidate.CandidateFragment;
 import sample.dev.dashboard.DashboardFragment;
 import sample.dev.dashboard.DashboardItemGenerator;
 import sample.dev.home.HomeFragment;
+import sample.dev.legal.LegalTermsFragment;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
@@ -33,11 +34,12 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
         HomeFragment.HomeListener,
         NotificationFragment.NotificationListener,
         SignupFragment.SignupFragmentListener,
-        ProfileFragment.OnFragmentInteractionListener,
+        ProfileFragment.ProfileFragmentListener,
         PlaceOverviewFragment.PlaceFragmentListener,
         ProductDetailFragment.ProductDetailListener,
         CandidateFragment.CandidateFragmentListener,
-        QuizFragment.QuizFragmentListener
+        QuizFragment.QuizFragmentListener,
+        LegalTermsFragment.LegalTermsFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -257,5 +259,17 @@ public class MainActivity extends AppCompatActivity implements DashboardFragment
 
     private void closeApp() {
         MainActivity.this.finish();
+    }
+
+    @Override
+    public void openLegalTerms() {
+        log.info("openLegalTerms");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Termos Legais");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = LegalTermsFragment.newInstance("", "");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+//        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

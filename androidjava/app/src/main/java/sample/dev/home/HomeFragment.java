@@ -144,7 +144,7 @@ public class HomeFragment extends Fragment {
             mListener = (HomeListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement LegalTermsFragmentListener");
         }
     }
 

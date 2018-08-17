@@ -5,6 +5,6 @@
     android:name="sample.dev.candidate.dummy.CandidateFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".candidate.dummy.CandidateFragment"
+    tools:context=".cadidate.CandidateFragment"
     tools:listitem="@layout/fragment_candidate"
     android:background="@color/primaryColor"/>

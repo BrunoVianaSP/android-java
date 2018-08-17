@@ -1,4 +1,4 @@
-package sample.dev.candidate.dummy;
+package sample.dev.cadidate;
 
 import android.content.Context;
 import android.os.Bundle;

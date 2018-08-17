@@ -27,6 +27,7 @@
     <string name="dummy_food_title">Churrasco Brasil</string>
     <string name="dummy_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed augue sed nisl faucibus dictum sed ut ligula. Integer efficitur gravida ultricies. Nullam hendrerit egestas sem, eu laoreet urna bibendum id. Aliquam non facilisis sapien. Mauris faucibus felis sed lectus ornare sagittis. Nulla lorem enim, ornare non scelerisque quis, dictum ac nulla. Fusce vel erat non odio venenatis auctor.</string>
     <string name="dummy_footer">Av. Paulista  2335 - 9h às 18h</string>
+    <string name="dummy_legal_terms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed augue sed nisl faucibus dictum sed ut ligula. Integer efficitur gravida ultricies. Nullam hendrerit egestas sem, eu laoreet urna bibendum id. Aliquam non facilisis sapien. Mauris faucibus felis sed lectus ornare sagittis. Nulla lorem enim, ornare non scelerisque quis, dictum ac nulla. Fusce vel erat non odio venenatis auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed augue sed nisl faucibus dictum sed ut ligula. Integer efficitur gravida ultricies. Nullam hendrerit egestas sem, eu laoreet urna bibendum id. Aliquam non facilisis sapien. Mauris faucibus felis sed lectus ornare sagittis. Nulla lorem enim, ornare non scelerisque quis, dictum ac nulla. Fusce vel erat non odio venenatis auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed augue sed nisl faucibus dictum sed ut ligula. Integer efficitur gravida ultricies. Nullam hendrerit egestas sem, eu laoreet urna bibendum id. Aliquam non facilisis sapien. Mauris faucibus felis sed lectus ornare sagittis. Nulla lorem enim, ornare non scelerisque quis, dictum ac nulla. Fusce vel erat non odio venenatis auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed augue sed nisl faucibus dictum sed ut ligula. Integer efficitur gravida ultricies. Nullam hendrerit egestas sem, eu laoreet urna bibendum id. Aliquam non facilisis sapien. Mauris faucibus felis sed lectus ornare sagittis. Nulla lorem enim, ornare non scelerisque quis, dictum ac nulla. Fusce vel erat non odio venenatis auctor.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -69,7 +70,7 @@
     <string name="title_quiz">Quiz</string>
     <string name="title_candidates">Candidatos</string>
     <string name="title_legal_terms">Legal</string>
-    <string name="prompt_terms_conditions">Termos Legais</string>
+    <string name="prompt_terms_conditions">Termos de Uso</string>
     <string name="action_continue">Continuar</string>
     <string name="prompt_password_recovery">Digite o email cadastrado para recuperar a senha</string>
     <string name="you_are_logged_in">Conectado com sucesso!</string>

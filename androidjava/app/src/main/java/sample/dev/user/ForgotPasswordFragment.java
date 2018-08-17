@@ -101,7 +101,7 @@ public class ForgotPasswordFragment extends Fragment {
             mListener = (ForgotPasswordListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement LegalTermsFragmentListener");
         }
     }
 

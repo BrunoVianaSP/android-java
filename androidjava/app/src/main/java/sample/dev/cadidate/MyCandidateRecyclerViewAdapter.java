@@ -1,4 +1,4 @@
-package sample.dev.candidate.dummy;
+package sample.dev.cadidate;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import sample.dev.R;
-import sample.dev.candidate.dummy.CandidateFragment.CandidateFragmentListener;
-import sample.dev.candidate.dummy.DummyContent.DummyItem;
+import sample.dev.cadidate.CandidateFragment.CandidateFragmentListener;
+import sample.dev.cadidate.DummyContent.DummyItem;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
