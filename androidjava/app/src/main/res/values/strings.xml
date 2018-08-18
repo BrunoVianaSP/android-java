@@ -72,7 +72,7 @@
     <string name="title_legal_terms">Legal</string>
     <string name="prompt_terms_conditions">Termos de Uso</string>
     <string name="action_continue">Continuar</string>
-    <string name="prompt_password_recovery">Digite o email cadastrado para recuperar a senha</string>
+    <string name="prompt_password_recovery">Digite o email cadastrado</string>
     <string name="you_are_logged_in">Conectado com sucesso!</string>
     <string name="prompt_save">Salvar</string>
     <string name="prompt_number_aggree">1 apoio</string>
@@ -85,4 +85,7 @@
     <string name="prompt_faq">FAQ</string>
     <string name="prompt_app_info">App info</string>
     <string name="prompt_contact_us">Entrar em contado</string>
+    <string name="prompt_your_suggestion">Por favor, deixe-nos sua sugestão</string>
+    <string name="action_send">Enviar</string>
+    <string name="prompt_add_screenshots">Adicione screenshots (Opcional)</string>
 </resources>

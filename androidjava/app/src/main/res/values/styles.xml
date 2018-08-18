@@ -179,7 +179,12 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:padding">@dimen/default_padding</item>
         <item name="android:layout_marginTop">@dimen/default_margin</item>
+    </style>
 
+    <style name="default_container">
+        <item name="android:background">@drawable/container</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
 

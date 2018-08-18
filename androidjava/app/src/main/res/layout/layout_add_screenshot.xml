@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/container"
+    android:layout_margin="@dimen/default_margin"
+    android:orientation="vertical"
+    android:background="@color/primaryColor"
+    android:showDividers="middle"
+    tools:showIn="@layout/fragment_suggestion">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/normalTextStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/prompt_add_screenshots"
+        android:textColor="@color/secondaryColor" />
+
+    <LinearLayout
+        style="@style/container"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/primaryColor">
+
+        <include layout="@layout/layout_input_image" />
+
+        <include layout="@layout/layout_input_image" />
+
+        <include layout="@layout/layout_input_image" />
+    </LinearLayout>
+</LinearLayout>
