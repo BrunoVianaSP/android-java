@@ -88,4 +88,8 @@
     <string name="prompt_your_suggestion">Por favor, deixe-nos sua sugestão</string>
     <string name="action_send">Enviar</string>
     <string name="prompt_add_screenshots">Adicione screenshots (Opcional)</string>
+    <string name="dummy_app_version">Version 2.18.248</string>
+    <string name="dummy_inc"><![CDATA[2017-2018 B&C Software Inc.]]></string>
+    <string name="dummy_copyrights">Todos os direitos reservados.</string>
+    <string name="prompt_licenses">LICENSES</string>
 </resources>
