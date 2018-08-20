@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
         android:text="@string/prompt_faq"
         android:textColor="@color/primaryTextColor"
         android:textStyle="bold"/>
@@ -20,12 +21,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/normalTextStyle"
             android:layout_marginLeft="@dimen/default_margin"
+
             android:text="@string/prompt_app_info"
             android:textColor="@color/primaryTextColor"
             android:textStyle="bold"/>
@@ -48,25 +51,26 @@
     <include layout="@layout/layout_horizontal_divider"></include>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/normalTextStyle"
-        android:layout_marginLeft="@dimen/default_margin"
-        android:text="@string/prompt_contact_us"
-        android:textColor="@color/primaryTextColor"
-        android:textStyle="bold"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@style/normalTextStyle"-->
+        <!--android:layout_marginLeft="@dimen/default_margin"-->
+        <!--android:layout_marginTop="@dimen/default_margin"-->
+        <!--android:text="@string/prompt_contact_us"-->
+        <!--android:textColor="@color/primaryTextColor"-->
+        <!--android:textStyle="bold"/>-->
 
-    <include layout="@layout/layout_horizontal_divider"></include>
+    <!--<include layout="@layout/layout_horizontal_divider"></include>-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/normalTextStyle"
-        android:layout_marginLeft="@dimen/default_margin"
-        android:text="@string/prompt_terms_conditions"
-        android:textColor="@color/primaryTextColor"
-        android:textStyle="bold"/>
-    <include layout="@layout/layout_horizontal_divider"></include>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@style/normalTextStyle"-->
+        <!--android:layout_marginLeft="@dimen/default_margin"-->
+        <!--android:text="@string/prompt_terms_conditions"-->
+        <!--android:textColor="@color/primaryTextColor"-->
+        <!--android:textStyle="bold"/>-->
+    <!--<include layout="@layout/layout_horizontal_divider"></include>-->
 
 </LinearLayout>

@@ -66,12 +66,15 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+            log.info("getSupportFragmentManager().getBackStackEntryCount(): " + getSupportFragmentManager().getBackStackEntryCount());
             if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
                 if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
                     log.info("Same option selected!");
                     return false;
                 }
             }
+
+            getSupportFragmentManager().getFragments().clear();
 
             LinearLayout layout = findViewById(R.id.main_container);
             layout.removeAllViews();
