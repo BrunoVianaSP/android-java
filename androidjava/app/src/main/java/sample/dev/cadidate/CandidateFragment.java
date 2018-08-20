@@ -66,7 +66,7 @@ public class CandidateFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyCandidateRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new CandidateRecyclerViewAdapter(CandidateContent.ITEMS, mListener));
         }
         return view;
     }

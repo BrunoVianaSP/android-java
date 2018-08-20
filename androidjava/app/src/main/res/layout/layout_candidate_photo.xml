@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_gravity="center_vertical"
+    tools:showIn="@layout/fragment_candidate">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="@dimen/tiny_margin"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_android_white_48dp"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/item_number"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/normalTextStyle"
+        android:layout_margin="@dimen/tiny_margin"
+        android:text="@string/prompt_number_aggree"
+        android:textColor="@color/primaryTextColor"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

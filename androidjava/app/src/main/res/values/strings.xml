@@ -76,8 +76,8 @@
     <string name="you_are_logged_in">Conectado com sucesso!</string>
     <string name="prompt_save">Salvar</string>
     <string name="prompt_number_aggree">1 apoio</string>
-    <string name="prompt_candidate_name">Airton Sandoval - MDB</string>
-    <string name="prompt_candidate_similarity">50% similar a voce</string>
+    <string name="prompt_candidate_name">Airton Sandoval</string>
+    <string name="prompt_candidate_similarity">50% compatibilidade</string>
     <string name="prompt_candidate_situation">Em exercicio - SP</string>
     <string name="dummy_quiz_question">As empresas no Brasil precisam ser regulamentadas para que cumpram com os cuidados ao meio ambiente, pois elas não fariam isso espontaneamente.</string>
     <string name="prompt_exit">Sair</string>
@@ -88,4 +88,6 @@
     <string name="prompt_your_suggestion">Por favor, deixe-nos sua sugestão</string>
     <string name="action_send">Enviar</string>
     <string name="prompt_add_screenshots">Adicione screenshots (Opcional)</string>
+    <string name="prompt_candidate_number">Vote 1445</string>
+    <string name="prompt_candidate_team">PSDB</string>
 </resources>

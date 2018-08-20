@@ -10,19 +10,19 @@ import java.util.List;
 
 import sample.dev.R;
 import sample.dev.cadidate.CandidateFragment.CandidateFragmentListener;
-import sample.dev.cadidate.DummyContent.DummyItem;
+import sample.dev.cadidate.CandidateContent.DummyItem;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
  * specified {@link CandidateFragmentListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyCandidateRecyclerViewAdapter extends RecyclerView.Adapter<MyCandidateRecyclerViewAdapter.ViewHolder> {
+public class CandidateRecyclerViewAdapter extends RecyclerView.Adapter<CandidateRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final CandidateFragmentListener mListener;
 
-    public MyCandidateRecyclerViewAdapter(List<DummyItem> items, CandidateFragmentListener listener) {
+    public CandidateRecyclerViewAdapter(List<DummyItem> items, CandidateFragmentListener listener) {
         mValues = items;
         mListener = listener;
     }
