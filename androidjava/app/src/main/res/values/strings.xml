@@ -91,4 +91,6 @@
     <string name="prompt_candidate_number">Vote 1445</string>
     <string name="prompt_candidate_team">PSDB</string>
     <string name="prompt_app_version">Version 2.18.248</string>
+    <string name="dummy_question">Vou perder meu direito a voto utilizando este App?</string>
+    <string name="dummy_answer">Absolutamente não, animal. Isso não tem nada a ver nem para ser perguntado.</string>
 </resources>
