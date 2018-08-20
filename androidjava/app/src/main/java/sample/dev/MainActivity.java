@@ -26,6 +26,9 @@ import sample.dev.place.PlaceOverviewFragment;
 import sample.dev.product.ProductDetailFragment;
 import sample.dev.quiz.QuizFragment;
 import sample.dev.settings.AboutFragment;
+import sample.dev.settings.AppInfoFragment;
+import sample.dev.settings.FaqContent;
+import sample.dev.settings.FaqFragment;
 import sample.dev.settings.FavoriteContent;
 import sample.dev.settings.FavoriteFragment;
 import sample.dev.settings.HelpFragment;
@@ -49,7 +52,9 @@ public class MainActivity extends AppCompatActivity implements
         FavoriteFragment.FavoriteFragmentListener,
         SuggestionFragment.SuggestionFragmentListener,
         AboutFragment.AboutFragmentListener,
-        HelpFragment.HelpFragmentListener
+        HelpFragment.HelpFragmentListener,
+        FaqFragment.FaqFragmentListener,
+        AppInfoFragment.AppInfoFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -382,6 +387,32 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+    @Override
+    public void openFaq() {
+        log.info("openFaq");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("FAQ");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = FaqFragment.newInstance(1);
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
+    @Override
+    public void openAppInfo() {
+        log.info("openAppInfo");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Sobre o App");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = AppInfoFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
+    @Override
+    public void onFaqInteraction(FaqContent.DummyItem item) {
+        log.info("openAppInfo");
+    }
 }

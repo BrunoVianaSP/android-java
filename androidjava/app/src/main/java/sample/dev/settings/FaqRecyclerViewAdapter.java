@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import sample.dev.R;
 import sample.dev.settings.FaqFragment.FaqFragmentListener;
-import sample.dev.settings.dummy.DummyContent.DummyItem;
+import sample.dev.settings.FaqContent.DummyItem;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class FaqRecyclerViewAdapter extends RecyclerView.Adapter<FaqRecyclerView
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onFaqInteraction(holder.mItem);
                 }
             }
         });

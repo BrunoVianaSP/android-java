@@ -1,29 +1,24 @@
 package sample.dev.settings;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
-import android.service.voice.VoiceInteractionService;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import sample.dev.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HelpFragment.HelpFragmentListener} interface
+ * {@link AppInfoFragment.AppInfoFragmentListener} interface
  * to handle interaction events.
- * Use the {@link HelpFragment#newInstance} factory method to
+ * Use the {@link AppInfoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HelpFragment extends Fragment {
+public class AppInfoFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,15 +28,9 @@ public class HelpFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private HelpFragmentListener mListener;
+    private AppInfoFragmentListener mListener;
 
-    @BindView(R.id.navigatorFaq)
-    public LinearLayout navigatorFaq;
-
-    @BindView(R.id.navigatorAppInfo)
-    public LinearLayout navigatorAppInfo;
-
-    public HelpFragment() {
+    public AppInfoFragment() {
         // Required empty public constructor
     }
 
@@ -51,11 +40,11 @@ public class HelpFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HelpFragment.
+     * @return A new instance of fragment AppInfoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HelpFragment newInstance(String param1, String param2) {
-        HelpFragment fragment = new HelpFragment();
+    public static AppInfoFragment newInstance(String param1, String param2) {
+        AppInfoFragment fragment = new AppInfoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,35 +65,15 @@ public class HelpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_help, container, false);
-        ButterKnife.bind(this, view);
-        return view;
+        return inflater.inflate(R.layout.fragment_app_info, container, false);
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        navigatorFaq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.openFaq();
-            }
-        });
-
-        navigatorAppInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.openAppInfo();
-            }
-        });
-    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof HelpFragmentListener) {
-            mListener = (HelpFragmentListener) context;
+        if (context instanceof AppInfoFragmentListener) {
+            mListener = (AppInfoFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -127,8 +96,7 @@ public class HelpFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface HelpFragmentListener {
-        void openFaq();
-        void openAppInfo();
+    public interface AppInfoFragmentListener {
+
     }
 }

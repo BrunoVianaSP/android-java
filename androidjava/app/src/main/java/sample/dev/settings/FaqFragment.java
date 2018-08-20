@@ -11,10 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import sample.dev.R;
-import sample.dev.settings.dummy.DummyContent;
-import sample.dev.settings.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import sample.dev.settings.FaqContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.
@@ -70,7 +67,7 @@ public class FaqFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new FaqRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new FaqRecyclerViewAdapter(FaqContent.ITEMS, mListener));
         }
         return view;
     }
@@ -105,6 +102,6 @@ public class FaqFragment extends Fragment {
      */
     public interface FaqFragmentListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onFaqInteraction(DummyItem item);
     }
 }
