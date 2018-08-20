@@ -19,17 +19,17 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import sample.dev.cadidate.CandidateFragment;
-import sample.dev.settings.AboutFragment;
-import sample.dev.settings.FavoriteFragment;
-import sample.dev.settings.FavoriteContent;
 import sample.dev.home.HomeFragment;
-import sample.dev.settings.HelpFragment;
-import sample.dev.settings.LegalTermsFragment;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
 import sample.dev.place.PlaceOverviewFragment;
 import sample.dev.product.ProductDetailFragment;
 import sample.dev.quiz.QuizFragment;
+import sample.dev.settings.AboutFragment;
+import sample.dev.settings.FavoriteContent;
+import sample.dev.settings.FavoriteFragment;
+import sample.dev.settings.HelpFragment;
+import sample.dev.settings.LegalTermsFragment;
 import sample.dev.settings.SettingsFragment;
 import sample.dev.settings.SuggestionFragment;
 import sample.dev.user.ProfileFragment;
@@ -66,9 +66,11 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
-                log.info("Same option selected!");
-                return false;
+            if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
+                    log.info("Same option selected!");
+                    return false;
+                }
             }
 
             LinearLayout layout = findViewById(R.id.main_container);
@@ -233,16 +235,13 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fr = fragmentManager.findFragmentById(R.id.main_container);
         if(fr!=null && !(fr instanceof HomeFragment)){
-
             bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         } else {
             offerExitApp();
         }
-
     }
 
     private void offerExitApp() {
@@ -273,6 +272,8 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void openEditProfile() {
         log.info("openEditProfile");
+
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);// show back button
         Objects.requireNonNull(getSupportActionBar()).setTitle("Editar perfil");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

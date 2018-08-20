@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    style="@style/container">
+    style="@style/container"
+    android:layout_marginTop="0dp"
+    android:padding="0dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/titleStyle"
+        style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
         android:text="@string/prompt_faq"
-        android:textColor="@color/primaryTextColor"/>
+        android:textColor="@color/primaryTextColor"
+        android:textStyle="bold"/>
 
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+    <include layout="@layout/layout_horizontal_divider"></include>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/titleStyle"
+        style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
         android:text="@string/prompt_app_info"
-        android:textColor="@color/primaryTextColor"/>
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+        android:textColor="@color/primaryTextColor"
+        android:textStyle="bold"/>
+    <include layout="@layout/layout_horizontal_divider"></include>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/titleStyle"
+        style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
         android:text="@string/prompt_contact_us"
-        android:textColor="@color/primaryTextColor"/>
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+        android:textColor="@color/primaryTextColor"
+        android:textStyle="bold"/>
+    <include layout="@layout/layout_horizontal_divider"></include>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/titleStyle"
+        style="@style/normalTextStyle"
         android:layout_marginLeft="@dimen/default_margin"
         android:text="@string/prompt_terms_conditions"
-        android:textColor="@color/primaryTextColor"/>
-    <include layout="@layout/layout_horizontal_tiny_divider"></include>
+        android:textColor="@color/primaryTextColor"
+        android:textStyle="bold"/>
+    <include layout="@layout/layout_horizontal_divider"></include>
 
 </LinearLayout>

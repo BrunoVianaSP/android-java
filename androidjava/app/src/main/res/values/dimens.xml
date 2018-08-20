@@ -25,7 +25,7 @@
 
     <dimen name="text_margin">16dp</dimen>
     <dimen name="main_container_bottom_margin">55dp</dimen>
-    <dimen name="normal_divider_height">4dp</dimen>
+    <dimen name="normal_divider_height">2dp</dimen>
 
     <dimen name="tiny_stroke_width">1dp</dimen>
     <dimen name="tiny_divider_height">2dp</dimen>

@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import sample.dev.R;
 import sample.dev.settings.FavoriteContent.FavoriteItem;
-
-import java.util.List;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link FavoriteContent.FavoriteItem} and makes a call to the
