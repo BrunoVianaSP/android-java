@@ -84,10 +84,11 @@
     <string name="prompt_about">Sobre</string>
     <string name="prompt_faq">FAQ</string>
     <string name="prompt_app_info">App info</string>
-    <string name="prompt_contact_us">Entrar em contado</string>
+    <string name="prompt_contact_us">Entrar em contato</string>
     <string name="prompt_your_suggestion">Por favor, deixe-nos sua sugestão</string>
     <string name="action_send">Enviar</string>
     <string name="prompt_add_screenshots">Adicione screenshots (Opcional)</string>
     <string name="prompt_candidate_number">Vote 1445</string>
     <string name="prompt_candidate_team">PSDB</string>
+    <string name="prompt_app_version">Version 2.18.248</string>
 </resources>
