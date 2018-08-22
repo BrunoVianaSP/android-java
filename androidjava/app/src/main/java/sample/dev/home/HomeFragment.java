@@ -7,11 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import sample.dev.R;
+import sample.dev.util.CustomPagerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +36,19 @@ public class HomeFragment extends Fragment {
     private HomeListener mListener;
 
     CollapsingToolbarLayout collapsingToolbarLayout;
+
+    private CustomPagerAdapter mCustomPagerAdapter;
+    private ViewPager mViewPager;
+
+    int[] mResources = {
+            R.drawable.brazil,
+            R.drawable.pec_241,
+            R.drawable.barbecue1,
+            R.drawable.barbecue2,
+            R.drawable.brazil2,
+            R.drawable.bread1
+    };
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -76,18 +91,15 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-//        final Button btnProductDetail = (Button) view.findViewById(R.id.btnProductDetail);
-//        btnProductDetail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mListener.onHomeButtonPressed(R.id.btnProductDetail);
-//            }
-//        });
-
+        configViewPager(view);
         configAppBarLayout(view);
         configCollapsingLayout(view);
+    }
 
+    private void configViewPager(View view) {
+        mCustomPagerAdapter = new CustomPagerAdapter(getContext(), mResources);
+        mViewPager = (ViewPager) view.findViewById(R.id.pager);
+        mViewPager.setAdapter(mCustomPagerAdapter);
     }
 
     private void configCollapsingLayout(View view) {
