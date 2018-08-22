@@ -22,10 +22,6 @@ import sample.dev.cadidate.CandidateFragment;
 import sample.dev.home.FeedContent;
 import sample.dev.home.FeedFragment;
 import sample.dev.home.HomeFragment;
-import sample.dev.notification.NotificationFragment;
-import sample.dev.notification.NotificationItemGenerator;
-import sample.dev.place.PlaceOverviewFragment;
-import sample.dev.product.ProductDetailFragment;
 import sample.dev.quiz.QuizFragment;
 import sample.dev.settings.AboutFragment;
 import sample.dev.settings.AppInfoFragment;
@@ -42,11 +38,8 @@ import sample.dev.user.SignupFragment;
 
 public class MainActivity extends AppCompatActivity implements
         HomeFragment.HomeListener,
-        NotificationFragment.NotificationListener,
         SignupFragment.SignupFragmentListener,
         ProfileFragment.ProfileFragmentListener,
-        PlaceOverviewFragment.PlaceFragmentListener,
-        ProductDetailFragment.ProductDetailListener,
         CandidateFragment.CandidateFragmentListener,
         QuizFragment.QuizFragmentListener,
         LegalTermsFragment.LegalTermsFragmentListener,
@@ -217,11 +210,6 @@ public class MainActivity extends AppCompatActivity implements
     public void showOption(int id) {
         MenuItem item = menu.findItem(id);
         item.setVisible(true);
-    }
-
-    @Override
-    public void onNotificationInteraction(NotificationItemGenerator.DummyItem item) {
-
     }
 
     @Override
