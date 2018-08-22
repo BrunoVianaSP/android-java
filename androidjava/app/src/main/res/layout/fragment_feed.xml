@@ -2,6 +2,7 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/tiny_margin"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="@layout/fragment_feed_list">
 
@@ -41,7 +42,8 @@
             <TextView
                 style="@style/descriptionStyle"
                 android:layout_margin="@dimen/tiny_margin"
-                android:text="22/08/2018 12h30m"/>
+                android:text="22/08/2018 12h30m"
+                android:textColor="@color/colorAccent"/>
         </LinearLayout>
     </LinearLayout>
 

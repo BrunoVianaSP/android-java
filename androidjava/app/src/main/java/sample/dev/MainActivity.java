@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void showHomeFragment() {
         log.info("showHomeFragment");
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Últimas Notícias");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Inicio");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = HomeFragment.newInstance("","");
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements
         // Inflate the menu; this adds items to the action bar if it is present.
         this.menu = menu;
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-        hideOption(R.id.action_info);
+        hideOption(R.id.action_refresh);
         return true;
     }
 
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements
             bottomNavigationView.setSelectedItemId(R.id.navigation_user_profile);
             openSettings();
             return true;
-        } else if (id == R.id.action_info) {
+        } else if (id == R.id.action_refresh) {
             return true;
         }
 

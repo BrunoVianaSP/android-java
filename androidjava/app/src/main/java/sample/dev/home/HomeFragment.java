@@ -120,14 +120,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void onBarColapsed() {
-        mListener.showOption(R.id.action_info);
+        mListener.showOption(R.id.action_refresh);
 //        setCollapsingBarTitle("Views Tour");
 //        collapsingToolbarLayout.setVisibility(View.GONE);
         setCollapsingBarTitle("Feed de Noticias");
     }
 
     private void onBarExpanded() {
-        mListener.hideOption(R.id.action_info);
+        mListener.hideOption(R.id.action_refresh);
 //        setCollapsingBarTitle("Home");
         setCollapsingBarTitle("");
 //        collapsingToolbarLayout.setVisibility(View.VISIBLE);
