@@ -1,16 +1,17 @@
 package sample.dev.settings;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import sample.dev.R;
-import sample.dev.settings.FaqFragment.FaqFragmentListener;
-import sample.dev.settings.FaqContent.DummyItem;
-
 import java.util.List;
+
+import sample.dev.R;
+import sample.dev.settings.FaqContent.DummyItem;
+import sample.dev.settings.FaqFragment.FaqFragmentListener;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
@@ -27,15 +28,16 @@ public class FaqRecyclerViewAdapter extends RecyclerView.Adapter<FaqRecyclerView
         mListener = listener;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_faq, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
 //        holder.mIdView.setText(mValues.get(position).id);
 //        holder.mContentView.setText(mValues.get(position).content);
@@ -66,8 +68,8 @@ public class FaqRecyclerViewAdapter extends RecyclerView.Adapter<FaqRecyclerView
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = view.findViewById(R.id.item_number);
+            mContentView = view.findViewById(R.id.content);
         }
 
         @Override

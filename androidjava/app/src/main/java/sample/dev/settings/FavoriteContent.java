@@ -16,12 +16,12 @@ public class FavoriteContent {
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<FavoriteItem> ITEMS = new ArrayList<FavoriteItem>();
+    public static final List<FavoriteItem> ITEMS = new ArrayList<>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, FavoriteItem> ITEM_MAP = new HashMap<String, FavoriteItem>();
+    public static final Map<String, FavoriteItem> ITEM_MAP = new HashMap<>();
 
     private static final int COUNT = 25;
 
