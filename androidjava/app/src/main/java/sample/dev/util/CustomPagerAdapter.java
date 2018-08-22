@@ -38,7 +38,6 @@ public class CustomPagerAdapter extends PagerAdapter {
 
         ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
         imageView.setImageResource(mResources[position]);
-
         container.addView(itemView);
 
         return itemView;
@@ -48,4 +47,28 @@ public class CustomPagerAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout) object);
     }
+
+//    private void onCircleButtonClick() {
+//        _btn1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                _btn1.setImageResource(R.drawable.fill_circle);
+//                _mViewPager.setCurrentItem(0);
+//            }
+//        });
+//        _btn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                _btn2.setImageResource(R.drawable.fill_circle);
+//                _mViewPager.setCurrentItem(1);
+//            }
+//        });
+//        _btn3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                _btn3.setImageResource(R.drawable.fill_circle);
+//                _mViewPager.setCurrentItem(2);
+//            }
+//        });
+//    }
 }

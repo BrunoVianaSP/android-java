@@ -41,12 +41,12 @@ public class HomeFragment extends Fragment {
     private ViewPager mViewPager;
 
     int[] mResources = {
+            R.drawable.banner_2018,
+            R.drawable.pec_241,
             R.drawable.brazil,
             R.drawable.pec_241,
-            R.drawable.barbecue1,
-            R.drawable.barbecue2,
-            R.drawable.brazil2,
-            R.drawable.bread1
+            R.drawable.banner_2018,
+            R.drawable.brazil
     };
 
 
