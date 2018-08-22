@@ -19,6 +19,8 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import sample.dev.cadidate.CandidateFragment;
+import sample.dev.home.FeedContent;
+import sample.dev.home.FeedFragment;
 import sample.dev.home.HomeFragment;
 import sample.dev.notification.NotificationFragment;
 import sample.dev.notification.NotificationItemGenerator;
@@ -54,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements
         AboutFragment.AboutFragmentListener,
         HelpFragment.HelpFragmentListener,
         FaqFragment.FaqFragmentListener,
-        AppInfoFragment.AppInfoFragmentListener
+        AppInfoFragment.AppInfoFragmentListener,
+        FeedFragment.FeedFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -139,15 +142,27 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void showHomeFragment() {
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Inicio");
+        log.info("showHomeFragment");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Últimas Notícias");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = HomeFragment.newInstance("","");
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
+        showHomeFeedList();
     }
 
+    private void showHomeFeedList() {
+        log.info("showHomeFeedList");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = FeedFragment.newInstance(1);
+        fragmentTransaction.replace(R.id.container_home, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
 
     private void configFloatButton() {
@@ -413,6 +428,11 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onFaqInteraction(FaqContent.DummyItem item) {
-        log.info("openAppInfo");
+        log.info("onFaqInteraction");
+    }
+
+    @Override
+    public void onFeedItemInteraction(FeedContent.DummyItem item) {
+        log.info("onFeedItemInteraction");
     }
 }
