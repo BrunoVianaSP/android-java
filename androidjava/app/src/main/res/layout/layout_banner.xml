@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:scaleType="centerCrop"
-    android:src="@drawable/hamburger1"
+    android:src="@drawable/banner_2018"
     app:layout_collapseMode="pin"
     app:layout_collapseParallaxMultiplier="0.7"
-    tools:showIn="@layout/activity_main"
+    tools:showIn="@layout/fragment_home"
     android:contentDescription="TODO" />
