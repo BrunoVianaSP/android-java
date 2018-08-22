@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/fragment_feed_list">
 
-    <TextView
-        android:id="@+id/item_number"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pec_241"
+                android:contentDescription="TODO" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_number"
+                style="@style/titleStyle"
+                android:layout_margin="@dimen/tiny_margin"
+                android:text="Maioridade Penal Reduzida"/>
+
+            <TextView
+                android:id="@+id/content"
+                style="@style/descriptionStyle"
+                android:layout_margin="@dimen/tiny_margin"
+                android:text="@string/dummy_description"/>
+
+            <TextView
+                style="@style/descriptionStyle"
+                android:layout_margin="@dimen/tiny_margin"
+                android:text="22/08/2018 12h30m"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

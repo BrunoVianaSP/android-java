@@ -25,6 +25,12 @@
 
             <include layout="@layout/layout_banner" />
         </android.support.design.widget.CollapsingToolbarLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_refresh_black_24dp"
+            android:text="@string/prompt_update"/>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
