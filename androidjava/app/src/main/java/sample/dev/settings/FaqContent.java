@@ -11,17 +11,17 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class FavoriteContent {
+public class FaqContent {
 
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<FavoriteItem> ITEMS = new ArrayList<>();
+    public static final List<DummyItem> ITEMS = new ArrayList<>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, FavoriteItem> ITEM_MAP = new HashMap<>();
+    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<>();
 
     private static final int COUNT = 25;
 
@@ -32,13 +32,13 @@ public class FavoriteContent {
         }
     }
 
-    private static void addItem(FavoriteItem item) {
+    private static void addItem(DummyItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
-    private static FavoriteItem createDummyItem(int position) {
-        return new FavoriteItem(String.valueOf(position), "Item " + position, makeDetails(position));
+    private static DummyItem createDummyItem(int position) {
+        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {
@@ -53,12 +53,12 @@ public class FavoriteContent {
     /**
      * A dummy item representing a piece of content.
      */
-    public static class FavoriteItem {
+    public static class DummyItem {
         public final String id;
         public final String content;
         public final String details;
 
-        public FavoriteItem(String id, String content, String details) {
+        public DummyItem(String id, String content, String details) {
             this.id = id;
             this.content = content;
             this.details = details;

@@ -1,4 +1,4 @@
-package sample.dev.notification;
+package sample.dev.settings;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,33 +12,33 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import sample.dev.R;
-import sample.dev.notification.NotificationItemGenerator.DummyItem;
+import sample.dev.settings.FaqContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.
  * <p/>
- * Activities containing this fragment MUST implement the {@link NotificationListener}
+ * Activities containing this fragment MUST implement the {@link FaqFragmentListener}
  * interface.
  */
-public class NotificationFragment extends Fragment {
+public class FaqFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
-    private NotificationListener mListener;
+    private FaqFragmentListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public NotificationFragment() {
+    public FaqFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static NotificationFragment newInstance(int columnCount) {
-        NotificationFragment fragment = new NotificationFragment();
+    public static FaqFragment newInstance(int columnCount) {
+        FaqFragment fragment = new FaqFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -57,7 +57,7 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_notification_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_faq_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -68,7 +68,7 @@ public class NotificationFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new NotificationRecyclerViewAdapter(NotificationItemGenerator.ITEMS, mListener));
+            recyclerView.setAdapter(new FaqRecyclerViewAdapter(FaqContent.ITEMS, mListener));
         }
         return view;
     }
@@ -77,11 +77,11 @@ public class NotificationFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof NotificationListener) {
-            mListener = (NotificationListener) context;
+        if (context instanceof FaqFragmentListener) {
+            mListener = (FaqFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement NotificationListener");
+                    + " must implement OnListFragmentInteractionListener");
         }
     }
 
@@ -101,8 +101,8 @@ public class NotificationFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface NotificationListener {
+    public interface FaqFragmentListener {
         // TODO: Update argument type and name
-        void onNotificationInteraction(DummyItem item);
+        void onFaqInteraction(DummyItem item);
     }
 }

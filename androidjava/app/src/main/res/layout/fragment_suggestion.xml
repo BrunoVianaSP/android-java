@@ -8,14 +8,14 @@
     android:orientation="vertical">
 
     <LinearLayout
-        style="@style/container"
-        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
         android:orientation="vertical">
         <include layout="@layout/layout_suggestion" />
         <include layout="@layout/layout_button_send" />
     </LinearLayout>
 
-    <include layout="@layout/layout_add_screenshot" />
+    <!--<include layout="@layout/layout_add_screenshot" />-->
 
 </LinearLayout>

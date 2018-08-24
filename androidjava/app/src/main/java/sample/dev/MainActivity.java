@@ -19,17 +19,18 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import sample.dev.cadidate.CandidateFragment;
-import sample.dev.settings.AboutFragment;
-import sample.dev.settings.FavoriteFragment;
-import sample.dev.settings.FavoriteContent;
+import sample.dev.home.FeedContent;
+import sample.dev.home.FeedFragment;
 import sample.dev.home.HomeFragment;
+import sample.dev.quiz.QuizFragment;
+import sample.dev.settings.AboutFragment;
+import sample.dev.settings.AppInfoFragment;
+import sample.dev.settings.FaqContent;
+import sample.dev.settings.FaqFragment;
+import sample.dev.settings.FavoriteContent;
+import sample.dev.settings.FavoriteFragment;
 import sample.dev.settings.HelpFragment;
 import sample.dev.settings.LegalTermsFragment;
-import sample.dev.notification.NotificationFragment;
-import sample.dev.notification.NotificationItemGenerator;
-import sample.dev.place.PlaceOverviewFragment;
-import sample.dev.product.ProductDetailFragment;
-import sample.dev.quiz.QuizFragment;
 import sample.dev.settings.SettingsFragment;
 import sample.dev.settings.SuggestionFragment;
 import sample.dev.user.ProfileFragment;
@@ -37,11 +38,8 @@ import sample.dev.user.SignupFragment;
 
 public class MainActivity extends AppCompatActivity implements
         HomeFragment.HomeListener,
-        NotificationFragment.NotificationListener,
         SignupFragment.SignupFragmentListener,
         ProfileFragment.ProfileFragmentListener,
-        PlaceOverviewFragment.PlaceFragmentListener,
-        ProductDetailFragment.ProductDetailListener,
         CandidateFragment.CandidateFragmentListener,
         QuizFragment.QuizFragmentListener,
         LegalTermsFragment.LegalTermsFragmentListener,
@@ -49,7 +47,10 @@ public class MainActivity extends AppCompatActivity implements
         FavoriteFragment.FavoriteFragmentListener,
         SuggestionFragment.SuggestionFragmentListener,
         AboutFragment.AboutFragmentListener,
-        HelpFragment.HelpFragmentListener
+        HelpFragment.HelpFragmentListener,
+        FaqFragment.FaqFragmentListener,
+        AppInfoFragment.AppInfoFragmentListener,
+        FeedFragment.FeedFragmentListener
 {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
@@ -66,10 +67,15 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
-                log.info("Same option selected!");
-                return false;
+            log.info("getSupportFragmentManager().getBackStackEntryCount(): " + getSupportFragmentManager().getBackStackEntryCount());
+            if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
+                    log.info("Same option selected!");
+                    return false;
+                }
             }
+
+            getSupportFragmentManager().getFragments().clear();
 
             LinearLayout layout = findViewById(R.id.main_container);
             layout.removeAllViews();
@@ -129,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void showHomeFragment() {
+        log.info("showHomeFragment");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Inicio");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -136,8 +143,19 @@ public class MainActivity extends AppCompatActivity implements
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
+        showHomeFeedList();
     }
 
+    private void showHomeFeedList() {
+        log.info("showHomeFeedList");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = FeedFragment.newInstance(1);
+        fragmentTransaction.replace(R.id.container_home, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
 
     private void configFloatButton() {
@@ -161,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements
         // Inflate the menu; this adds items to the action bar if it is present.
         this.menu = menu;
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-        hideOption(R.id.action_info);
+        hideOption(R.id.action_refresh);
         return true;
     }
 
@@ -177,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements
             bottomNavigationView.setSelectedItemId(R.id.navigation_user_profile);
             openSettings();
             return true;
-        } else if (id == R.id.action_info) {
+        } else if (id == R.id.action_refresh) {
             return true;
         }
 
@@ -192,11 +210,6 @@ public class MainActivity extends AppCompatActivity implements
     public void showOption(int id) {
         MenuItem item = menu.findItem(id);
         item.setVisible(true);
-    }
-
-    @Override
-    public void onNotificationInteraction(NotificationItemGenerator.DummyItem item) {
-
     }
 
     @Override
@@ -233,16 +246,13 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fr = fragmentManager.findFragmentById(R.id.main_container);
         if(fr!=null && !(fr instanceof HomeFragment)){
-
             bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         } else {
             offerExitApp();
         }
-
     }
 
     private void offerExitApp() {
@@ -273,6 +283,8 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void openEditProfile() {
         log.info("openEditProfile");
+
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);// show back button
         Objects.requireNonNull(getSupportActionBar()).setTitle("Editar perfil");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -378,6 +390,37 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+    @Override
+    public void openFaq() {
+        log.info("openFaq");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("FAQ");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = FaqFragment.newInstance(1);
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
+    @Override
+    public void openAppInfo() {
+        log.info("openAppInfo");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Sobre o App");
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = AppInfoFragment.newInstance("","");
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
+    @Override
+    public void onFaqInteraction(FaqContent.DummyItem item) {
+        log.info("onFaqInteraction");
+    }
+
+    @Override
+    public void onFeedItemInteraction(FeedContent.DummyItem item) {
+        log.info("onFeedItemInteraction");
+    }
 }

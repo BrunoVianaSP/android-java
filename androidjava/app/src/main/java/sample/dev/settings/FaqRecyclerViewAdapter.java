@@ -10,19 +10,20 @@ import android.widget.TextView;
 import java.util.List;
 
 import sample.dev.R;
-import sample.dev.settings.FavoriteContent.FavoriteItem;
+import sample.dev.settings.FaqContent.DummyItem;
+import sample.dev.settings.FaqFragment.FaqFragmentListener;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link FavoriteContent.FavoriteItem} and makes a call to the
- * specified {@link FavoriteFragment.FavoriteFragmentListener}.
+ * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
+ * specified {@link FaqFragmentListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class FavoriteRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteRecyclerViewAdapter.ViewHolder> {
+public class FaqRecyclerViewAdapter extends RecyclerView.Adapter<FaqRecyclerViewAdapter.ViewHolder> {
 
-    private final List<FavoriteItem> mValues;
-    private final FavoriteFragment.FavoriteFragmentListener mListener;
+    private final List<DummyItem> mValues;
+    private final FaqFragmentListener mListener;
 
-    public FavoriteRecyclerViewAdapter(List<FavoriteContent.FavoriteItem> items, FavoriteFragment.FavoriteFragmentListener listener) {
+    public FaqRecyclerViewAdapter(List<DummyItem> items, FaqFragmentListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -31,15 +32,15 @@ public class FavoriteRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteRe
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_favorite, parent, false);
+                .inflate(R.layout.fragment_faq, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+//        holder.mIdView.setText(mValues.get(position).id);
+//        holder.mContentView.setText(mValues.get(position).content);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +48,7 @@ public class FavoriteRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteRe
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onFavoriteSelected(holder.mItem);
+                    mListener.onFaqInteraction(holder.mItem);
                 }
             }
         });
@@ -62,7 +63,7 @@ public class FavoriteRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteRe
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public FavoriteContent.FavoriteItem mItem;
+        public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
