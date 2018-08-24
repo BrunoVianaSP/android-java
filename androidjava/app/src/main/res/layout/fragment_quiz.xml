@@ -7,26 +7,28 @@
     card_view:cardCornerRadius="@dimen/default_radius"
     card_view:cardUseCompatPadding="true"
     android:layout_margin="@dimen/tiny_margin"
-    app:cardBackgroundColor="@color/primaryDarkColor">
+    app:cardBackgroundColor="@color/primaryLightColor">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/primaryDarkColor">
+        android:background="@color/primaryLightColor">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="120dp"
-        android:layout_margin="@dimen/tiny_margin"
+            android:layout_margin="@dimen/tiny_margin"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/brazil"
+            android:src="@drawable/banner_2018"
+            android:scaleType="fitXY"
             android:contentDescription="TODO" />
 
+        <include layout="@layout/layout_horizontal_divider"></include>
         <LinearLayout
             style="@style/container"
             android:orientation="horizontal"
-            android:background="@color/primaryColor">
+            android:background="@color/primaryLightColor">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -44,6 +46,7 @@
             </LinearLayout>
 
         </LinearLayout>
+        <include layout="@layout/layout_horizontal_divider"></include>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
