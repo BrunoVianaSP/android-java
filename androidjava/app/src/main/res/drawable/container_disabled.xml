@@ -12,6 +12,6 @@
         android:bottom="@dimen/small_padding" />
     <stroke
         android:width="@dimen/default_stroke_width"
-        android:color="@color/primaryDetailColor" />
+        android:color="@color/primaryColor" />
     <corners android:radius="@dimen/tiny_radius" />
 </shape>

@@ -6,10 +6,6 @@
 
 
     <!--Yellow -->
-    <!--<color name="primaryColor">#F9DB22</color>-->
-    <!--<color name="primaryLightColor">#FAEC33</color>-->
-    <!--<color name="primaryDarkColor">#E8CA11</color>-->
-
     <!--<color name="primaryColor">#E8CA11</color>-->
     <!--<color name="primaryLightColor">#F9DB22</color>-->
     <!--<color name="primaryDarkColor">#D7B900</color>-->
@@ -21,33 +17,35 @@
     <!--<color name="secondaryDarkColor">#008A29</color>-->
     <!--<color name="secondaryTextColor">#ffffff</color>-->
     <!--<color name="secondaryDetailColor">#ffffff</color>-->
+    <!--<color name="colorAccent">#FEDF00</color>-->
 
     <!--GREEN SET-->
-    <color name="primaryColor">#009B3A</color>
-    <color name="primaryLightColor">#11AC4B</color>
-    <color name="primaryDarkColor">#008A29</color>
-    <color name="primaryTextColor">#FFFFFF</color>
-    <color name="primaryDetailColor">#FEDF00</color>
-
-    <color name="secondaryColor">#FEDF00</color>
-    <color name="secondaryLightColor">#FFEF11</color>
-    <color name="secondaryDarkColor">#EDCE00</color>
-    <color name="secondaryTextColor">#009B3A</color>
-    <color name="secondaryDetailColor">#002776</color>
-
-
-    <!--<color name="primaryColor">#002776</color>-->
-    <!--<color name="primaryLightColor">#113887</color>-->
-    <!--<color name="primaryDarkColor">#001665</color>-->
-    <!--<color name="primaryTextColor">#ffffff</color>-->
+    <!--<color name="primaryColor">#009B3A</color>-->
+    <!--<color name="primaryLightColor">#11AC4B</color>-->
+    <!--<color name="primaryDarkColor">#008A29</color>-->
+    <!--<color name="primaryTextColor">#FFFFFF</color>-->
     <!--<color name="primaryDetailColor">#FEDF00</color>-->
 
     <!--<color name="secondaryColor">#FEDF00</color>-->
     <!--<color name="secondaryLightColor">#FFEF11</color>-->
     <!--<color name="secondaryDarkColor">#EDCE00</color>-->
-    <!--<color name="secondaryTextColor">#11AC4B</color>-->
-    <!--<color name="secondaryDetailColor">#11AC4B</color>-->
+    <!--<color name="secondaryTextColor">#009B3A</color>-->
+    <!--<color name="secondaryDetailColor">#002776</color>-->
+    <!--<color name="colorAccent">#FEDF00</color>-->
 
+
+    <color name="primaryColor">#002776</color>
+    <color name="primaryLightColor">#113887</color>
+    <color name="primaryDarkColor">#001665</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="primaryDetailColor">#FEDF00</color>
+
+    <color name="secondaryColor">#FEDF00</color>
+    <color name="secondaryLightColor">#FFEF11</color>
+    <color name="secondaryDarkColor">#EDCE00</color>
+    <color name="secondaryTextColor">#11AC4B</color>
+    <color name="secondaryDetailColor">#11AC4B</color>
+    <color name="colorAccent">#FEDF00</color>
 
 
     <!--CAMOUFLAGE-->
@@ -62,9 +60,10 @@
     <!--<color name="secondaryDarkColor">#D0D0D0</color>-->
     <!--<color name="secondaryTextColor">#000000</color>-->
     <!--<color name="secondaryDetailColor">#D0D0D0</color>-->
+    <!--<color name="colorAccent">#FFFFFF</color>-->
 
 
-    <color name="colorAccent">#2a1aDD</color>
+
     <color name="default_stroke_color">@color/primaryDetailColor</color>
     <color name="white">#FFFFFF</color>
     <color name="ice">#CDCDCD</color>
