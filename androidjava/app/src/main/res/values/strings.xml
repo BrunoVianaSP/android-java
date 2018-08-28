@@ -100,4 +100,7 @@
     <string name="prompt_update">Atualizar</string>
     <string name="google_login_Text">Login with Google</string>
     <string name="action_facebook_login">Login com Facebook</string>
+    <string name="prompt_recover_password">Recuperar Senha</string>
+    <string name="action_ask_password_recovery">Solicitar</string>
+    <string name="prompt_redefine_password">Redefinir Senha</string>
 </resources>

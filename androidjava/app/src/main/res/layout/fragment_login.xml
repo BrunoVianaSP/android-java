@@ -18,40 +18,7 @@
 
         <include layout="@layout/layout_password" />
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="@dimen/default_margin">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/SwitchCompatStyle"
-                    android:id="@+id/reminder" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/smallTextStyle"
-                    android:text="Manter conectado" />
-            </LinearLayout>
-        <TextView
-            android:id="@+id/forgotPassword"
-            style="@style/smallTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="end"
-            android:text="@string/prompt_forgot_password"
-            android:textAlignment="textEnd"
-            android:autoLink="all"
-            android:textColorLink="@color/white"
-            />
-        </LinearLayout>
+        <include layout="@layout/layout_login_management" />
 
 
         <Button
@@ -89,27 +56,6 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             />
-
-        <!--<com.facebook.login.widget.LoginButton-->
-            <!--android:id="@+id/login_button"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:layout_margin="@dimen/tiny_margin"-->
-            <!--android:paddingTop="10dp"-->
-            <!--android:paddingBottom="10dp"-->
-            <!--android:textSize="@dimen/default_text_size"-->
-            <!--facebook:com_facebook_login_text="Facebook"-->
-            <!--facebook:com_facebook_logout_text="Facebook" />-->
-
-        <!--<com.google.android.gms.common.SignInButton-->
-            <!--android:id="@+id/signin"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:text="@string/google_login_Text"-->
-            <!--android:textSize="@dimen/default_text_size"-->
-            <!--android:layout_margin="@dimen/tiny_margin"-->
-            <!--/>-->
-
 
     </LinearLayout>
 
