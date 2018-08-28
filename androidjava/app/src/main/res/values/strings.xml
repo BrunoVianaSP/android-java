@@ -98,4 +98,6 @@
     <string name="dummy_question">Vou perder meu direito a voto utilizando este App?</string>
     <string name="dummy_answer">Absolutamente não, animal. Isso não tem nada a ver nem para ser perguntado.</string>
     <string name="prompt_update">Atualizar</string>
+    <string name="google_login_Text">Login with Google</string>
+    <string name="action_facebook_login">Login com Facebook</string>
 </resources>
