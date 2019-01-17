@@ -7,11 +7,11 @@
     <android.support.design.widget.TextInputLayout
         style="@style/textInputLayout">
         <AutoCompleteTextView
-            android:id="@+id/email"
+            android:id="@+id/seller"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
-            android:inputType="textEmailAddress"
+            android:hint="@string/prompt_seller"
+            android:inputType="textAutoComplete"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/primaryTextColor"

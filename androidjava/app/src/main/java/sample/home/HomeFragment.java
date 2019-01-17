@@ -12,8 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import sample.adapter.CustomPagerAdapter;
 import sample.dev.R;
-import sample.util.CustomPagerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

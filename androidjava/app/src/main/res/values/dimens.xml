@@ -35,6 +35,7 @@
 
     <dimen name="tiny_vetical_separator">2dp</dimen>
     <dimen name="tiny_vetical_height">100dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>

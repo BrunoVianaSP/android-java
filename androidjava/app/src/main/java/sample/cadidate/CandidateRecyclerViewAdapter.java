@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import sample.dev.R;
 import sample.cadidate.CandidateContent.DummyItem;
 import sample.cadidate.CandidateFragment.CandidateFragmentListener;
+import sample.dev.R;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the

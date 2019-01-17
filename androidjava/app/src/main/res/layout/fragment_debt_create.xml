@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    android:layout_gravity="center">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/primaryColor">
+
+            <include layout="@layout/layout_date" />
+
+            <include layout="@layout/layout_name" />
+
+            <include layout="@layout/layout_category" />
+
+            <include layout="@layout/layout_subcategory" />
+
+            <include layout="@layout/layout_seller" />
+
+            <include layout="@layout/layout_price" />
+
+            <include layout="@layout/layout_status" />
+
+            <Button
+                android:id="@+id/email_sign_in_button"
+                style="@style/button"
+                android:text="@string/action_sign_in" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
