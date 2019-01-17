@@ -136,6 +136,15 @@
         <item name="android:textSize">@dimen/default_text_size</item>
     </style>
 
+    <style name="smallTextStyle" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+
+
 
     <style name="textInputLayout" parent="Widget.Design.TextInputLayout">
         <item name="android:layout_width">match_parent</item>
@@ -187,5 +196,13 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+    <style name="SwitchCompatStyle" >
+        <item name="thumbTint">@color/switch_thumb_color</item>
+        <item name="trackTint">@color/switch_track_color</item>
+    </style>
 
+
+
+    <color name="switch_thumb_color">@color/colorAccent</color>
+    <color name="switch_track_color">@color/colorAccent</color>
 </resources>

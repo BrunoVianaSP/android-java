@@ -74,4 +74,6 @@
     <color name="transparent">#00000000</color>
     <color name="black">#000000</color>
     <color name="gray">#DDDDDD</color>
+    <color name="green">#00FF00</color>
+    <color name="facebook_blue">#3b5998</color>
 </resources>
