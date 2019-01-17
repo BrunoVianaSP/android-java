@@ -14,14 +14,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import java.io.IOException;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import sample.dev.api.UserAPI;
 import sample.dev.cadidate.CandidateFragment;
+import sample.dev.controller.Controller;
 import sample.dev.home.FeedContent;
 import sample.dev.home.FeedFragment;
 import sample.dev.home.HomeFragment;
+import sample.dev.model.User;
 import sample.dev.quiz.QuizFragment;
 import sample.dev.settings.AboutFragment;
 import sample.dev.settings.AppInfoFragment;
@@ -132,6 +140,44 @@ public class MainActivity extends AppCompatActivity implements
         ConfigBottomNavigator();
         configFloatButton();
         showHomeFragment();
+
+//        Controller ctrl = new Controller();
+//        ctrl.start();
+
+
+        log.info("START REQUEST");
+        User user = new User();
+        final UserAPI loginClient = Controller.createService(UserAPI.class);
+        Call<ResponseBody> call = loginClient.login(user);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        // get String from response
+                        String stringResponse = response.body().string();
+                        log.info("REQUEST RESULT: " + stringResponse);
+                    } catch (IOException e) {
+                        log.info("REQUEST RESULT ERROR ");
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+
+//        try {
+//            log.info("CALL EXECUTE");
+//            Response<ResponseBody> response = call.execute();
+//            log.info("response: " + response);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     private void showHomeFragment() {
