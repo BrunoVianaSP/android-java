@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".user.SignupFragment"
+    tools:context="sample.user.SignupFragment"
     android:background="@color/primaryColor"
     android:padding="@dimen/small_padding">
 

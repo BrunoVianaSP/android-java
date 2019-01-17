@@ -8,6 +8,6 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/tiny_margin"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".settings.HelpFragment"
+    tools:context="sample.settings.HelpFragment"
     tools:listitem="@layout/fragment_dashboard"
     android:background="@color/primaryColor"/>

@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.LoadingActivity"
+            android:name="sample.activity.LoadingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_loading"
             android:theme="@style/FullscreenTheme">
@@ -26,11 +26,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="sample.activity.MainActivity"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="sample.activity.LoginActivity"
             android:label="@string/title_activity_login" />
     </application>
 </manifest>

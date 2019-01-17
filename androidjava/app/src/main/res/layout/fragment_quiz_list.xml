@@ -7,5 +7,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".quiz.QuizFragment"
+    tools:context="sample.quiz.QuizFragment"
     tools:listitem="@layout/fragment_quiz" />
