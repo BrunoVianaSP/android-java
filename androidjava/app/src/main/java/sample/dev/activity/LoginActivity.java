@@ -1,4 +1,4 @@
-package sample.dev;
+package sample.dev.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,6 +31,7 @@ import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import sample.dev.R;
 import sample.dev.user.ChangePasswordFragment;
 import sample.dev.user.ForgotPasswordFragment;
 import sample.dev.user.LoginFragment;

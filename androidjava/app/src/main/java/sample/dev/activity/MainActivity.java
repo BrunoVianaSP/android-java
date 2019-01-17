@@ -1,4 +1,4 @@
-package sample.dev;
+package sample.dev.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -23,6 +23,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import sample.dev.R;
 import sample.dev.api.UserAPI;
 import sample.dev.cadidate.CandidateFragment;
 import sample.dev.controller.Controller;
