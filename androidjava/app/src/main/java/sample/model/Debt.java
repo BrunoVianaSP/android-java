@@ -6,9 +6,9 @@ import lombok.Data;
 
 @Data
 public class Debt {
-    private LocalDateTime date;
+    private long date;
     private String day;
-    private String item;
+    private String name;
     private String category;
     private String subcategory;
     private String seller;

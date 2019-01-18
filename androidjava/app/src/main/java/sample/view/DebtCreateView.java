@@ -3,6 +3,7 @@ package sample.view;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.CalendarView;
 
 import butterknife.BindView;
@@ -26,6 +27,8 @@ public class DebtCreateView extends RecyclerView.ViewHolder {
     public AutoCompleteTextView price;
     @BindView(R.id.status)
     public AutoCompleteTextView status;
+    @BindView(R.id.saveButton)
+    public Button saveButton;
 
     public DebtCreateView(View view) {
         super(view);

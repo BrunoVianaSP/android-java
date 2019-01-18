@@ -10,6 +10,7 @@ import java.util.List;
 
 import sample.debt.DebtViewFragment.OnListFragmentInteractionListener;
 import sample.debt.dummy.DummyContent.DummyItem;
+import sample.dev.R;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the

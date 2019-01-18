@@ -28,7 +28,7 @@
             <include layout="@layout/layout_status" />
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/saveButton"
                 style="@style/button"
                 android:text="@string/action_sign_in" />
         </LinearLayout>
