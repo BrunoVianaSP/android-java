@@ -44,6 +44,7 @@ import sample.settings.SettingsFragment;
 import sample.settings.SuggestionFragment;
 import sample.user.ProfileFragment;
 import sample.user.SignupFragment;
+import sample.util.FragmentUtils;
 
 public class MainActivity extends AppCompatActivity implements
         HomeFragment.HomeListener,
@@ -76,61 +77,58 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            log.info("getSupportFragmentManager().getBackStackEntryCount(): " + getSupportFragmentManager().getBackStackEntryCount());
-            if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
-                if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
-                    log.info("Same option selected!");
-                    return false;
-                }
+            if (isSameOptionSelected(item)) {
+                return false;
             }
 
-            getSupportFragmentManager().getFragments().clear();
+            cleanMainContainer();
 
-            LinearLayout layout = findViewById(R.id.main_container);
-            layout.removeAllViews();
-
-            switch (item.getItemId()) {
-                case R.id.navigation_home: {
-                    showHomeFragment();
-                    return true;
-                }
-
-                case R.id.navigation_user_profile: {
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Usuario");
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = ProfileFragment.newInstance("", "");
-                    fragmentTransaction.replace(R.id.main_container, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                    return true;
-                }
-
-                case R.id.navigation_quiz: {
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Quiz de Afinidade");
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = QuizFragment.newInstance(1);
-                    fragmentTransaction.replace(R.id.main_container, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                    return true;
-                }
-
-                case R.id.navigation_candidates: {
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Candidatos");
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    Fragment fragment = CandidateFragment.newInstance(1);
-                    fragmentTransaction.replace(R.id.main_container, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                    return true;
-                }
-            }
-            return false;
+            return showSelectedFragment(item);
         }
     };
+
+    private boolean isSameOptionSelected(@NonNull MenuItem item) {
+        if ( getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            if (bottomNavigationView.getSelectedItemId() == item.getItemId()) {
+                log.info("Same option selected!");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void cleanMainContainer() {
+        FragmentUtils.clearAllFragments(MainActivity.this);
+        LinearLayout layout = findViewById(R.id.main_container);
+        layout.removeAllViews();
+    }
+
+    private boolean showSelectedFragment(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.navigation_home: {
+                showHomeFragment();
+                return true;
+            }
+            case R.id.navigation_user_profile: {
+                Objects.requireNonNull(getSupportActionBar()).setTitle("Usuario");
+                FragmentUtils.replace(MainActivity.this, ProfileFragment.newInstance("", ""), R.id.main_container);
+                return true;
+            }
+
+            case R.id.navigation_quiz: {
+                Objects.requireNonNull(getSupportActionBar()).setTitle("Quiz de Afinidade");
+                FragmentUtils.replace(MainActivity.this, QuizFragment.newInstance(1), R.id.main_container);
+                return true;
+            }
+
+            case R.id.navigation_candidates: {
+                Objects.requireNonNull(getSupportActionBar()).setTitle("Candidatos");
+                FragmentUtils.replace(MainActivity.this, CandidateFragment.newInstance(1), R.id.main_container);
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     @Override
@@ -141,10 +139,6 @@ public class MainActivity extends AppCompatActivity implements
         ConfigBottomNavigator();
         configFloatButton();
         showHomeFragment();
-
-//        Controller ctrl = new Controller();
-//        ctrl.start();
-
 
         log.info("START REQUEST");
         User user = new User();
@@ -170,38 +164,18 @@ public class MainActivity extends AppCompatActivity implements
                 t.printStackTrace();
             }
         });
-
-//        try {
-//            log.info("CALL EXECUTE");
-//            Response<ResponseBody> response = call.execute();
-//            log.info("response: " + response);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
     }
 
     private void showHomeFragment() {
         log.info("showHomeFragment");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Inicio");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = HomeFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-
+        FragmentUtils.replace(MainActivity.this, HomeFragment.newInstance("",""), R.id.main_container);
         showHomeFeedList();
     }
 
     private void showHomeFeedList() {
         log.info("showHomeFeedList");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = FeedFragment.newInstance(1);
-        fragmentTransaction.replace(R.id.container_home, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, FeedFragment.newInstance(1), R.id.main_container);
     }
 
 
@@ -261,45 +235,31 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = ProfileFragment.newInstance("", "");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, ProfileFragment.newInstance("", ""), R.id.main_container);
     }
 
     @Override
     public void onHomeButtonPressed(int button) {
         log.info("onHomeInteraction: " + button);
-
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//
-//        switch (button) {
-//            case R.id.btnProductDetail: {
-//                Fragment fragment = ProductDetailFragment.newInstance("","");
-//                fragmentTransaction.replace(R.id.main_container, fragment);
-//                fragmentTransaction.commit();
-//               break;
-//            }
-//            default: {
-//                log.info("Invalid button pressed!");
-//                break;
-//            }
-//        }
-
     }
 
     @Override
     public void onBackPressed() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fr = fragmentManager.findFragmentById(R.id.main_container);
-        if(fr!=null && !(fr instanceof HomeFragment)){
-            bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        if(isGoingToHomeScreen(fr)){
+            setHomeScreenSelected();
         } else {
             offerExitApp();
         }
+    }
+
+    private void setHomeScreenSelected() {
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+    }
+
+    private boolean isGoingToHomeScreen(Fragment fr) {
+        return fr!=null && !(fr instanceof HomeFragment);
     }
 
     private void offerExitApp() {
@@ -330,27 +290,15 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void openEditProfile() {
         log.info("openEditProfile");
-
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);// show back button
         Objects.requireNonNull(getSupportActionBar()).setTitle("Editar perfil");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = SignupFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, SignupFragment.newInstance("", ""), R.id.main_container);
     }
 
     @Override
     public void openLegalTerms() {
         log.info("openLegalTerms");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Termos Legais");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = LegalTermsFragment.newInstance("", "");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, LegalTermsFragment.newInstance("", ""), R.id.main_container);
     }
 
 
@@ -358,12 +306,7 @@ public class MainActivity extends AppCompatActivity implements
     public void openSettings() {
         log.info("openSettings");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Configurações");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = SettingsFragment.newInstance("", "");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, SettingsFragment.newInstance("", ""), R.id.main_container);
     }
 
     @Override
@@ -372,19 +315,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-
-
-
     @Override
     public void openFavorites() {
         log.info("openFavorites");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Favoritos");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = FavoriteFragment.newInstance(1);
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, FavoriteFragment.newInstance(1), R.id.main_container);
     }
 
     @Override
@@ -392,48 +327,25 @@ public class MainActivity extends AppCompatActivity implements
         log.info("onFavoriteSelected");
     }
 
-
-
     @Override
     public void openHelp() {
         log.info("openHelp");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Ajuda");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = HelpFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, HelpFragment.newInstance("",""), R.id.main_container);
     }
 
     @Override
     public void openSuggestion() {
         log.info("openSuggestion");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Sugestões");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = SuggestionFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, SuggestionFragment.newInstance("",""), R.id.main_container);
     }
 
     @Override
     public void openAbout() {
         log.info("openAbout");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Sobre a Empresa");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = AboutFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
-
-    @Override
-    public void exit() {
-        log.info("exit");
-        offerExitApp();
+        FragmentUtils.replace(MainActivity.this, AboutFragment.newInstance("",""), R.id.main_container);
     }
 
 
@@ -441,24 +353,14 @@ public class MainActivity extends AppCompatActivity implements
     public void openFaq() {
         log.info("openFaq");
         Objects.requireNonNull(getSupportActionBar()).setTitle("FAQ");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = FaqFragment.newInstance(1);
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, FaqFragment.newInstance(1), R.id.main_container);
     }
 
     @Override
     public void openAppInfo() {
         log.info("openAppInfo");
         Objects.requireNonNull(getSupportActionBar()).setTitle("Sobre o App");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = AppInfoFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(MainActivity.this, AppInfoFragment.newInstance("", ""), R.id.main_container);
     }
 
     @Override
@@ -470,4 +372,11 @@ public class MainActivity extends AppCompatActivity implements
     public void onFeedItemInteraction(FeedContent.DummyItem item) {
         log.info("onFeedItemInteraction");
     }
+
+    @Override
+    public void exit() {
+        log.info("exit");
+        offerExitApp();
+    }
+
 }
