@@ -81,7 +81,7 @@ public class FaqFragment extends Fragment {
             mListener = (FaqFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+                    + " must implement DebtViewFragmentListener");
         }
     }
 

@@ -1,11 +1,13 @@
 package sample.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import lombok.Data;
 
 @Data
-public class Debt {
+public class Debt implements Serializable {
+    private String id;
     private long date;
     private String day;
     private String name;

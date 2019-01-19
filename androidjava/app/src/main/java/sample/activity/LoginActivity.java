@@ -35,6 +35,7 @@ import sample.dev.R;
 import sample.user.ChangePasswordFragment;
 import sample.user.ForgotPasswordFragment;
 import sample.user.LoginFragment;
+import sample.util.FragmentUtils;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -86,12 +87,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void showLoginFragment() {
         Objects.requireNonNull(getSupportActionBar()).setTitle("Login");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        loginFragment = LoginFragment.newInstance("","");
-        fragmentTransaction.replace(R.id.login_container, loginFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        FragmentUtils.replace(this, LoginFragment.newInstance("",""), R.id.login_container);
     }
 
     private void populateAutoComplete() {

@@ -33,6 +33,7 @@
             android:name="sample.activity.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
+            android:parentActivityName="sample.activity.MainActivity"
             android:name="sample.activity.DebtActivity"
             android:label="@string/title_activity_debt"
             android:theme="@style/AppTheme.NoActionBar"></activity>

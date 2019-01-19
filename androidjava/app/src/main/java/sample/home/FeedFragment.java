@@ -81,7 +81,7 @@ public class FeedFragment extends Fragment {
             mListener = (FeedFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+                    + " must implement DebtViewFragmentListener");
         }
     }
 

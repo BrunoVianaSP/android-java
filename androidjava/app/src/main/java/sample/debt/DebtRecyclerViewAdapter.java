@@ -8,21 +8,21 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import sample.debt.DebtViewFragment.OnListFragmentInteractionListener;
 import sample.debt.dummy.DummyContent.DummyItem;
 import sample.dev.R;
+import sample.model.Debt;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
+ * specified {@link DebtViewFragment.DebtViewFragmentListener}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class DebtRecyclerViewAdapter extends RecyclerView.Adapter<DebtRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    private final List<Debt> mValues;
+    private final DebtViewFragment.DebtViewFragmentListener mListener;
 
-    public DebtRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public DebtRecyclerViewAdapter(List<Debt> items, DebtViewFragment.DebtViewFragmentListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -37,8 +37,8 @@ public class DebtRecyclerViewAdapter extends RecyclerView.Adapter<DebtRecyclerVi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).getId());
+        holder.mContentView.setText(mValues.get(position).getDay());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +61,7 @@ public class DebtRecyclerViewAdapter extends RecyclerView.Adapter<DebtRecyclerVi
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public Debt mItem;
 
         public ViewHolder(View view) {
             super(view);
