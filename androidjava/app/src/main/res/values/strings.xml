@@ -110,4 +110,6 @@
     <string name="prompt_subcategory">Subcategory</string>
     <string name="prompt_category">Category</string>
     <string name="title_activity_debt">DebtActivity</string>
+    <string name="title_debts">Débitos</string>
+    <string name="title_plans">Planos</string>
 </resources>

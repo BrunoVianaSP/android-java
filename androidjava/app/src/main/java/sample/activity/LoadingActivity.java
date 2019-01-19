@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import sample.dev.R;
+import sample.util.ActivityUtils;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -119,8 +120,7 @@ public class LoadingActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i=new Intent(LoadingActivity.this, LoginActivity.class);
-                startActivity(i);
+                ActivityUtils.start(LoadingActivity.this, LoginActivity.class);
             }
         }, OPEN_LOGIN_ACTIVITY_DELAY);
 

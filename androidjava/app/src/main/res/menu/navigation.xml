@@ -19,13 +19,13 @@
         android:title="@string/title_quiz" />
 
     <item
-        android:id="@+id/navigation_candidates"
+        android:id="@+id/navigation_debts"
         android:icon="@drawable/ic_people_white_24dp"
-        android:title="@string/title_candidates" />
+        android:title="@string/title_debts" />
 
     <!--<item-->
-        <!--android:id="@+id/navigation_dashboard"-->
-        <!--android:icon="@drawable/"-->
-        <!--android:title="@string/title_legal_terms" />-->
+        <!--android:id="@+id/navigation_plans"-->
+        <!--android:icon="@drawable/ic_access_alarms_white_24dp"-->
+        <!--android:title="@string/title_plans" />-->
 
 </menu>

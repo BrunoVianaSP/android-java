@@ -2,13 +2,13 @@ package sample.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -44,6 +44,7 @@ import sample.settings.SettingsFragment;
 import sample.settings.SuggestionFragment;
 import sample.user.ProfileFragment;
 import sample.user.SignupFragment;
+import sample.util.ActivityUtils;
 import sample.util.FragmentUtils;
 
 public class MainActivity extends AppCompatActivity implements
@@ -121,13 +122,17 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
             }
 
-            case R.id.navigation_candidates: {
-                Objects.requireNonNull(getSupportActionBar()).setTitle("Candidatos");
-                FragmentUtils.replace(MainActivity.this, CandidateFragment.newInstance(1), R.id.main_container);
+            case R.id.navigation_debts: {
+                openDebtActivity();
                 return true;
             }
         }
         return false;
+    }
+
+    private void openDebtActivity() {
+        log.info("openDebtActivity");
+        ActivityUtils.start(getBaseContext(), DebtActivity.class);
     }
 
 
