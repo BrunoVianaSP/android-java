@@ -59,10 +59,11 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
 
         final DebtController debtController = new DebtController();
 
-        Callback<DebtDTO> callback = new Callback<DebtDTO>() {
+        final Callback<DebtDTO> callback = new Callback<DebtDTO>() {
             @Override
             public void onResponse(Call<DebtDTO> call, Response<DebtDTO> response) {
                 log.info("onResponse");
+                log.info("response: " + response);
                 DebtDTO dto = response.body();
                 List<Debt> debts = dto.getDebts();
                 FragmentUtils.replace( DebtActivity.this, DebtViewFragment.newInstance(1, debts), R.id.debt_view_content);
@@ -70,7 +71,8 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
 
             @Override
             public void onFailure(Call<DebtDTO> call, Throwable t) {
-
+                log.info("onFailure");
+                log.info("call: " + call);
             }
 
         };

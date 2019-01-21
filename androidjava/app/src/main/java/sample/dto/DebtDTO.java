@@ -7,6 +7,7 @@ import lombok.Data;
 import sample.model.Debt;
 
 @Data
-public class DebtDTO implements Serializable {
+public class DebtDTO extends BaseDTO implements Serializable {
+    private int status;
     private final List<Debt> debts;
 }
