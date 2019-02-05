@@ -5,8 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import sample.activity.MainActivity;
-
 public class FragmentUtils {
 
     public static void replace(AppCompatActivity ctx, Fragment fragment, int container) {

@@ -1,10 +1,5 @@
 package sample.populator;
 
-import java.time.LocalDateTime;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalAccessor;
-import java.util.Date;
-
 import sample.model.Debt;
 import sample.view.DebtCreateView;
 

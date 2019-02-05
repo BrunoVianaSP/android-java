@@ -2,10 +2,6 @@ package sample.util;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-
-import sample.activity.LoadingActivity;
-import sample.activity.LoginActivity;
 
 public class ActivityUtils {
     public static void start(Context ctx, Class<?> target) {

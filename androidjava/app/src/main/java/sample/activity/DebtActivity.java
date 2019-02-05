@@ -7,25 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import sample.api.UserAPI;
-import sample.controller.Controller;
 import sample.controller.DebtController;
 import sample.debt.DebtViewFragment;
-import sample.debt.dummy.DummyContent;
 import sample.dev.R;
-import sample.model.Debt;
-import sample.model.User;
-import sample.util.FragmentUtils;
 import sample.dto.DebtDTO;
+import sample.model.Debt;
+import sample.util.FragmentUtils;
 
 
 public class DebtActivity extends AppCompatActivity implements DebtViewFragment.DebtViewFragmentListener {

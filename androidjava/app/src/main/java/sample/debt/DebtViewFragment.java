@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import sample.debt.dummy.DummyContent;
-import sample.debt.dummy.DummyContent.DummyItem;
 import sample.dev.R;
 import sample.model.Debt;
 
