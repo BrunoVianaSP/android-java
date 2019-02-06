@@ -1,29 +1,11 @@
 package sample.activity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
-import java.util.logging.Level;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import sample.controller.UserController;
-import sample.dev.R;
-import sample.model.User;
 import sample.user.SignupFragment;
-import sample.util.FragmentUtils;
 
 public class SignupActivity extends AppCompatActivity implements SignupFragment.SignupFragmentListener {
 

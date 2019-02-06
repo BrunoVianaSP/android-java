@@ -3,9 +3,9 @@ package sample.controller;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import sample.util.NewtworkUtils;
 import sample.dto.TokenDto;
 import sample.model.User;
+import sample.util.NewtworkUtils;
 
 public class UserController {
 
