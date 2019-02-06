@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.Lo
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 log.log(Level.INFO, "onResponse");
+                log.log(Level.INFO, "response: " + response);
 
                 User res = response.body();
 

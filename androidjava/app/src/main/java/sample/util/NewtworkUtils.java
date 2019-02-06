@@ -13,8 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewtworkUtils {
 
+    protected static java.util.logging.Logger log = java.util.logging.Logger.getLogger(NewtworkUtils.class.getName());
 
     public static <T> T createApi(String path, Class<T> type) {
+        log.info("createApi");
+        log.info("BASE: " + ConstantUtils.BASE_URL_SERVER);
+        log.info("PATH: " + path);
+        log.info("RESULT: " + (ConstantUtils.BASE_URL_SERVER + path) );
         final OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .readTimeout(10, TimeUnit.SECONDS)
                 .connectTimeout(10, TimeUnit.SECONDS)

@@ -7,9 +7,6 @@ import sample.dto.ResponseDTO;
 import sample.model.Debt;
 
 public interface DebtApi {
-//    @GET()
-//    Call<ResponseDTO> debts(@Query("email") final String email);
-
-    @GET("/")
+    @GET(" ")
     Call<ResponseDTO<Debt>> debts(@Header("Authorization") String token);
 }
