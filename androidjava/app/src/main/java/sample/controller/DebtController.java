@@ -9,7 +9,7 @@ import sample.util.NewtworkUtils;
 
 public class DebtController {
 
-    private final DebtApi debtApi = NewtworkUtils.createApi(ConstantUtils.SERVER_BASE_URL + ConstantUtils.SERVER_DEBTS_URL, DebtApi.class);
+    private final DebtApi debtApi = NewtworkUtils.createApi(ConstantUtils.SERVER_DEBTS_PATH, DebtApi.class);
 
     public void debts(Callback<DebtDTO> callback) {
         Call<DebtDTO> call = debtApi.debts();

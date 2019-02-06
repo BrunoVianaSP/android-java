@@ -237,10 +237,10 @@ public class MainActivity extends AppCompatActivity implements
         item.setVisible(true);
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-        FragmentUtils.replace(MainActivity.this, ProfileFragment.newInstance("", ""), R.id.main_container);
-    }
+//    @Override
+//    public void onFragmentInteraction(Uri uri) {
+//        FragmentUtils.replace(MainActivity.this, ProfileFragment.newInstance("", ""), R.id.main_container);
+//    }
 
     @Override
     public void onHomeButtonPressed(int button) {

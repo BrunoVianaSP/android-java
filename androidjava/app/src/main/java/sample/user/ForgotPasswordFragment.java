@@ -89,7 +89,7 @@ public class ForgotPasswordFragment extends Fragment {
             public void onClick(View view) {
 //                mEmailSignInButton.setEnabled(false);
 //                btnContinue.setClickable(false);
-                mListener.continueButtonPressed(mEmailView.getText().toString());
+                mListener.continueButton(mEmailView.getText().toString());
             }
         });
     }
@@ -123,6 +123,6 @@ public class ForgotPasswordFragment extends Fragment {
      */
     public interface ForgotPasswordListener {
 //        // TODO: Update argument type and name
-        void continueButtonPressed(String email);
+        void continueButton(String email);
     }
 }

@@ -206,4 +206,12 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@color/primaryLightColor</item>
+        <item name="android:colorAccent">@color/primaryTextColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+    </style>
 </resources>

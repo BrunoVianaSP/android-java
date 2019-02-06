@@ -2,6 +2,13 @@ package sample.util;
 
 public class ConstantUtils {
 
-    public static final String SERVER_BASE_URL = "http://10.0.2.2:1314";
-    public static final String SERVER_DEBTS_URL = "/debts/";
+    public static final String BASE_URL_SERVER = "https://sheltered-citadel-11390.herokuapp.com";  // PROD
+    //    public static final String BASE_URL_SERVER = ""; // LOCAL
+
+    public static final String SERVER_USERS_PATH = "/users/";
+    public static final String SERVER_DEBTS_PATH = "/debts/";
+
+    public static final String ARG_USER_EMAIL = "USER_EMAIL";
+    public static final String ARG_USER_PASSWORD = "USER_PASSWORD";
+    public static final String ARG_TOKEN = "ACCESS_TOKEN";
 }

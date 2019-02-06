@@ -82,7 +82,7 @@ public class SignupFragment extends Fragment {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onFragmentInteraction(null);
+//                mListener.onFragmentInteraction(null);
             }
         });
     }
@@ -116,6 +116,6 @@ public class SignupFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface SignupFragmentListener {
-        void onFragmentInteraction(Uri uri);
+//        void onFragmentInteraction(Uri uri);
     }
 }

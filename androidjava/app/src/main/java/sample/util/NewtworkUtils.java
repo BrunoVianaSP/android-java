@@ -12,8 +12,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewtworkUtils {
-    private static final String BASE_URL_SERVER = "https://sheltered-citadel-11390.herokuapp.com";  // PROD
-//    private static final String BASE_URL_SERVER = ""; // LOCAL
+
 
     public static <T> T createApi(String path, Class<T> type) {
         final OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -26,7 +25,7 @@ public class NewtworkUtils {
                 .create();
 
         final Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL_SERVER + path)
+                .baseUrl(ConstantUtils.BASE_URL_SERVER + path)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .build();
