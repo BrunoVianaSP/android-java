@@ -23,6 +23,8 @@ import sample.user.LoginFragment;
 import sample.util.ConstantUtils;
 import sample.util.DialogUtils;
 import sample.util.FragmentUtils;
+import sample.util.JsonUtils;
+import sample.util.ResourceUtils;
 
 
 public class LoginActivity extends AppCompatActivity implements LoginFragment.LoginFragmentListener, ForgotPasswordFragment.ForgotPasswordListener, ChangePasswordFragment.ChangePasswordFragmentListener {
@@ -30,8 +32,6 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.Lo
     private static final long OPEN_MAIN_ACTIVITY_DELAY = 1000;
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
-
-    private LoginFragment loginFragment;
 
     private UserController userController = new UserController();
 
@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.Lo
                 log.log(Level.INFO, "User: " + res);
 
                 if (isLoggedIn(res)) {
+                    saveLoggeInUser(res);
                     startMainActivity();
                 } else {
                     offerSignUpOrTryAgain(email, password);
@@ -75,6 +76,11 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.Lo
         };
 
         userController.authenticate(email, password, callback);
+    }
+
+    private void saveLoggeInUser(User user) {
+        log.log(Level.INFO, "saveLoggeInUser: " + JsonUtils.json(user));
+        ResourceUtils.save(this, ConstantUtils.USER_SHARED_REPOSITORY_KEY, ConstantUtils.USER_SHARED_KEY, user);
     }
 
     private void offerSignUpOrTryAgain(final String email, final String password) {

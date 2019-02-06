@@ -1,29 +1,39 @@
 package sample.util;
 
-import java.util.Random;
+import android.content.SharedPreferences;
+import android.support.v7.app.AppCompatActivity;
+
+import com.google.gson.Gson;
+
+import sample.model.User;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class ResourceUtils {
 
-    public static int randomTeamLogo() {
-//        final List<Integer> resources = Arrays.asList(
-//                R.drawable.team1,
-//                R.drawable.team2,
-//                R.drawable.team3,
-////                R.drawable.team4,
-//                R.drawable.team5,
-////                R.drawable.team6,
-//                R.drawable.team7,
-//                R.drawable.team8,
-//                R.drawable.team9,
-////                R.drawable.team10,
-//                R.drawable.team11,
-//                R.drawable.team12,
-//                R.drawable.team13,
-//                R.drawable.team14,
-//                R.drawable.team15,
-//                R.drawable.team16);
-        Random r = new Random();
-//        return resources.get(r.nextInt(resources.size()));
-        return 0;
+
+    public static void save(AppCompatActivity ctx, String repositoryKey, String dataSaveKey, Object data) {
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(repositoryKey, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(dataSaveKey, JsonUtils.json(data));
+        editor.apply();
+    }
+
+    public static <T> T load(AppCompatActivity ctx, String repositoryKey, String dataSaveKey, Class<T> type) {
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(repositoryKey, MODE_PRIVATE);
+        String json = sharedPreferences.getString(dataSaveKey, "{}");
+        Gson g = new Gson();
+        T obj = g.fromJson(json, type);
+        return obj;
+    }
+
+    public static String getBearerToken(AppCompatActivity ctx) {
+        User user = load(ctx, ConstantUtils.USER_SHARED_REPOSITORY_KEY, ConstantUtils.USER_SHARED_KEY, User.class);
+        return "Bearer " + user.getToken();
+    }
+
+    public static User user(AppCompatActivity ctx) {
+        User user = ResourceUtils.load(ctx, ConstantUtils.USER_SHARED_REPOSITORY_KEY, ConstantUtils.USER_SHARED_KEY, User.class);
+        return user;
     }
 }

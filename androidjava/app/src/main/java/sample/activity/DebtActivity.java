@@ -16,7 +16,7 @@ import retrofit2.Response;
 import sample.controller.DebtController;
 import sample.debt.DebtViewFragment;
 import sample.dev.R;
-import sample.dto.DebtDTO;
+import sample.dto.ResponseDTO;
 import sample.model.Debt;
 import sample.util.FragmentUtils;
 
@@ -25,8 +25,17 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
+    private final DebtController debtController = new DebtController(this);
+//
+//    private final DebtController debtController;
+//
+//    private DebtActivity() {
+//        debtController = new DebtController(this);
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        log.info("DebtActivity onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_debt);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -49,22 +58,21 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
     }
 
     private void showDebtListFragment() {
+        log.info("showDebtListFragment");
 
-        final DebtController debtController = new DebtController();
-
-        final Callback<DebtDTO> callback = new Callback<DebtDTO>() {
+        final Callback<ResponseDTO<Debt>> callback = new Callback<ResponseDTO<Debt>>() {
             @Override
-            public void onResponse(Call<DebtDTO> call, Response<DebtDTO> response) {
+            public void onResponse(Call<ResponseDTO<Debt>> call, Response<ResponseDTO<Debt>> response) {
                 log.info("onResponse");
                 log.info("response: " + response);
-                DebtDTO dto = response.body();
-                List<Debt> debts = dto.getDebts();
+                ResponseDTO<Debt> res = response.body();
+                List<Debt> debts = res.getBody().getList();
                 FragmentUtils.replace( DebtActivity.this, DebtViewFragment.newInstance(1, debts), R.id.debt_view_content);
             }
 
             @Override
-            public void onFailure(Call<DebtDTO> call, Throwable t) {
-                log.info("onFailure");
+            public void onFailure(Call<ResponseDTO<Debt>> call, Throwable t) {
+                log.info("onFailure: showDebtListFragment");
                 log.info("call: " + call);
             }
 
@@ -72,6 +80,35 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
 
         debtController.debts(callback);
     }
+
+//    private void showDebtListFragment() {
+//        log.info("showDebtListFragment");
+//
+//        ProtectedApiCaller caller = ProtectedApiCaller.builder()
+//                .email(ResourceUtils.get(ConstantUtils.ARG_USER_EMAIL))
+//                .password(ResourceUtils.get(ConstantUtils.ARG_USER_PASSWORD))
+//                .token(ResourceUtils.get(ConstantUtils.ARG_USER_PASSWORD))
+//                .callback()
+//        final Callback<ResponseDTO<Debt>> callback = new Callback<ResponseDTO<Debt>>() {
+//            @Override
+//            public void onResponse(Call<ResponseDTO<Debt>> call, Response<ResponseDTO<Debt>> response) {
+//                log.info("onResponse");
+//                log.info("response: " + response);
+//                ResponseDTO<Debt> res = response.body();
+//                List<Debt> debts = res.getBody().getList();
+//                FragmentUtils.replace( DebtActivity.this, DebtViewFragment.newInstance(1, debts), R.id.debt_view_content);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseDTO<Debt>> call, Throwable t) {
+//                log.info("onFailure");
+//                log.info("call: " + call);
+//            }
+//
+//        };
+//
+//        debtController.debts(callback);
+//    }
 
     @Override
     public void onListFragmentInteraction(Debt item) {

@@ -11,4 +11,7 @@ public class ConstantUtils {
     public static final String ARG_USER_EMAIL = "USER_EMAIL";
     public static final String ARG_USER_PASSWORD = "USER_PASSWORD";
     public static final String ARG_TOKEN = "ACCESS_TOKEN";
+    public static final String ARG_USER = "ARG_USER";
+    public static final String USER_SHARED_KEY = "USER_SHARED_KEY";
+    public static final String USER_SHARED_REPOSITORY_KEY = "USER_SHARED_REPOSITORY_KEY";
 }

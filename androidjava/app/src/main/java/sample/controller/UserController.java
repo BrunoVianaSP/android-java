@@ -5,15 +5,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import sample.dto.TokenDto;
 import sample.model.User;
+import sample.util.ConstantUtils;
 import sample.util.NewtworkUtils;
 
 public class UserController {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
-    private static final String PATH = "/users/";
-
-    private final UserApi userApi = NewtworkUtils.createApi(PATH, UserApi.class);
+    private final UserApi userApi = NewtworkUtils.createApi(ConstantUtils.SERVER_USERS_PATH, UserApi.class);
 
     public void authenticate(String email, String password, Callback<User> callback) {
         User user = User.create(email, password);

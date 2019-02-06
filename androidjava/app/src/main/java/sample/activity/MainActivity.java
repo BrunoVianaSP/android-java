@@ -12,23 +12,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
-import java.io.IOException;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import sample.api.UserAPI;
 import sample.cadidate.CandidateFragment;
-import sample.controller.Controller;
 import sample.dev.R;
 import sample.home.FeedContent;
 import sample.home.FeedFragment;
 import sample.home.HomeFragment;
-import sample.model.User;
 import sample.quiz.QuizFragment;
 import sample.settings.AboutFragment;
 import sample.settings.AppInfoFragment;
@@ -133,7 +125,6 @@ public class MainActivity extends AppCompatActivity implements
         ActivityUtils.start(getBaseContext(), DebtActivity.class);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,31 +133,6 @@ public class MainActivity extends AppCompatActivity implements
         ConfigBottomNavigator();
         configFloatButton();
         showHomeFragment();
-
-        log.info("START REQUEST");
-        User user = new User();
-        final UserAPI loginClient = Controller.createService(UserAPI.class);
-        Call<ResponseBody> call = loginClient.login(user);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful()) {
-                    try {
-                        // get String from response
-                        String stringResponse = response.body().string();
-                        log.info("REQUEST RESULT: " + stringResponse);
-                    } catch (IOException e) {
-                        log.info("REQUEST RESULT ERROR ");
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
     }
 
     private void showHomeFragment() {
