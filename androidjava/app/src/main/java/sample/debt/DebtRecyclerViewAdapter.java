@@ -11,16 +11,14 @@ import java.util.List;
 import sample.debt.dummy.DummyContent.DummyItem;
 import sample.dev.R;
 import sample.model.Debt;
+import sample.populator.DebtPopulator;
+import sample.view.DebtItemView;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link DebtViewFragment.DebtViewFragmentListener}.
- * TODO: Replace the implementation with code for your data type.
- */
-public class DebtRecyclerViewAdapter extends RecyclerView.Adapter<DebtRecyclerViewAdapter.ViewHolder> {
+public class DebtRecyclerViewAdapter extends RecyclerView.Adapter<DebtItemView> {
 
     private final List<Debt> mValues;
     private final DebtViewFragment.DebtViewFragmentListener mListener;
+    private final DebtPopulator populator = new DebtPopulator();
 
     public DebtRecyclerViewAdapter(List<Debt> items, DebtViewFragment.DebtViewFragmentListener listener) {
         mValues = items;
@@ -28,17 +26,17 @@ public class DebtRecyclerViewAdapter extends RecyclerView.Adapter<DebtRecyclerVi
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DebtItemView onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_debt_view, parent, false);
-        return new ViewHolder(view);
+        return new DebtItemView(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final DebtItemView holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getId());
-        holder.mContentView.setText(mValues.get(position).getDay());
+
+        populator.populate(holder.mItem, holder);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

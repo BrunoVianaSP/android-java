@@ -1,20 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/tiny_margin"
+    tools:showIn="@layout/fragment_debt_list">
 
-    <TextView
-        android:id="@+id/item_number"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:orientation="horizontal"
+        android:background="@color/primaryLightColor">
 
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pec_241"
+                android:contentDescription="TODO" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_margin="@dimen/tiny_margin"
+                android:text="Condução Trabalho"
+                style="@style/titleStyle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="Category"
+                    android:layout_weight="1"
+                    style="@style/normalTextStyle"/>
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="TRABALHO"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    style="@style/normalTextStyle"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="SubCategory"
+                    android:layout_weight="1"
+                    style="@style/normalTextStyle"/>
+                <TextView
+                    android:id="@+id/subcategory"
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="Transporte"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    style="@style/normalTextStyle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="Price"
+                    android:layout_weight="1"
+                    style="@style/normalTextStyle"/>
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="11,50"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    style="@style/normalTextStyle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="Seller"
+                    android:layout_weight="1"
+                    style="@style/normalTextStyle"/>
+                <TextView
+                    android:id="@+id/seller"
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="URUBUPUNGÁ LTDA"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    style="@style/normalTextStyle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="22/08/2018 12h30m"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccent"
+                    style="@style/normalTextStyle"/>
+                <TextView
+                    android:id="@+id/day"
+                    android:layout_margin="@dimen/tiny_margin"
+                    android:text="saturday"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorAccent"
+                    style="@style/normalTextStyle"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

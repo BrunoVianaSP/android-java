@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void showHomeFeedList() {
         log.info("showHomeFeedList");
-        FragmentUtils.replace(MainActivity.this, FeedFragment.newInstance(1), R.id.main_container);
+        FragmentUtils.replace(MainActivity.this, FeedFragment.newInstance(1), R.id.container_home);
     }
 
 
