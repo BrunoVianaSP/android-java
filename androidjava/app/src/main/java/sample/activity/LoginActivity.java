@@ -113,7 +113,6 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.Lo
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 Intent i=new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
             }
