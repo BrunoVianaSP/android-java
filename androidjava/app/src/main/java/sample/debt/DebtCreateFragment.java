@@ -26,7 +26,7 @@ public class DebtCreateFragment extends Fragment {
 
     private DebtPopulator populator = new DebtPopulator();
 
-    private OnFragmentInteractionListener mListener;
+    private DebtCreateListener mListener;
 
     public DebtCreateFragment() {
         // Required empty public constructor
@@ -61,6 +61,7 @@ public class DebtCreateFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel = new DebtCreateView(view);
         viewModel.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,11 +74,11 @@ public class DebtCreateFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof DebtCreateListener) {
+            mListener = (DebtCreateListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement DebtCreateListener");
         }
     }
 
@@ -87,7 +88,7 @@ public class DebtCreateFragment extends Fragment {
         mListener = null;
     }
 
-    public interface OnFragmentInteractionListener {
+    public interface DebtCreateListener {
         void saveDebt(Debt debt);
     }
 }

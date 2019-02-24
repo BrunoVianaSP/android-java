@@ -76,7 +76,7 @@ public class SuggestionFragment extends Fragment {
             mListener = (SuggestionFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement DebtCreateListener");
         }
     }
 

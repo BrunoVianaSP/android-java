@@ -77,7 +77,7 @@ public class AboutFragment extends Fragment {
             mListener = (AboutFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement DebtCreateListener");
         }
     }
 

@@ -76,7 +76,7 @@ public class AppInfoFragment extends Fragment {
             mListener = (AppInfoFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement DebtCreateListener");
         }
     }
 

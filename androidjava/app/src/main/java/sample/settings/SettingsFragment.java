@@ -80,7 +80,7 @@ public class SettingsFragment extends Fragment {
             mListener = (SettingsFragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement DebtCreateListener");
         }
     }
 

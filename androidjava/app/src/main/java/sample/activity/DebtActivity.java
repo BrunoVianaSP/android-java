@@ -3,6 +3,7 @@ package sample.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -14,6 +15,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import sample.controller.DebtController;
+import sample.debt.DebtCreateFragment;
 import sample.debt.DebtViewFragment;
 import sample.dev.R;
 import sample.dto.ResponseDTO;
@@ -21,7 +23,8 @@ import sample.model.Debt;
 import sample.util.FragmentUtils;
 
 
-public class DebtActivity extends AppCompatActivity implements DebtViewFragment.DebtViewFragmentListener {
+public class DebtActivity extends AppCompatActivity
+        implements DebtViewFragment.DebtViewFragmentListener, DebtCreateFragment.DebtCreateListener {
 
     protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
 
@@ -46,10 +49,15 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                showCreateDebtFragment();
             }
         });
+    }
+
+    private void showCreateDebtFragment() {
+        log.info("showDebtListFragment");
+        Fragment fragment = DebtCreateFragment.newInstance("","");
+        FragmentUtils.replace(this, fragment, R.id.debt_view_content);
     }
 
     private void showDebtListFragment() {
@@ -83,5 +91,10 @@ public class DebtActivity extends AppCompatActivity implements DebtViewFragment.
     @Override
     public void onListFragmentInteraction(Debt item) {
 
+    }
+
+    @Override
+    public void saveDebt(Debt debt) {
+        log.info("saveDebt");
     }
 }
