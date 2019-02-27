@@ -1,5 +1,7 @@
 package sample.populator;
 
+import java.time.LocalDateTime;
+
 import sample.model.Debt;
 import sample.view.DebtCreateView;
 import sample.view.DebtItemView;
@@ -9,12 +11,13 @@ public class DebtPopulator {
     public Debt populate(DebtCreateView source) {
         Debt debt = new Debt();
 //        debt.setDate(source.date.getDate());
-        debt.setName(source.name.toString());
-        debt.setCategory(source.category.toString());
-        debt.setSubcategory(source.subcategory.toString());
-        debt.setPrice(Float.parseFloat(source.price.toString()));
-        debt.setSeller(source.seller.toString());
-        debt.setStatus(source.status.toString());
+        debt.setDate(LocalDateTime.now().toString());
+        debt.setName(source.name.getText().toString());
+        debt.setCategory(source.category.getText().toString());
+        debt.setSubcategory(source.subcategory.getText().toString());
+        debt.setPrice(Double.parseDouble(source.price.getText().toString()));
+        debt.setSeller(source.seller.getText().toString());
+        debt.setStatus(source.status.getText().toString());
         return debt;
     }
 

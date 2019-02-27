@@ -8,12 +8,12 @@ import lombok.Data;
 @Data
 public class Debt implements Serializable {
     private String id;
-//    private LocalDateTime date;
+    private String date;
     private String day;
     private String name;
     private String category;
     private String subcategory;
     private String seller;
-    private float price;
+    private Double price;
     private String status;
 }

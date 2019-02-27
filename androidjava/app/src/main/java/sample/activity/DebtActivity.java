@@ -82,7 +82,6 @@ public class DebtActivity extends AppCompatActivity
                 log.info("call: " + call);
                 t.printStackTrace();
             }
-
         };
 
         debtController.debts(callback);
@@ -96,5 +95,27 @@ public class DebtActivity extends AppCompatActivity
     @Override
     public void saveDebt(Debt debt) {
         log.info("saveDebt");
+
+        final Callback<ResponseDTO<Debt>> callback = new Callback<ResponseDTO<Debt>>() {
+            @Override
+            public void onResponse(Call<ResponseDTO<Debt>> call, Response<ResponseDTO<Debt>> response) {
+                log.info("onResponse");
+                log.info("response: " + response);
+
+                if (response.isSuccessful()) {
+                    showDebtListFragment();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseDTO<Debt>> call, Throwable t) {
+                log.info("onFailure: showDebtListFragment");
+                log.info("call: " + call);
+                t.printStackTrace();
+            }
+        };
+
+        debtController.create(debt, callback);
+
     }
 }

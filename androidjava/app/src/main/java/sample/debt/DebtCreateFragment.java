@@ -19,6 +19,8 @@ public class DebtCreateFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    protected java.util.logging.Logger log = java.util.logging.Logger.getLogger(getClass().getName());
+
     private String mParam1;
     private String mParam2;
 
@@ -65,6 +67,7 @@ public class DebtCreateFragment extends Fragment {
         viewModel.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                log.info("price:" + viewModel.price.getText().toString());
                 Debt debt = populator.populate(viewModel);
                 mListener.saveDebt(debt);
             }

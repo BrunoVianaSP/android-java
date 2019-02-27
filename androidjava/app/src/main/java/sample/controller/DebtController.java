@@ -23,4 +23,9 @@ public class DebtController extends Controller {
         Call<ResponseDTO<Debt>> call = debtApi.debts(ResourceUtils.getBearerToken(getContext()));
         call.enqueue(callback);
     }
+
+    public void create(Debt entity, Callback<ResponseDTO<Debt>> callback) {
+        Call<ResponseDTO<Debt>> call = debtApi.create(entity, ResourceUtils.getBearerToken(getContext()));
+        call.enqueue(callback);
+    }
 }
