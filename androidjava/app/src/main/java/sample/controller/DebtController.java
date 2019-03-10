@@ -1,15 +1,15 @@
 package sample.controller;
 
-import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.app.AppCompatActivity;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import sample.api.DebtApi;
-import sample.dto.ResponseDTO;
-import sample.model.Debt;
-import sample.util.ConstantUtils;
-import sample.util.NewtworkUtils;
-import sample.util.ResourceUtils;
+        import retrofit2.Call;
+        import retrofit2.Callback;
+        import sample.api.DebtApi;
+        import sample.dto.ResponseDTO;
+        import sample.model.Debt;
+        import sample.util.ConstantUtils;
+        import sample.util.NewtworkUtils;
+        import sample.util.ResourceUtils;
 
 public class DebtController extends Controller {
 
@@ -20,12 +20,19 @@ public class DebtController extends Controller {
     }
 
     public void debts(Callback<ResponseDTO<Debt>> callback) {
-        Call<ResponseDTO<Debt>> call = debtApi.debts(ResourceUtils.getBearerToken(getContext()));
+        String email = ResourceUtils.userEmail(getContext());
+        Call<ResponseDTO<Debt>> call = debtApi.debts(ResourceUtils.getBearerToken(getContext()), email);
         call.enqueue(callback);
     }
 
-    public void create(Debt entity, Callback<ResponseDTO<Debt>> callback) {
-        Call<ResponseDTO<Debt>> call = debtApi.create(entity, ResourceUtils.getBearerToken(getContext()));
+    public void create(Debt mItem, Callback<ResponseDTO<Debt>> callback) {
+        String email = ResourceUtils.userEmail(getContext());
+        Call<ResponseDTO<Debt>> call = debtApi.create(mItem, ResourceUtils.getBearerToken(getContext()), email);
+        call.enqueue(callback);
+    }
+
+    public void delete(Debt mItem, Callback<ResponseDTO<Debt>> callback) {
+        Call<ResponseDTO<Debt>> call = debtApi.delete(mItem.getId(), ResourceUtils.getBearerToken(getContext()));
         call.enqueue(callback);
     }
 }

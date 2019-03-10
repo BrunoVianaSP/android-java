@@ -36,4 +36,8 @@ public class ResourceUtils {
         User user = ResourceUtils.load(ctx, ConstantUtils.USER_SHARED_REPOSITORY_KEY, ConstantUtils.USER_SHARED_KEY, User.class);
         return user;
     }
+
+    public static String userEmail(AppCompatActivity context) {
+        return user(context).getEmail();
+    }
 }

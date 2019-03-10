@@ -69,7 +69,7 @@ public class DebtCreateFragment extends Fragment {
             public void onClick(View v) {
                 log.info("price:" + viewModel.price.getText().toString());
                 Debt debt = populator.populate(viewModel);
-                mListener.saveDebt(debt);
+                mListener.create(debt);
             }
         });
     }
@@ -92,6 +92,6 @@ public class DebtCreateFragment extends Fragment {
     }
 
     public interface DebtCreateListener {
-        void saveDebt(Debt debt);
+        void create(Debt debt);
     }
 }

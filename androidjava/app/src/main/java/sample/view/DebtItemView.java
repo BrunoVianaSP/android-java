@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -27,6 +28,8 @@ public class DebtItemView extends RecyclerView.ViewHolder {
     public TextView seller;
     @BindView(R.id.price)
     public TextView price;
+    @BindView(R.id.delete)
+    public ImageButton delete;
 //    @BindView(R.id.status)
 //    public TextView status;
 

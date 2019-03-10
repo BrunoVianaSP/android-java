@@ -88,13 +88,37 @@ public class DebtActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(Debt item) {
+    public void details(Debt mItem) {
 
     }
 
     @Override
-    public void saveDebt(Debt debt) {
-        log.info("saveDebt");
+    public void delete(Debt mItem) {
+        final Callback<ResponseDTO<Debt>> callback = new Callback<ResponseDTO<Debt>>() {
+            @Override
+            public void onResponse(Call<ResponseDTO<Debt>> call, Response<ResponseDTO<Debt>> response) {
+                log.info("onResponse");
+                log.info("response: " + response);
+
+                if (response.isSuccessful()) {
+                    showDebtListFragment();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseDTO<Debt>> call, Throwable t) {
+                log.info("onFailure: showDebtListFragment");
+                log.info("call: " + call);
+                t.printStackTrace();
+            }
+        };
+
+        debtController.delete(mItem, callback);
+    }
+
+    @Override
+    public void create(Debt mItem) {
+        log.info("create");
 
         final Callback<ResponseDTO<Debt>> callback = new Callback<ResponseDTO<Debt>>() {
             @Override
@@ -115,7 +139,7 @@ public class DebtActivity extends AppCompatActivity
             }
         };
 
-        debtController.create(debt, callback);
+        debtController.create(mItem, callback);
 
     }
 }

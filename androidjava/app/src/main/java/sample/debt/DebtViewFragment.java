@@ -82,6 +82,7 @@ public class DebtViewFragment extends Fragment {
     }
 
     public interface DebtViewFragmentListener {
-        void onListFragmentInteraction(Debt item);
+        void details(Debt mItem);
+        void delete(Debt mItem);
     }
 }
